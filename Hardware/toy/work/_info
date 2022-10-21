@@ -7,17 +7,17 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/mp619/nfshome/toy
+d/home/mp619/nfshome/toy
 vmultiplier
 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-!s110 1665995781
+Z0 !s110 1666284760
 !i10b 1
 !s100 n`7?n^U8Ej2dj894BIKo82
 IWUj_e8C:n1z3Y2CVfi_QP0
 VDg1SIo80bB@j0V0VzS_@n1
 !s105 multiplier_sv_unit
 S1
-R0
+d/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/toy
 w1665995345
 8rtl/multiplier.sv
 Frtl/multiplier.sv
@@ -26,15 +26,15 @@ OL;L;10.7c;67
 r1
 !s85 0
 31
-!s108 1665995781.000000
+!s108 1666284760.000000
 !s107 rtl/multiplier.sv|
 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|rtl/multiplier.sv|
 !i113 0
 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Z1 tCvgOpt 0
 Twork_opt
-!s110 1665996127
-VVMA1Q;4k]FYD^43L50:J61
+R0
+Vnkfko^@[hOG5k:iRJiFhA2
 04 10 4 work multiplier fast 0
 o-work work
 R1
