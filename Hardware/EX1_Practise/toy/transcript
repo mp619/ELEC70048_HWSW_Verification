@@ -14,11 +14,17 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim work_opt -gui 
-# Start time: 17:52:49 on Oct 20,2022
+# Start time: 18:37:58 on Oct 21,2022
 # Loading sv_std.std
+# Loading work.tb_top(fast)
+# Loading work.tb_clk(fast)
 # Loading work.multiplier(fast)
-log -r /*
-add wave *
-# (vish-4014) No objects found matching '*'.
-# End time: 17:54:30 on Oct 20,2022, Elapsed time: 0:01:41
-# Errors: 1, Warnings: 0
+# Loading work.multiplier_tb(fast)
+do setup.do
+# rdy is high
+# ** Note: $finish    : tbench/multiplier_tb.sv(22)
+#    Time: 300 ns  Iteration: 1  Instance: /tb_top/multi_tb
+# 1
+# Break in Module multiplier_tb at tbench/multiplier_tb.sv line 22
+# End time: 18:40:14 on Oct 21,2022, Elapsed time: 0:02:16
+# Errors: 0, Warnings: 0
