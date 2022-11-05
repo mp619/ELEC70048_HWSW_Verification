@@ -1,4 +1,4 @@
-module Generator
+module tb_clk
     (
         output logic clk
     );

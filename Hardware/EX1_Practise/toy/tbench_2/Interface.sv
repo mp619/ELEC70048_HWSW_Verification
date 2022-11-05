@@ -32,7 +32,7 @@ interface multi_inf
         clocking cb
     );
 
-    modport MULTI // Multiplier mod port - everything is already clocked
+    modport DUT // Multiplier mod port - everything is already clocked
     (
         input clk,
         output rdy,

@@ -14,17 +14,22 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim work_opt -gui 
-# Start time: 18:37:58 on Oct 21,2022
+# Start time: 15:27:55 on Nov 05,2022
 # Loading sv_std.std
-# Loading work.tb_top(fast)
-# Loading work.tb_clk(fast)
+# Loading work.multiplier_top(fast)
+# Loading work.multi_inf(fast)
 # Loading work.multiplier(fast)
 # Loading work.multiplier_tb(fast)
 do setup.do
-# rdy is high
-# ** Note: $finish    : tbench/multiplier_tb.sv(22)
-#    Time: 300 ns  Iteration: 1  Instance: /tb_top/multi_tb
-# 1
-# Break in Module multiplier_tb at tbench/multiplier_tb.sv line 22
-# End time: 18:40:14 on Oct 21,2022, Elapsed time: 0:02:16
-# Errors: 0, Warnings: 0
+# ** Error: (vish-4014) No objects found matching 'multi/*'.
+# Error in macro ./setup.do line 2
+# (vish-4014) No objects found matching 'multi/*'.
+#     while executing
+# "add wave multi/*"
+do setup.do
+# Initial check pass: Multiplier result = 56, expected result is 56
+# ** Note: $stop    : tbench_2/multiplier_tb.sv(36)
+#    Time: 2100 ns  Iteration: 2  Instance: /multiplier_top/mul1_tb
+# Break in Module multiplier_tb at tbench_2/multiplier_tb.sv line 36
+# End time: 15:29:26 on Nov 05,2022, Elapsed time: 0:01:31
+# Errors: 3, Warnings: 0

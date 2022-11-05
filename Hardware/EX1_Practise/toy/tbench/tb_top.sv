@@ -4,13 +4,13 @@ module tb_top;
   parameter WIDTH = 5;
 
   // Wires                 
-  logic                   clk;
-  logic                   rst_n;
-  logic                   req;
-  logic                   rdy;
+  logic                       clk;
+  logic                       rst_n;
+  logic                       req;
+  logic                       rdy;
   logic [WIDTH-1:0]       a;
   logic [WIDTH-1:0]       b;
-  logic                   done;
+  logic                       done;
   logic [2*WIDTH-1:0]     ab; 
 
   // Modules
@@ -20,28 +20,30 @@ module tb_top;
     .clk      (clk)
   );
   
-  multiplier multi_5
-  (
-    .clk      (clk),
-    .rst_n    (rst_n),
-    .req      (req),
-    .rdy      (rdy),
-    .a        (a),
-    .b        (b),
-    .done     (done),
-    .ab       (ab)
-  );
+  multiplier 
+  #(.WIDTH (WIDTH)) multi 
+    (
+      .clk      (clk),
+      .rst_n    (rst_n),
+      .req      (req),
+      .rdy      (rdy),
+      .a        (a),
+      .b        (b),
+      .done     (done),
+      .ab       (ab)
+    );
 
-  multiplier_tb multi_tb
-  (
-    .clk      (clk),
-    .rst_n    (rst_n),
-    .req      (req),
-    .rdy      (rdy),
-    .a        (a),
-    .b        (b),
-    .done     (done),
-    .ab       (ab)
-  );
+  multiplier_tb_2
+  #(.WIDTH (WIDTH)) multi_tb 
+    (
+      .clk      (clk),
+      .rst_n    (rst_n),
+      .req      (req),
+      .rdy      (rdy),
+      .a        (a),
+      .b        (b),
+      .done     (done),
+      .ab       (ab)
+    );
 
 endmodule
