@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files
+YAHB_GPIO_INF
+Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+Z2 !s110 1667812900
+!i10b 1
+!s100 HZFgYhRIh4SiVgNRD4gUU3
+I4ZhEQUb;eZ01az0Xk5T7;2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 Interface_sv_unit
+S1
+R0
+w1667769153
+8tbench/Interface.sv
+Ftbench/Interface.sv
+L0 1
+Z4 OL;L;10.7c;67
+r1
+!s85 0
+31
+Z5 !s108 1667812900.000000
+!s107 tbench/Interface.sv|tbench/AHBGPIO_top.sv|
+Z6 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|tbench/AHBGPIO_top.sv|tbench/Interface.sv|
+!i113 0
+Z7 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+n@a@h@b_@g@p@i@o_@i@n@f
+vAHBGPIO_top
+R1
+R2
+!i10b 1
+!s100 c2Vzm[Fnja;e`:z;32B0<0
+IlY33nLMI4YcHDRiT@A`Na2
+R3
+!s105 AHBGPIO_top_sv_unit
+S1
+R0
+w1667813091
+8tbench/AHBGPIO_top.sv
+Ftbench/AHBGPIO_top.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+Z9 !s107 tbench/Interface.sv|tbench/AHBGPIO_top.sv|
+R6
+!i113 0
+R7
+R8
+n@a@h@b@g@p@i@o_top

@@ -77,7 +77,7 @@ program automatic multiplier_tb
 
         init_reset();   //begin with reset asserted
         initial_check();    //Initial check
-        
+
         for (test_count = 0; test_count < 128; test_count++)
         begin
             @(posedge multif.clk); 
@@ -87,13 +87,13 @@ program automatic multiplier_tb
             multif.b = opvals.j;                        // Randomize as inputs
             cova.sample();                              // Collect a coverage
             multif.cb.req <= 1;                         // Request calc
-
             wait (multif.done == 1);
             covmax.sample();
             multif.cb.req <= 0;
+            $display("%d", test_count);
         end
-        
         @(posedge multif.clk); 
+        $display("Coverage = %f %%", cova.get_inst_coverage());
         $stop;
 
     end
