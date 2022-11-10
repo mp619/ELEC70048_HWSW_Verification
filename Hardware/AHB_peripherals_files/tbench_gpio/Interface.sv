@@ -20,7 +20,7 @@ interface AHBGPIO_intf
     logic [31:0]    HRDATA;
     logic [15:0]    GPIOOUT;
 
-    clocking cb_DRIVER @(posedge clk);
+    clocking cb_TB @(posedge clk);
         output  HADDR;
         output  HTRANS;
         output  HWDATA;
@@ -48,18 +48,11 @@ interface AHBGPIO_intf
         input   GPIOOUT;              
     endclocking
 
-    modport DRIVER
+    modport TB
     (
         input clk,
-        rst_n,
-        clocking cb_DRIVER
-    );
-
-    modport MONITOR
-    (
-        input clk,
-        rst_n,
-        clocking cb_MONITOR
+        input rst_n,
+        clocking cb_TB
     );
 
 

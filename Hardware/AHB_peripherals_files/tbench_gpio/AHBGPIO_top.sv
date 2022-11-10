@@ -14,7 +14,10 @@ module AHBGPIO_top;
 
     initial begin
         rst_n = 0;              //Assert reset
-        repeat (5) @(posedge clk) rst_n = 1;           //De-assert reset
+        repeat (5) begin 
+            @(posedge clk);
+        end
+        rst_n = 1;           //De-assert reset
     end 
 
     AHBGPIO_intf ahbgpio_intf(.clk(clk),

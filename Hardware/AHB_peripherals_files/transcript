@@ -14,20 +14,18 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim work_opt -gui 
-# Start time: 14:58:07 on Nov 09,2022
+# Start time: 20:55:55 on Nov 10,2022
 # Loading sv_std.std
 # Loading work.AHBGPIO_top(fast)
 # Loading work.AHBGPIO_intf(fast)
 # Loading work.AHBGPIO(fast)
 # Loading work.AHBGPIO_tb(fast)
 do setup.do
-# ** Note: implicit $finish from program
-#    Time: 0 ps  Iteration: 2  Instance: /AHBGPIO_top/ahbgpio_tb
-# 1
-# Simulation stop requested.
-do setup.do
-run 100n
-# Invalid time value: 100n
-run 100ns
-# End time: 15:01:43 on Nov 09,2022, Elapsed time: 0:03:36
-# Errors: 1, Warnings: 0
+# Initial write check pass: GPIO_OUT = 85, expected result is 85
+# Initial read GPIOIN check pass: HRDATA = 80, expected result is 80
+# Initial read GPIOOUT check pass: HRDATA = 69, expected result is 69
+# ** Note: $stop    : tbench_gpio/AHBGPIO_tb.sv(100)
+#    Time: 205 ns  Iteration: 1  Instance: /AHBGPIO_top/ahbgpio_tb
+# Break in Module AHBGPIO_tb at tbench_gpio/AHBGPIO_tb.sv line 100
+# End time: 20:58:02 on Nov 10,2022, Elapsed time: 0:02:07
+# Errors: 0, Warnings: 0

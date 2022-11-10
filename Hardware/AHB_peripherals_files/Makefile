@@ -1,6 +1,6 @@
 testbench_gpio:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/*	tbench_gpio/*
+	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO.sv tbench_gpio/*
 
 	echo "Optimizing..."
 	vopt -work work AHBGPIO_top -o work_opt
@@ -10,7 +10,7 @@ testbench_gpio:
 
 testbench_nogui:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/*	tbench_gpio/*
+	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO.sv tbench_gpio/*
 
 	echo "Optimizing..."
 	vopt -work work AHBGPIO_top -o work_opt
@@ -19,5 +19,10 @@ testbench_nogui:
 	vsim work_opt -c -do setup.do \
 		-l out.log &
 
+testbench_jg:
+	jg rtl/AHB_GPIO/AHBGPIO.tcl
+
 setdisplay:
 	export DISPLAY=localhost:16.0
+	source /usr/local/cadence/JASPER_2018.06.002/settings.sh 
+

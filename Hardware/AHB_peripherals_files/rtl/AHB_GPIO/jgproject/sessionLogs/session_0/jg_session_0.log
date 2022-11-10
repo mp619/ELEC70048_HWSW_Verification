@@ -1,0 +1,236 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2018.06
+# platform  : Linux 3.10.0-957.21.3.el7.x86_64
+# version   : 2018.06p002 64 bits
+# build date: 2018.08.27 18:04:53 PDT
+#----------------------------------------
+# started Wed Nov 09 18:31:11 GMT 2022
+# hostname  : ee-mill3.ee.ic.ac.uk
+# pid       : 4697
+# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:32818' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/.tmp/.initCmds.tcl' 'AHBGPIO.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2018 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/mp619/.config/jasper/jaspergold.conf".
+% 
+% clear -all
+INFO (IPF121): Cleared environment completely for new design analysis.
+% analyze -clear
+% analyze -sv AHBGPIO.sv
+[-- (VERI-1482)] Analyzing Verilog file '/usr/local/cadence/JASPER_2018.06.002/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'AHBGPIO.sv'
+% elaborate -bbox_mul 64 -top AHBGPIO
+INFO (ISW003): Top module name is "AHBGPIO".
+[INFO (VERI-1018)] AHBGPIO.sv(38): compiling module 'AHBGPIO'
+[WARN (VERI-1221)] AHBGPIO.sv(133): 'gpio_datain' should be on the sensitivity list
+[WARN (VERI-1466)] AHBGPIO.sv(133): assignment under multiple single edges is not supported for synthesis
+[WARN (VERI-1221)] AHBGPIO.sv(134): 'gpio_dataout' should be on the sensitivity list
+[WARN (VERI-1466)] AHBGPIO.sv(134): assignment under multiple single edges is not supported for synthesis
+AHBGPIO
+[<embedded>] % 
+[<embedded>] % # Setup global clocks and resets
+[<embedded>] % clock HCLK
+[<embedded>] % reset -expression !(HRESETn)
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "HRESETn".
+[<embedded>] % 
+[<embedded>] % # Setup task
+[<embedded>] % task -set <embedded>
+<embedded>
+[<embedded>] % set_proofgrid_max_jobs 4
+[<embedded>] % set_proofgrid_max_local_jobs 4
+[<embedded>] % 
+[<embedded>] % prove -bg -property {<embedded>::AHBGPIO.check_datain}
+background 0
+INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 2 iterations. Assigned values for 48 of 84 design flops, 0 of 0 design latches, 4 of 4 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on (auto)
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    proofgrid_max_jobs            = 4
+    max engine jobs               = auto (max 4)
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "AHBGPIO.check_datain" was proven in 0.00 s.
+0: Found proofs for 1 properties in preprocessing
+INFO (IPF059): Completed proof on task: "<embedded>"
+[<embedded>] % prove -bg -property {<embedded>::AHBGPIO.check_dataout}
+background 1
+INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
+INFO (IPF031): Settings used for proof thread 1:
+    orchestration                 = on (auto)
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    proofgrid_max_jobs            = 4
+    max engine jobs               = auto (max 4)
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+1.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 1.0.PRE: The property "AHBGPIO.check_dataout" was proven in 0.00 s.
+1: Found proofs for 1 properties in preprocessing
+INFO (IPF059): Completed proof on task: "<embedded>"
+[<embedded>] % prove -bg -task {<embedded>}
+background 2
+INFO (IPF036): Starting proof on task: "<embedded>", 2 properties to prove with 2 already proven/unreachable
+INFO (IPF031): Settings used for proof thread 2:
+    orchestration                 = on (auto)
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    proofgrid_max_jobs            = 4
+    max engine jobs               = auto (max 4)
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+2: Using multistage preprocessing
+2: Starting reduce
+2: Finished reduce in 0.001s
+2.0.PRE: Performing Proof Simplification...
+2.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.N: Proof Simplification Iteration 1	[0.00 s]
+2.0.N: Proof Simplification Iteration 2	[0.00 s]
+2.0.N: Proof Simplification Iteration 3	[0.00 s]
+2.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 2.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+use check_assumptions -show to show this property in the property table
+2.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 2.0.PRE: The property ":noConflict" was proven in 0.00 s.
+use check_assumptions -show to show this property in the property table
+2.0.PRE: Proof Simplification completed in 0.01 s
+2.0.N: Identified and disabled 1 duplicated target.
+2: About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+2: =============================== ProofGrid start ===============================
+2: ProofGrid usable level: 1
+2: ProofGrid is starting event handling
+2.0.N: Proofgrid shell started at 12041@ee-mill3.ee.ic.ac.uk(local) jg_4697_ee-mill3.ee.ic.ac.uk_3
+2.0.Hp: Proofgrid shell started at 12042@ee-mill3.ee.ic.ac.uk(local) jg_4697_ee-mill3.ee.ic.ac.uk_3
+2.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.N: Last scan. Per property time limit: 0s
+2.0.N: Starting proof for property "AHBGPIO.check_datain:precondition1"	[0.00 s].
+2.0.N: Starting proof for property "AHBGPIO.check_dataout:precondition1"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.00 s]
+2.0.N: Trace Attempt  2	[0.00 s]
+2.0.N: Trace Attempt  2	[0.00 s]
+2.0.N: Requesting engine job to stop
+2.0.Hp: Requesting engine job to terminate
+INFO (IPF144): 2: Initiating shutdown of proof [0.00]
+2.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): 2.0.N: The cover property "AHBGPIO.check_datain:precondition1" was covered in 2 cycles in 0.04 s.
+INFO (IPF047): 2.0.N: The cover property "AHBGPIO.check_dataout:precondition1" was covered in 2 cycles in 0.04 s.
+2.0.Hp: Trace Attempt  1	[0.00 s]
+2.0.N: Stopped processing property "AHBGPIO.check_datain:precondition1"	[0.05 s].
+2.0.N: Stopped processing property "AHBGPIO.check_dataout:precondition1"	[0.05 s].
+2.0.Hp: Interrupted (multi)
+2.0.N: All properties either determined or skipped. [0.00 s]
+2.0.Hp: Interrupted. [0.00 s]
+2.0.N: Exited with Success (@ 0.00 s)
+2: ProofGrid usable level: 0
+2.0.B: Proofgrid shell started at 12056@ee-mill3.ee.ic.ac.uk(local) jg_4697_ee-mill3.ee.ic.ac.uk_3
+2.0.B: Requesting engine job to terminate
+2.0.Hp: Exited with Success (@ 0.02 s)
+2.0.B: Interrupted. [0.00 s]
+2.0.Ht: Proofgrid shell started at 12055@ee-mill3.ee.ic.ac.uk(local) jg_4697_ee-mill3.ee.ic.ac.uk_3
+2.0.Ht: Requesting engine job to terminate
+2.0.B: Exited with Success (@ 0.02 s)
+2.0.Ht: Interrupted. [0.00 s]
+2.0.Ht: Exited with Success (@ 0.02 s)
+2: --------------------------------------------------------------
+ProofGrid Summary
+--------------------------------------------------------------
+     engines started                               :   4
+     engine jobs started                           :   4
+     times jobs never connected to ProofGrid       :   2
+     jobs where 1 minute load exceeded core count  :   4
+     jobs where 5 minute load exceeded core count  :   4
+     jobs where 15 minute load exceeded core count :   4
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.03        0.00        0.00        9.26 %
+     Hp        0.02        0.00        0.00        7.91 %
+     Ht        0.02        0.00        0.00        0.00 %
+      B        0.02        0.00        0.00        0.00 %
+    all        0.02        0.00        0.00        4.97 %
+
+    Data read    : 1.75 kiB
+    Data written : 1.17 kiB
+
+2: ProofGrid usable level: 0
+2: All pending notifications were processed.
+INFO (IPF059): Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 4
+                 assertions                   : 2
+                  - proven                    : 2 (100%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 0 (0%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 2
+                  - unreachable               : 0 (0%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 2 (100%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
