@@ -32,9 +32,11 @@ module AHBGPIO_top;
                      .HSEL(ahbgpio_intf.HSEL),
                      .HREADY(ahbgpio_intf.HREADY),
                      .GPIOIN(ahbgpio_intf.GPIOIN),
+                     .PARITYSEL(ahbgpio_intf.PARITYSEL),
                      .HREADYOUT(ahbgpio_intf.HREADYOUT),
                      .HRDATA(ahbgpio_intf.HRDATA),
-                     .GPIOOUT(ahbgpio_intf.GPIOOUT));
+                     .GPIOOUT(ahbgpio_intf.GPIOOUT),
+                     .PARITYERR(ahbgpio_intf.PARITYERR));
 
     AHBGPIO_tb ahbgpio_tb(ahbgpio_intf);
     

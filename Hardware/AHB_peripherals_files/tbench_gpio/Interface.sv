@@ -13,12 +13,14 @@ interface AHBGPIO_intf
     logic           HWRITE;
     logic           HSEL;
     logic           HREADY;
-    logic [15:0]    GPIOIN; 
+    logic [16:0]    GPIOIN;
+    logic           PARITYSEL; 
 
     // DUT outputs
     logic           HREADYOUT;
     logic [31:0]    HRDATA;
-    logic [15:0]    GPIOOUT;
+    logic [16:0]    GPIOOUT;
+    logic           PARITYERR;
 
     clocking cb_TB @(posedge clk);
         output  HADDR;
@@ -28,10 +30,12 @@ interface AHBGPIO_intf
         output  HSEL;
         output  HREADY;
         output  GPIOIN;
+        output  PARITYSEL;
 
         input   HREADYOUT;
         input   HRDATA;
-        input   GPIOOUT;              
+        input   GPIOOUT;
+        input   PARITYERR;              
     endclocking    
 
     clocking cb_MONITOR @(posedge clk);
@@ -42,10 +46,12 @@ interface AHBGPIO_intf
         input   HSEL;
         input   HREADY;
         input   GPIOIN;
+        input   PARITYSEL;
 
         input   HREADYOUT;
         input   HRDATA;
-        input   GPIOOUT;              
+        input   GPIOOUT;  
+        input   PARITYERR;            
     endclocking
 
     modport TB

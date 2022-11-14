@@ -14,18 +14,21 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim work_opt -gui 
-# Start time: 20:55:55 on Nov 10,2022
+# Start time: 19:54:20 on Nov 14,2022
 # Loading sv_std.std
 # Loading work.AHBGPIO_top(fast)
 # Loading work.AHBGPIO_intf(fast)
 # Loading work.AHBGPIO(fast)
 # Loading work.AHBGPIO_tb(fast)
+# ** Warning: (vsim-8441) Clocking block output ahbgpio_intf.cb_TB.PARITYSEL is not legal in this
+# or another expression.
+#    Time: 0 ps  Iteration: 0  Instance: /AHBGPIO_top/ahbgpio_tb File: tbench_gpio/AHBGPIO_tb.sv Line: 39
 do setup.do
-# Initial write check pass: GPIO_OUT = 85, expected result is 85
-# Initial read GPIOIN check pass: HRDATA = 80, expected result is 80
+# Initial write check pass: GPIO_OUT = 85; PARITYBIT = 0, expected result is 85; 0
+# Initial read GPIOIN check pass: HRDATA = 80; PARITYERR = 1, expected result is 80; 1
 # Initial read GPIOOUT check pass: HRDATA = 69, expected result is 69
-# ** Note: $stop    : tbench_gpio/AHBGPIO_tb.sv(100)
+# ** Note: $stop    : tbench_gpio/AHBGPIO_tb.sv(96)
 #    Time: 205 ns  Iteration: 1  Instance: /AHBGPIO_top/ahbgpio_tb
-# Break in Module AHBGPIO_tb at tbench_gpio/AHBGPIO_tb.sv line 100
-# End time: 20:58:02 on Nov 10,2022, Elapsed time: 0:02:07
-# Errors: 0, Warnings: 0
+# Break in Module AHBGPIO_tb at tbench_gpio/AHBGPIO_tb.sv line 96
+# End time: 19:56:47 on Nov 14,2022, Elapsed time: 0:02:27
+# Errors: 0, Warnings: 1
