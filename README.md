@@ -4,8 +4,8 @@
 
 ### GPIO - TODO
 
-- [] Verification Checklist
-- [] Parity Bit inplementation
+- [ ] Verification Checklist
+- [ ] Parity Bit inplementation
     - [] Fault injection
     - [] Output PARITYERR 'Set to a ‘1’ every time a parity error is detected'
     - [] Input PARITYSEL 'Parity selection input pin;
