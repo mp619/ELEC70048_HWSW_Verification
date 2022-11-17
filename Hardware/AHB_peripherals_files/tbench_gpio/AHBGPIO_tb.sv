@@ -1,3 +1,4 @@
+`include "Generator.sv"
 // AHBGPIO testbench
 
 program automatic AHBGPIO_tb
@@ -12,6 +13,8 @@ program automatic AHBGPIO_tb
     logic data_check;
     logic parity_sel;
     logic parity_check;
+
+    //generator gen;
 
     task ahb_address_phase(input logic [31:0]addr, input logic [31:0]data);
         @(posedge ahbgpio_intf.clk)
@@ -93,6 +96,11 @@ program automatic AHBGPIO_tb
         write_test();
         read_test_GPIOIN();
         read_test_GPIOOUT();
+
+        //gen = new();
+        //gen.main();
+        //gen.main();
+
         $stop;
 
     end
