@@ -7,8 +7,8 @@
 - [ ] Verification Checklist
 - [ ] Parity Bit inplementation
     - [ ] Fault injection
-    - [ ] Output PARITYERR 'Set to a ‘1’ every time a parity error is detected'
-    - [ ] Input PARITYSEL 'Parity selection input pin;
+    - [x] Output PARITYERR 'Set to a ‘1’ every time a parity error is detected'
+    - [x] Input PARITYSEL 'Parity selection input pin;
                             Odd parity if PARITYSEL = 1,
                             Even parity if PARITYSEL = 0'
 - [ ] Function Verification
