@@ -16,9 +16,9 @@
     - [ ] Test with JasperGold
 - [ ] Unit Level Tests
     - [x] Get GPIO Read/Write to work for initial tests
-    - [ ] Implement transaction class to randomize
-    - [ ] Implement Generator class
-    - [ ] Implement Driver class
+    - [x] Implement transaction class to randomize
+    - [x] Implement Generator class
+    - [x] Implement Driver class
 - [ ] Top coverage with CPU implementation 
  
 ### VGA - TODO
