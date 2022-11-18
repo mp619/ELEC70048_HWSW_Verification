@@ -1,0 +1,122 @@
+# vsim work_opt -c -do "setup.do" -l out.log 
+# Start time: 16:41:31 on Nov 18,2022
+# ** Warning: License feature 'msimhdlsim' will expire in 12 days.
+# Loading sv_std.std
+# Loading work.AHBGPIO_top(fast)
+# Loading work.AHBGPIO_intf(fast)
+# Loading work.AHBGPIO(fast)
+# ** Warning: License feature 'svverification' will expire in 12 days.
+# Loading work.AHBGPIO_tb_sv_unit(fast)
+# Loading work.AHBGPIO_tb(fast)
+# ** Warning: License feature 'mtiverification' will expire in 12 days.
+# Loading work.AHBGPIO_intf(fast)
+# do setup.do
+# [Environment] Starting at T = 0
+# [Driver] Reset Start
+# [Driver] Reset End
+# [Generator] Starting at T=45000
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 0, 1, d1e9, 0, 1, 1, 5049, 1
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 3, 2cc9, 0, 1, 0, db10, 1
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 3, 60a1, 0, 0, 0, 758f, 1
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 3, cd15, 0, 0, 0, 14f56, 0
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: c439, 2, c1f3, 1, 1, 0, 1e09f, 0
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 0, 2, 4a63, 0, 0, 1, 10d44, 1
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 0, 3, 8f8, 0, 0, 1, 10418, 1
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 0, 2, db4f, 0, 0, 1, 17f94, 1
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 2, 79e0, 0, 1, 0, 4888, 0
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 0, 8728, 1, 0, 1, 19751, 1
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 3, 5db0, 0, 0, 1, ec6c, 0
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 2, 6494, 0, 0, 1, 12370, 1
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 0, 2, eb86, 0, 0, 1, 9979, 1
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 0, 994c, 0, 1, 1, 1838d, 0
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 0, 2, 7adb, 0, 0, 0, 412c, 0
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 2, c951, 1, 0, 1, 1ee08, 0
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: dc08, 3, ceac, 1, 0, 1, 4894, 1
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 0, 2, 89a6, 0, 1, 1, afdd, 1
+# [Generator] Address transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 3, cd89, 0, 0, 1, 15182, 1
+# [Generator] Data transaction randomization pass
+# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
+# [Transaction] Values: 4, 3, 82d6, 1, 1, 1, 6a6d, 0
+# [Driver] Starting at T=45000
+# [Driver] Packet No. 1
+# [Driver] --Address Phase-- HADDR = 0, HWDATA = d1e9
+# [Driver] ----Data Phase--- HWDATA = 2cc9
+# [Driver] Packet Complete
+# [Driver] Packet No. 2
+# [Driver] --Address Phase-- HADDR = 4, HWDATA = 60a1
+# [Driver] ----Data Phase--- HWDATA = cd15
+# [Driver] Packet Complete
+# [Driver] Packet No. 3
+# [Driver] --Address Phase-- HADDR = c439, HWDATA = c1f3
+# [Driver] ----Data Phase--- HWDATA = 4a63
+# [Driver] Packet Complete
+# [Driver] Packet No. 4
+# [Driver] --Address Phase-- HADDR = 0, HWDATA = 8f8
+# [Driver] ----Data Phase--- HWDATA = db4f
+# [Driver] Packet Complete
+# [Driver] Packet No. 5
+# [Driver] --Address Phase-- HADDR = 4, HWDATA = 79e0
+# [Driver] ----Data Phase--- HWDATA = 8728
+# [Driver] Packet Complete
+# [Driver] Packet No. 6
+# [Driver] --Address Phase-- HADDR = 4, HWDATA = 5db0
+# [Driver] ----Data Phase--- HWDATA = 6494
+# [Driver] Packet Complete
+# [Driver] Packet No. 7
+# [Driver] --Address Phase-- HADDR = 0, HWDATA = eb86
+# [Driver] ----Data Phase--- HWDATA = 994c
+# [Driver] Packet Complete
+# [Driver] Packet No. 8
+# [Driver] --Address Phase-- HADDR = 0, HWDATA = 7adb
+# [Driver] ----Data Phase--- HWDATA = c951
+# [Driver] Packet Complete
+# [Driver] Packet No. 9
+# [Driver] --Address Phase-- HADDR = dc08, HWDATA = ceac
+# [Driver] ----Data Phase--- HWDATA = 89a6
+# [Driver] Packet Complete
+# [Driver] Packet No. 10
+# [Driver] --Address Phase-- HADDR = 4, HWDATA = cd89
+# [Driver] ----Data Phase--- HWDATA = 82d6
+# [Driver] Packet Complete
+# 
+# <EOF>
+# End time: 16:41:32 on Nov 18,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

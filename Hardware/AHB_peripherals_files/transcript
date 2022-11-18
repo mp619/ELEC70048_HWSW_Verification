@@ -1,31 +1,30 @@
 # Reading pref.tcl
-# ** Warning: License feature 'msimviewer' will expire in 13 days.
+# ** Warning: License feature 'msimviewer' will expire in 12 days.
 # vsim work_opt -gui 
-# Start time: 18:39:32 on Nov 17,2022
-# ** Warning: License feature 'msimhdlsim' will expire in 13 days.
+# Start time: 11:12:25 on Nov 18,2022
+# ** Warning: License feature 'msimhdlsim' will expire in 12 days.
 # Loading sv_std.std
 # Loading work.AHBGPIO_top(fast)
 # Loading work.AHBGPIO_intf(fast)
 # Loading work.AHBGPIO(fast)
-# ** Warning: License feature 'svverification' will expire in 13 days.
-# Loading work.AHBGPIO_tb_sv_unit(fast)
-# Loading work.AHBGPIO_tb(fast)
-# ** Warning: License feature 'mtiverification' will expire in 13 days.
-# ** Warning: (vsim-8441) Clocking block output ahbgpio_intf.cb_TB.PARITYSEL is not legal in this
-# or another expression.
-#    Time: 0 ps  Iteration: 0  Instance: /AHBGPIO_top/ahbgpio_tb File: tbench_gpio/AHBGPIO_tb.sv Line: 42
+# ** Warning: License feature 'svverification' will expire in 12 days.
+# Loading work.AHBGPIO_test_sv_unit(fast)
+# Loading work.AHBGPIO_test(fast)
+# ** Warning: License feature 'mtiverification' will expire in 12 days.
+# Loading work.AHBGPIO_intf(fast)
+# ** Warning: (vsim-8637) A modport ('DRIVER') should not be used in a hierarchical path.
+#    Time: 0 ps  Iteration: 0  Region: /AHBGPIO_test_sv_unit File: tbench_gpio/Driver.sv Line: 22
+# ** Warning: (vsim-8637) A modport ('DRIVER') should not be used in a hierarchical path.
+#    Time: 0 ps  Iteration: 0  Region: /AHBGPIO_test_sv_unit File: tbench_gpio/Driver.sv Line: 31
+# ** Warning: (vsim-8637) A modport ('DRIVER') should not be used in a hierarchical path.
+#    Time: 0 ps  Iteration: 0  Region: /AHBGPIO_test_sv_unit File: tbench_gpio/Driver.sv Line: 41
+# ** Warning: (vsim-8637) A modport ('DRIVER') should not be used in a hierarchical path.
+#    Time: 0 ps  Iteration: 0  Region: /AHBGPIO_test_sv_unit File: tbench_gpio/Driver.sv Line: 64
 do setup.do
-# Initial write check pass: GPIO_OUT = 85; PARITYBIT = 0, expected result is 85; 0
-# Initial read GPIOIN check pass: HRDATA = 80; PARITYERR = 1, expected result is 80; 1
-# Initial read GPIOOUT check pass: HRDATA = 69, expected result is 69
-# Gen :: packet randomization pass
-# Transaction: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# Values: 8da, 0, d1e9, 0, 1, 1, 5049, 1
-# Gen :: packet randomization pass
-# Transaction: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# Values: 78ed, 0, 2cc9, 0, 1, 0, db10, 1
-# ** Note: $stop    : tbench_gpio/AHBGPIO_tb.sv(104)
-#    Time: 205 ns  Iteration: 1  Instance: /AHBGPIO_top/ahbgpio_tb
-# Break in Module AHBGPIO_tb at tbench_gpio/AHBGPIO_tb.sv line 104
-# End time: 18:41:37 on Nov 17,2022, Elapsed time: 0:02:05
-# Errors: 0, Warnings: 1
+# [Driver] Reset Start
+# [Driver] Reset End
+# ** Note: $stop    : tbench_gpio/Environment.sv(21)
+#    Time: 45 ns  Iteration: 2  Instance: /AHBGPIO_top/t1
+# Break in Task AHBGPIO_test_sv_unit/environment::run_test at tbench_gpio/Environment.sv line 21
+# End time: 11:16:25 on Nov 18,2022, Elapsed time: 0:04:00
+# Errors: 0, Warnings: 4

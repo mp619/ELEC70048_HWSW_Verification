@@ -10,7 +10,7 @@ testbench_gpio:
 
 testbench_nogui:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO.sv tbench_gpio/*
+	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO_parity.sv tbench_gpio/*
 
 	echo "Optimizing..."
 	vopt -work work AHBGPIO_top -o work_opt

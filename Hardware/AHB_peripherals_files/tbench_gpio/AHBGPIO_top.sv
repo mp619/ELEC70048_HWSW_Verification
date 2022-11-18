@@ -38,6 +38,12 @@ module AHBGPIO_top;
                      .GPIOOUT(ahbgpio_intf.GPIOOUT),
                      .PARITYERR(ahbgpio_intf.PARITYERR));
 
-    AHBGPIO_tb ahbgpio_tb(ahbgpio_intf);
+    //AHBGPIO_tb ahbgpio_tb(ahbgpio_intf);
+    AHBGPIO_tb tb1(ahbgpio_intf);
+
+    initial begin 
+        $dumpfile("dump.vcd");
+        $dumpvars;
+    end
     
 endmodule

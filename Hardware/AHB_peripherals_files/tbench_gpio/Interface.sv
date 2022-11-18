@@ -22,7 +22,7 @@ interface AHBGPIO_intf
     logic [16:0]    GPIOOUT;
     logic           PARITYERR;
 
-    clocking cb_TB @(posedge clk);
+    clocking cb_DRIVER @(posedge clk);
         output  HADDR;
         output  HTRANS;
         output  HWDATA;
@@ -54,11 +54,18 @@ interface AHBGPIO_intf
         input   PARITYERR;            
     endclocking
 
-    modport TB
+    modport DRIVER
     (
         input clk,
         input rst_n,
-        clocking cb_TB
+        clocking cb_DRIVER
+    );
+
+    modport MONITOR
+    (
+        input clk,
+        input rst_n,
+        clocking cb_MONITOR
     );
 
 
