@@ -2,10 +2,11 @@
 class Generator;
     Transaction tr;
     mailbox gen2driv;
-    int no_packets = 10;
+    int no_packets;
 
-    function new(mailbox gen2driv);
+    function new(mailbox gen2driv, int no_packets);
         this.gen2driv = gen2driv;
+        this.no_packets = no_packets;
     endfunction
 
     task main();

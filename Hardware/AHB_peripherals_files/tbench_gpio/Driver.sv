@@ -8,14 +8,19 @@ class Driver;
     // Mailbox handle
     mailbox gen2driv;
 
+    // Number of Packets
+    int no_packets;
+
     // Packet count
     int pkt_count = 0;
 
-    function new(virtual AHBGPIO_intf ahbgpio_driv_vintf, mailbox gen2driv);
+    function new(virtual AHBGPIO_intf ahbgpio_driv_vintf, mailbox gen2driv, int no_packets);
         //get interface
         this.ahbgpio_driv_vintf = ahbgpio_driv_vintf;
         //get mailbox
         this.gen2driv = gen2driv;
+        //get number of packets
+        this.no_packets = no_packets;
     endfunction
 
     task ahb_address_phase(input logic [31:0]addr, input logic [31:0]data);
@@ -24,6 +29,8 @@ class Driver;
             `driver_vintf.HADDR <= addr;       // Give address
             `driver_vintf.HWDATA <= data;      // Input data
             `driver_vintf.HWRITE <= 1;         // Set read/write bit for now
+            `driver_vintf.HSEL <= 1;          // Set HSEL bit for now
+            `driver_vintf.HREADY <= 1;        // Set HREADY bit for now
         end 
     endtask
 
@@ -32,6 +39,8 @@ class Driver;
         begin
             `driver_vintf.HWDATA <= data;
             `driver_vintf.HWRITE <= 0; // Set read/write bit for now
+            `driver_vintf.HSEL <= 1;          // Set HSEL bit for now
+            `driver_vintf.HREADY <= 1;        // Set HREADY bit for now
         end
     endtask
 
@@ -52,7 +61,7 @@ class Driver;
 
     task main();
         $display("[Driver] Starting at T=%0t", $time);
-        forever begin 
+        repeat(no_packets) begin 
             Transaction tr;
             gen2driv.get(tr);                                   // Get address phase random data
             $display("[Driver] Packet No. %0d", pkt_count+1);

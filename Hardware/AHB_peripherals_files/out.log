@@ -1,14 +1,14 @@
 # vsim work_opt -c -do "setup.do" -l out.log 
-# Start time: 16:41:31 on Nov 18,2022
-# ** Warning: License feature 'msimhdlsim' will expire in 12 days.
+# Start time: 09:09:22 on Nov 21,2022
+# ** Warning: License feature 'msimhdlsim' will expire in 9 days.
 # Loading sv_std.std
 # Loading work.AHBGPIO_top(fast)
 # Loading work.AHBGPIO_intf(fast)
 # Loading work.AHBGPIO(fast)
-# ** Warning: License feature 'svverification' will expire in 12 days.
+# ** Warning: License feature 'svverification' will expire in 9 days.
 # Loading work.AHBGPIO_tb_sv_unit(fast)
 # Loading work.AHBGPIO_tb(fast)
-# ** Warning: License feature 'mtiverification' will expire in 12 days.
+# ** Warning: License feature 'mtiverification' will expire in 9 days.
 # Loading work.AHBGPIO_intf(fast)
 # do setup.do
 # [Environment] Starting at T = 0
@@ -118,5 +118,5 @@
 # [Driver] Packet Complete
 # 
 # <EOF>
-# End time: 16:41:32 on Nov 18,2022, Elapsed time: 0:00:01
+# End time: 09:09:23 on Nov 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
