@@ -67,14 +67,14 @@ module AHBGPIO(
   reg last_HWRITE;
   reg last_HSEL;
   
-  integer i;
+  //integer i;
   
   assign HREADYOUT = 1'b1;
   
 // Set Registers from address phase  
-  always @(posedge HCLK)
+  always @(posedge HCLK) // Added reset to last bits
   begin
-    if(HREADY)
+    if(HREADY) // Added reset to last bits
     begin
       last_HADDR <= HADDR;
       last_HTRANS <= HTRANS;
@@ -118,7 +118,7 @@ module AHBGPIO(
       gpio_datain <= GPIOOUT;
   end
          
-  assign HRDATA[15:0] = gpio_datain;  
+  assign HRDATA[15:0] = gpio_datain;    //May be worth reseting 
   assign GPIOOUT = gpio_dataout;
 
   

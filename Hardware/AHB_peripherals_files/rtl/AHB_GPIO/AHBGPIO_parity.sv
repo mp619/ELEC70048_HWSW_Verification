@@ -52,7 +52,8 @@ module AHBGPIO(
   output wire HREADYOUT,
   output wire [31:0] HRDATA,
   output wire [16:0] GPIOOUT,                 // MSB is PARITY
-  output wire PARITYERR
+  output wire PARITYERR,
+  output wire [15:0] GPIODIR                  // Added gpio direction output
   
   );
   
@@ -68,14 +69,14 @@ module AHBGPIO(
   reg last_HWRITE;
   reg last_HSEL;
 
-  integer i;
+  //integer i;
   
   assign HREADYOUT = 1'b1;
   
 // Set Registers from address phase  
-  always @(posedge HCLK)
+  always @(posedge HCLK)  // Add for reset to push to last
   begin
-    if(HREADY)
+    if(HREADY | !HRESETn)
     begin
       last_HADDR <= HADDR;
       last_HTRANS <= HTRANS;
@@ -119,18 +120,19 @@ module AHBGPIO(
     else if (gpio_dir == 16'h0000)
     begin
       gpio_datain[15:0] <= GPIOIN[15:0];
-      gpio_datain[16] <= (^GPIOIN[16])^PARITYSEL;
+      gpio_datain[16] <= (^GPIOIN[16:0])^PARITYSEL;
     end
     else if (gpio_dir == 16'h0001)
     begin
       gpio_datain[15:0] <= GPIOOUT[15:0];
-      gpio_datain[16] <= (^GPIOIN[16])^PARITYSEL;
+      gpio_datain[16] <= (^GPIOOUT[16:0])^PARITYSEL;
     end
   end
          
   assign HRDATA[15:0] = gpio_datain[15:0];  
   assign PARITYERR = gpio_datain[16];
   assign GPIOOUT = gpio_dataout;
+  assign GPIODIR = gpio_dir;
 
   
    // Possible Assertions

@@ -36,7 +36,8 @@ module AHBGPIO_top;
                      .HREADYOUT(ahbgpio_intf.HREADYOUT),
                      .HRDATA(ahbgpio_intf.HRDATA),
                      .GPIOOUT(ahbgpio_intf.GPIOOUT),
-                     .PARITYERR(ahbgpio_intf.PARITYERR));
+                     .PARITYERR(ahbgpio_intf.PARITYERR),
+                     .GPIODIR(ahbgpio_intf.GPIODIR));
 
     //AHBGPIO_tb ahbgpio_tb(ahbgpio_intf);
     AHBGPIO_tb tb1(ahbgpio_intf);
