@@ -14,12 +14,13 @@
 - [ ] Function Verification
     - [ ] Add Assertions
     - [ ] Test with JasperGold
-- [x] Unit Level Tests
+- [ ] Unit Level Tests
     - [x] Get GPIO Read/Write to work for initial tests
     - [x] Implement transaction class to randomize
     - [x] Implement Generator class
     - [x] Implement Driver class
     - [x] Make a checker
+    - [] Check coverage
 - [ ] Top coverage with CPU implementation 
  
 ### VGA - TODO
