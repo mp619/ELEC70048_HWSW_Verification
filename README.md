@@ -27,5 +27,7 @@
 
 - [ ] Verification Checklist
 - [ ] Dual Lock-Step Configuration of VGA Peripheral
+    - [ ] Unit level test for Dual Lock-Step
+- [ ] Top level test for VGA
 
 ## Software
