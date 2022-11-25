@@ -55,7 +55,7 @@ Reset_Handler   PROC
                 GLOBAL Reset_Handler
                 ENTRY
 
-AGAIN		   	LDR 	R1, =0x50000000				;Write to LED with value 0x55
+AGAIN		   	LDR 	R1, =0x53000000				;Write to LED with value 0x55
 				LDR		R0, =0x55
 				STR		R0, [R1]
 
@@ -65,7 +65,7 @@ AGAIN		   	LDR 	R1, =0x50000000				;Write to LED with value 0x55
 Loop			SUBS	R0,R0,#1
 				BNE Loop
 
-				LDR 	R1, =0x50000000				;Write to LED with value 0xAA
+				LDR 	R1, =0x53000000				;Write to LED with value 0xAA
 				LDR		R0, =0xAA
 				STR		R0, [R1]
 

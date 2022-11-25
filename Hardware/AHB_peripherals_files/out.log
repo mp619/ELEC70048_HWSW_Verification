@@ -1,14 +1,14 @@
 # vsim work_opt -c -do "setup.do" -l out.log 
-# Start time: 21:39:18 on Nov 24,2022
-# ** Warning: License feature 'msimhdlsim' will expire in 6 days.
+# Start time: 10:40:46 on Nov 25,2022
+# ** Warning: License feature 'msimhdlsim' will expire in 5 days.
 # Loading sv_std.std
 # Loading work.AHBGPIO_top(fast)
 # Loading work.AHBGPIO_intf(fast)
 # Loading work.AHBGPIO(fast)
-# ** Warning: License feature 'svverification' will expire in 6 days.
+# ** Warning: License feature 'svverification' will expire in 5 days.
 # Loading work.AHBGPIO_tb_sv_unit(fast)
 # Loading work.AHBGPIO_tb(fast)
-# ** Warning: License feature 'mtiverification' will expire in 6 days.
+# ** Warning: License feature 'mtiverification' will expire in 5 days.
 # Loading work.AHBGPIO_intf(fast)
 # do setup.do
 # [Environment] Starting at T = 0
@@ -134,5 +134,5 @@
 # Stopped at tbench_gpio/Environment.sv line 56
 # 
 # <EOF>
-# End time: 21:39:19 on Nov 24,2022, Elapsed time: 0:00:01
+# End time: 10:40:47 on Nov 25,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

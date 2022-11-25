@@ -56,17 +56,7 @@ __Vectors       DCD     0x00003FFC
 Reset_Handler   PROC
                 GLOBAL  Reset_Handler
                 ENTRY
-
-
-               ; Configure the timer
-                
-                LDR     R1, =0x52000000         ; Timer load value register
-                LDR     R0, =0xFFFFFFFF         ; Maximum load value
-                STR     R0, [R1]            
-                LDR     R1, =0x52000008         ; Timer control register
-                MOVS    R0, #0x07               ; Set prescaler, reload mode, start timer
-                STR     R0, [R1]
-
+ 
 
 AGAIN            
                 ; Read from switches, and output to LEDs

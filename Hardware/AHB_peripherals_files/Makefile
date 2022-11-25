@@ -19,6 +19,16 @@ testbench_nogui:
 	vsim work_opt -c -do setup.do \
 		-l out.log &
 
+testbench_vga:
+	echo "Compiling..."
+	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_VGA/* tbench_vga/*
+
+	echo "Optimizing..."
+	vopt -work work AHBVGA_top -o work_opt
+
+	echo "Opening vsim"
+	vsim work_opt -gui
+
 testbench_jg:
 	jg rtl/AHB_GPIO/AHBGPIO.tcl
 

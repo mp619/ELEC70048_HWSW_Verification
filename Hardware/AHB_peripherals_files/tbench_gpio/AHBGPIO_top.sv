@@ -39,7 +39,6 @@ module AHBGPIO_top;
                      .PARITYERR(ahbgpio_intf.PARITYERR),
                      .GPIODIR(ahbgpio_intf.GPIODIR));
 
-    //AHBGPIO_tb ahbgpio_tb(ahbgpio_intf);
     AHBGPIO_tb tb1(ahbgpio_intf);
 
     initial begin 
