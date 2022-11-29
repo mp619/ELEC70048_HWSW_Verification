@@ -113,7 +113,7 @@ assign          	IRQ = 32'h00000000;
 // Clock
 wire            	fclk;                 // Free running clock
 // Reset
-wire            	reset_n = RESET;
+wire            	reset_n = ~RESET;
 
 // Clock divider, divide the frequency by two, hence less time constraint 
 reg clk_div;

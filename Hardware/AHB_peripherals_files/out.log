@@ -1,138 +1,44 @@
-# vsim work_opt -c -do "setup.do" -l out.log 
-# Start time: 10:40:46 on Nov 25,2022
-# ** Warning: License feature 'msimhdlsim' will expire in 5 days.
+# vsim work_opt -c -do "setupvga.do" -l out.log 
+# Start time: 20:13:57 on Nov 29,2022
+# ** Warning: License feature 'msimhdlsim' will expire in 1 days.
 # Loading sv_std.std
-# Loading work.AHBGPIO_top(fast)
-# Loading work.AHBGPIO_intf(fast)
-# Loading work.AHBGPIO(fast)
-# ** Warning: License feature 'svverification' will expire in 5 days.
-# Loading work.AHBGPIO_tb_sv_unit(fast)
-# Loading work.AHBGPIO_tb(fast)
-# ** Warning: License feature 'mtiverification' will expire in 5 days.
-# Loading work.AHBGPIO_intf(fast)
-# do setup.do
+# Loading work.AHBVGA_top(fast)
+# Loading work.AHBVGA_intf(fast)
+# Loading work.AHBVGADLS(fast)
+# Loading work.AHBVGA(fast)
+# Loading work.VGAInterface(fast)
+# Loading work.GenericCounter(fast)
+# Loading work.GenericCounter(fast__1)
+# Loading work.GenericCounter(fast__2)
+# Loading work.vga_console(fast)
+# Loading work.font_rom(fast)
+# Loading work.dual_port_ram_sync(fast)
+# Loading work.vga_image(fast)
+# Loading work.dual_port_ram_sync(fast__1)
+# ** Warning: License feature 'svverification' will expire in 1 days.
+# Loading work.AHBVGA_tb_sv_unit(fast)
+# Loading work.AHBVGA_tb(fast)
+# Loading work.AHBVGA_intf(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (14) for port 'address'. The port definition is at: rtl/AHB_VGA/vga_image.v(45).
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga0/uvga_image File: rtl/AHB_VGA/AHBVGASYS.v Line: 120
+# ** Warning: (vsim-3015) [PCDPC] - Port size (15) does not match connection size (16) for port 'addr_b'. The port definition is at: rtl/AHB_VGA/dual_port_ram_sync.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga0/uvga_image/uimage_ram File: rtl/AHB_VGA/vga_image.v Line: 67
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (14) for port 'address'. The port definition is at: rtl/AHB_VGA/vga_image.v(45).
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga1/uvga_image File: rtl/AHB_VGA/AHBVGASYS.v Line: 120
+# ** Warning: (vsim-3015) [PCDPC] - Port size (15) does not match connection size (16) for port 'addr_b'. The port definition is at: rtl/AHB_VGA/dual_port_ram_sync.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga1/uvga_image/uimage_ram File: rtl/AHB_VGA/vga_image.v Line: 67
+# do setupvga.do
 # [Environment] Starting at T = 0
 # [Driver] Reset Start
 # [Driver] Reset End
-# [Monitor] Sampling output No. 1, T = 55000
-# -------------------[Time = 55000][Scoreboard][Packet no. 1]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 0, 0, 0, 0, 0, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 0, 0, 0, 0, 0, 0, 0
-# ------------------------------------------------------------------------------
-# [Monitor] Sampling output No. 2, T = 65000
-# -------------------[Time = 65000][Scoreboard][Packet no. 2]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 0, 0, 0, 0, 0, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 0, 0, 0, 0, 0, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 65000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 3, T = 75000
-# -------------------[Time = 75000][Scoreboard][Packet no. 3]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 0, 0, 0, 0, 0, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 0, 1, 1, 1, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 75000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 4, T = 85000
-# -------------------[Time = 85000][Scoreboard][Packet no. 4]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 0, 1, 1, 1, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 0, 1, 1, 1, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 85000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 5, T = 95000
-# -------------------[Time = 95000][Scoreboard][Packet no. 5]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 0, 1, 1, 1, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 1, 1, 1, 1, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 95000][Scoreboard] Direction pass expected 1 actual 1
-# [Time = 95000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 6, T = 105000
-# -------------------[Time = 105000][Scoreboard][Packet no. 6]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 1, 1, 1, 1, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 0, 1, 1, 1, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 105000][Scoreboard] Direction pass expected 0 actual 0
-# [Time = 105000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 7, T = 115000
-# -------------------[Time = 115000][Scoreboard][Packet no. 7]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 0, 1, 1, 1, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 1, 1, 1, 1, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 115000][Scoreboard] Direction pass expected 1 actual 1
-# [Time = 115000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 8, T = 125000
-# -------------------[Time = 125000][Scoreboard][Packet no. 8]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 1, 1, 1, 1, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 0, 1, 1, 1, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 125000][Scoreboard] Direction pass expected 0 actual 0
-# [Time = 125000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 9, T = 135000
-# -------------------[Time = 135000][Scoreboard][Packet no. 9]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 0, 1, 1, 1, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 1, 1, 1, 1, 0, 0
-# ------------------------------------------------------------------------------
-# [Time = 135000][Scoreboard] Direction pass expected 1 actual 1
-# [Time = 135000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 10, T = 145000
-# -------------------[Time = 145000][Scoreboard][Packet no. 10]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 4, 2, 1, 1, 1, 1, 0, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 1, 1, 1, 1, f, 0
-# ------------------------------------------------------------------------------
-# [Time = 145000][Scoreboard] Direction pass expected 1 actual 1
-# [Time = 145000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 11, T = 155000
-# -------------------[Time = 155000][Scoreboard][Packet no. 11]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 1, 1, 1, 1, f, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 3, 1, 1, 1, f, 0
-# ------------------------------------------------------------------------------
-# [Time = 155000][Scoreboard] GPIOOUT Write pass expected 3 actual 3
-# [Time = 155000][Scoreboard] GPIOIN Input Read pass expected 0 actual 0
-# [Monitor] Sampling output No. 12, T = 165000
-# -------------------[Time = 165000][Scoreboard][Packet no. 12]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 3, 1, 1, 1, f, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 4, 1, 1, 1, f, 0
-# ------------------------------------------------------------------------------
-# [Time = 165000][Scoreboard] GPIOOUT Write pass expected 4 actual 4
-# [Time = 165000][Scoreboard] GPIOIN Input Read pass expected 3 actual 3
-# [Monitor] Sampling output No. 13, T = 175000
-# -------------------[Time = 175000][Scoreboard][Packet no. 13]-------------------
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 4, 1, 1, 1, f, 0
-# [Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, GPIOIN, PARITYSEL
-# [Transaction] Values: 0, 2, 5, 1, 1, 1, f, 0
-# ------------------------------------------------------------------------------
-# [Time = 175000][Scoreboard] GPIOOUT Write pass expected 5 actual 5
-# [Time = 175000][Scoreboard] GPIOIN Input Read pass expected 4 actual 4
-# [Environment] gen.no_packets = 6
-# [Environment] driv.pkt_count = 0
-# ** Note: $stop    : tbench_gpio/Environment.sv(56)
-#    Time: 185 ns  Iteration: 2  Instance: /AHBGPIO_top/tb1
-# Break in Task AHBGPIO_tb_sv_unit/environment::run_test at tbench_gpio/Environment.sv line 56
-# Stopped at tbench_gpio/Environment.sv line 56
+# [Monitor] Starting at T = 55000
+# [Environment] Exporting vga_out.txt at T = 485000
+# [Driver] End of frame no. 1
+# ** Note: $stop    : tbench_vga/Environment.sv(58)
+#    Time: 8426615 ns  Iteration: 2  Instance: /AHBVGA_top/tb1
+# Break in Task AHBVGA_tb_sv_unit/environment::run_test at tbench_vga/Environment.sv line 58
+# Stopped at tbench_vga/Environment.sv line 58
 # 
 # <EOF>
-# End time: 10:40:47 on Nov 25,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 20:14:24 on Nov 29,2022, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 4

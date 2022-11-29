@@ -20,6 +20,7 @@ interface AHBVGA_intf
     logic           HSYNC;
     logic           VSYNC;
     logic [7:0]     RGB;
+    logic           DLS_ERROR;
 
     clocking cb_DRIVER @(posedge clk);
         output  HADDR;
@@ -33,7 +34,8 @@ interface AHBVGA_intf
         input   HRDATA;
         input   HSYNC;
         input   VSYNC;
-        input   RGB;              
+        input   RGB; 
+        input   DLS_ERROR;             
     endclocking    
 
     clocking cb_MONITOR @(posedge clk);
@@ -48,7 +50,8 @@ interface AHBVGA_intf
         input   HRDATA;
         input   HSYNC;
         input   VSYNC;
-        input   RGB;            
+        input   RGB;
+        input   DLS_ERROR;            
     endclocking
 
     modport DRIVER

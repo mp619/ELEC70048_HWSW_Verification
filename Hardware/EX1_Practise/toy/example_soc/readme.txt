@@ -1,0 +1,1 @@
+For simulation purposes, place the code.hex file in the same root directory where you launch the Questasim simulation

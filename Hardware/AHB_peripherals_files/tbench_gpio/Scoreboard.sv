@@ -57,7 +57,7 @@ class Scoreboard;
             //Check direction
             if((tr_q[1].HADDR == gpio_dir_addr) & (tr_q[1].HSEL) & tr_q[1].HWRITE & tr_q[1].HTRANS[1])
             begin
-                if(!(tr.GPIODIR[0] == tr_q[0].HWDATA[0])) $fatal ("[Time = %0t][Scoreboard] Direction fail expected %0d actual %0d", $time, tr_q[0].HWDATA[0], tr.GPIODIR[0]);
+                if(!(tr.GPIODIR[15:0] == tr_q[0].HWDATA[15:0])) $fatal ("[Time = %0t][Scoreboard] Direction fail expected %0d actual %0d", $time, tr_q[0].HWDATA[0], tr.GPIODIR[0]);
                 $display ("[Time = %0t][Scoreboard] Direction pass expected %0d actual %0d", $time, tr_q[0].HWDATA[0], tr.GPIODIR[0]);
             end 
             else

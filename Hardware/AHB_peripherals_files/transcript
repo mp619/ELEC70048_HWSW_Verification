@@ -1,11 +1,12 @@
 # Reading pref.tcl
-# ** Warning: License feature 'msimviewer' will expire in 5 days.
+# ** Warning: License feature 'msimviewer' will expire in 1 days.
 # vsim work_opt -gui 
-# Start time: 10:36:11 on Nov 25,2022
-# ** Warning: License feature 'msimhdlsim' will expire in 5 days.
+# Start time: 20:53:05 on Nov 29,2022
+# ** Warning: License feature 'msimhdlsim' will expire in 1 days.
 # Loading sv_std.std
 # Loading work.AHBVGA_top(fast)
 # Loading work.AHBVGA_intf(fast)
+# Loading work.AHBVGADLS(fast)
 # Loading work.AHBVGA(fast)
 # Loading work.VGAInterface(fast)
 # Loading work.GenericCounter(fast)
@@ -16,33 +17,20 @@
 # Loading work.dual_port_ram_sync(fast)
 # Loading work.vga_image(fast)
 # Loading work.dual_port_ram_sync(fast__1)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (14) for port 'address'. The port definition is at: rtl/AHB_VGA/vga_image.v(45).
-#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/uvga_image File: rtl/AHB_VGA/AHBVGASYS.v Line: 120
-# ** Warning: (vsim-3015) [PCDPC] - Port size (15) does not match connection size (16) for port 'addr_b'. The port definition is at: rtl/AHB_VGA/dual_port_ram_sync.v(46).
-#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/uvga_image/uimage_ram File: rtl/AHB_VGA/vga_image.v Line: 67
-do setup.do
-# ** Error: (vish-4014) No objects found matching 'ahbgpio1/*'.
-# Error in macro ./setup.do line 2
-# (vish-4014) No objects found matching 'ahbgpio1/*'.
-#     while executing
-# "add wave ahbgpio1/*"
-restart
-# Loading work.AHBVGA_top(fast)
+# ** Warning: License feature 'svverification' will expire in 1 days.
+# Loading work.AHBVGA_tb_sv_unit(fast)
+# Loading work.AHBVGA_tb(fast)
 # Loading work.AHBVGA_intf(fast)
-# Loading work.AHBVGA(fast)
-# Loading work.VGAInterface(fast)
-# Loading work.GenericCounter(fast)
-# Loading work.GenericCounter(fast__1)
-# Loading work.GenericCounter(fast__2)
-# Loading work.vga_console(fast)
-# Loading work.font_rom(fast)
-# Loading work.dual_port_ram_sync(fast)
-# Loading work.vga_image(fast)
-# Loading work.dual_port_ram_sync(fast__1)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (14) for port 'address'. The port definition is at: rtl/AHB_VGA/vga_image.v(45).
-#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/uvga_image File: rtl/AHB_VGA/AHBVGASYS.v Line: 120
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga0/uvga_image File: rtl/AHB_VGA/AHBVGASYS.v Line: 123
 # ** Warning: (vsim-3015) [PCDPC] - Port size (15) does not match connection size (16) for port 'addr_b'. The port definition is at: rtl/AHB_VGA/dual_port_ram_sync.v(46).
-#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/uvga_image/uimage_ram File: rtl/AHB_VGA/vga_image.v Line: 67
-do setupvga.do
-# End time: 10:37:18 on Nov 25,2022, Elapsed time: 0:01:07
-# Errors: 3, Warnings: 0
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga0/uvga_image/uimage_ram File: rtl/AHB_VGA/vga_image.v Line: 67
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (14) for port 'address'. The port definition is at: rtl/AHB_VGA/vga_image.v(45).
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga1/uvga_image File: rtl/AHB_VGA/AHBVGASYS.v Line: 123
+# ** Warning: (vsim-3015) [PCDPC] - Port size (15) does not match connection size (16) for port 'addr_b'. The port definition is at: rtl/AHB_VGA/dual_port_ram_sync.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /AHBVGA_top/ahbvga1/ahbvga1/uvga_image/uimage_ram File: rtl/AHB_VGA/vga_image.v Line: 67
+# ** Warning: License feature 'msimhdlsim' will expire in 1 days.
+# ** Warning: License feature 'svverification' will expire in 1 days.
+# End time: 20:53:43 on Nov 29,2022, Elapsed time: 0:00:38
+# Errors: 0, Warnings: 4
+# ** Warning: License feature 'svverification' will expire in 1 days.

@@ -1,5 +1,5 @@
 `include "Transaction.sv"
-class Generator;
+class Generator;                // Change to SINGLE TRANSACTION
     Transaction tr;
     mailbox gen2driv;
     int no_packets;
@@ -20,12 +20,12 @@ class Generator;
             // Put packet into mailbox
             gen2driv.put(tr);
 
-            tr = new();
-            if( !tr.randomize() ) $fatal ("[Generator] Data transaction randomization fail");
-            $display("[Generator] Data transaction randomization pass");
-            tr.display();
-            // Put packet into mailbox
-            gen2driv.put(tr);
+            // tr = new();
+            // if( !tr.randomize() ) $fatal ("[Generator] Data transaction randomization fail");
+            // $display("[Generator] Data transaction randomization pass");
+            // tr.display();
+            // // Put packet into mailbox
+            // gen2driv.put(tr);
         end
     endtask
 endclass: Generator

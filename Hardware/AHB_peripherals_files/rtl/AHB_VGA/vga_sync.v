@@ -47,10 +47,15 @@ module VGAInterface(
 
 
 // Time in Vertical Lines
+// parameter VertTimeToPulseWidthEnd  = 10'd2;
+// parameter VertTimeToBackPorchEnd   = 10'd31;
+// parameter VertTimeToDisplayTimeEnd = 10'd511;
+// parameter VertTimeToFrontPorchEnd  = 10'd521;
+
 parameter VertTimeToPulseWidthEnd  = 10'd2;
-parameter VertTimeToBackPorchEnd   = 10'd31;
-parameter VertTimeToDisplayTimeEnd = 10'd511;
-parameter VertTimeToFrontPorchEnd  = 10'd521;
+parameter VertTimeToBackPorchEnd   = 10'd35;	// 2 + 33
+parameter VertTimeToDisplayTimeEnd = 10'd515;	// 35 + 480
+parameter VertTimeToFrontPorchEnd  = 10'd525;	// 515 + 10
 
 // Time in Horizontal Lines
 parameter HorzTimeToPulseWidthEnd  = 10'd96;

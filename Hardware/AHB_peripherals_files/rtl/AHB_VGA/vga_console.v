@@ -3,7 +3,7 @@
 //                                                                              //
 //Copyright (c) 2012, ARM All rights reserved.                                  //
 //                                                                              //
-//THIS END USER LICENCE AGREEMENT (“LICENCE”) IS A LEGAL AGREEMENT BETWEEN      //
+//THIS END USER LICENCE AGREEMENT (ï¿½LICENCEï¿½) IS A LEGAL AGREEMENT BETWEEN      //
 //YOU AND ARM LIMITED ("ARM") FOR THE USE OF THE SOFTWARE EXAMPLE ACCOMPANYING  //
 //THIS LICENCE. ARM IS ONLY WILLING TO LICENSE THE SOFTWARE EXAMPLE TO YOU ON   //
 //CONDITION THAT YOU ACCEPT ALL OF THE TERMS IN THIS LICENCE. BY INSTALLING OR  //
@@ -150,7 +150,7 @@ module vga_console(
   assign new_line = font_we && ((cur_x_reg == MAX_X-1) || return_key);
         
   //Next Cursor Position logic   
-  assign cur_x_next = (new_line) ? 2 :
+  assign cur_x_next = (new_line) ? 0 :  // Changed from 2
                       (back_space && cur_x_reg) ? cur_x_reg - 1 :
                       (font_we && ~back_space && ~scroll) ? cur_x_reg + 1 : cur_x_reg;
   

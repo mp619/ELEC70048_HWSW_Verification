@@ -9,10 +9,12 @@ module AHBVGA_top;
 
     initial begin
         clk = 0;
-        forever #20 clk = !clk;     // 25Mhz Clock
+        forever #5 clk = !clk;     // 25Mhz Clock 
     end
 
     initial begin
+        rst_n = 1;                  
+        @(posedge clk);
         rst_n = 0;                  //Assert reset
         repeat (5) begin 
             @(posedge clk);
@@ -23,7 +25,7 @@ module AHBVGA_top;
     AHBVGA_intf ahbvga_intf(.clk(clk),
                               .rst_n(rst_n));
                               
-    AHBVGA  ahbvga1( .HCLK(clk),
+    AHBVGADLS  ahbvga1( .HCLK(clk),
                      .HRESETn(rst_n),
                      .HADDR(ahbvga_intf.HADDR),
                      .HTRANS(ahbvga_intf.HTRANS),
@@ -35,7 +37,8 @@ module AHBVGA_top;
                      .HRDATA(ahbvga_intf.HRDATA),
                      .HSYNC(ahbvga_intf.HSYNC),
                      .VSYNC(ahbvga_intf.VSYNC),
-                     .RGB(ahbvga_intf.RGB));
+                     .RGB(ahbvga_intf.RGB),
+                     .DLS_ERROR(ahbvga_intf.DLS_ERROR));
 
     //AHBGPIO_tb ahbgpio_tb(ahbgpio_intf);
     AHBVGA_tb tb1(ahbvga_intf);
