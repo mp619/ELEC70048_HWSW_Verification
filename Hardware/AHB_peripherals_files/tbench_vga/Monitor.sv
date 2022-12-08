@@ -18,6 +18,8 @@ class Monitor;
 
     //Pixel_count
     logic pixel_div = 1;
+    int x = 0;
+    int y = 0;
 
     // File descriptor
     int fd; 
@@ -36,12 +38,16 @@ class Monitor;
             $display("[Monitor] New Frame no. %0d at T = %0t", frame_count+1, $time);
             $fdisplay(fd ,"New Frame no. %0d at T = %0t", frame_count+1, $time);
             frame_count++;
+            x = 0;  // Reset Count
+            y = 0;  // Reset Count
         end
         if (last_HSYNC && !`monitor_vintf.HSYNC)    // New line
         begin 
             $fwrite(fd ,"\n");
+            y++;
         end
         if(pixel_div)                               // Divide pixel print by 2, print only first pixel
+        x++;
         begin
             if (`monitor_vintf.RGB == 8'h1C)
                 $fwrite(fd ,"#");

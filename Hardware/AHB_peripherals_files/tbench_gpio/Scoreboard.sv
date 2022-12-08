@@ -7,7 +7,7 @@ class Scoreboard;
     int pkt_count;
 
     Transaction tr;
-    Transaction tr_q [$:1];         //Transaction queue size of 1
+    Transaction tr_q [$:1];         //Transaction queue size of 2
 
     localparam [7:0] gpio_data_addr = 8'h00;
     localparam [7:0] gpio_dir_addr = 8'h04;

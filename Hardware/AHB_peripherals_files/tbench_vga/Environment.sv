@@ -1,14 +1,14 @@
 //`include "Transaction.sv"
 //`include "Generator.sv"
-`include "Monitor.sv"
-//`include "Scoreboard.sv"
+//`include "Monitor.sv"
+`include "Scoreboard.sv"
 class environment;
     virtual AHBVGA_intf ahbvga_vintf;
 
     Generator gen;
     Driver driv;
     Monitor mon;
-    //Scoreboard scb;
+    Scoreboard scb;
 
     mailbox gen2driv;
     mailbox mon2scb;
@@ -22,7 +22,7 @@ class environment;
         driv = new(ahbvga_vintf_DRIVER, gen2driv, no_packets); 
         mon2scb = new();
         mon = new(ahbvga_vintf_MONITOR, mon2scb, no_packets);
-        //scb = new(ahbvga_vintf_MONITOR, mon2scb, no_packets);
+        scb = new(ahbvga_vintf_MONITOR, mon2scb);
     endfunction
 
     task init();

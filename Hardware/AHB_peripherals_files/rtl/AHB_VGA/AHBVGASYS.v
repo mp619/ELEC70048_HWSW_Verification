@@ -183,7 +183,7 @@ module AHBVGA(
       if(pixel_x[9:0]< 240 )
         cin <= console_rgb ;
       else
-        cin <= image_rgb;
+        cin <= 8'h00;
   end
 
 endmodule
