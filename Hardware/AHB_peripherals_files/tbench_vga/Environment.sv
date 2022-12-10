@@ -39,6 +39,7 @@ class environment;
             driv.test();
         end
         mon.main();
+        scb.main();
         join_any
     endtask
 

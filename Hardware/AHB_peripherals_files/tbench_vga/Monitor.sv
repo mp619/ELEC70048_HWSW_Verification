@@ -13,11 +13,21 @@ class Monitor;
     logic last_HSYNC = 0;
     logic last_VSYNC = 0;
 
+    // Console Area
+    logic console_area;
+    int y_max = 480;
+    int x_max = 240; 
+
+    // Cell Numbering
+    int cell_no = 0;
+    int cell_width = 8;
+    int cell_height = 16;
+
     // Frame_count
     int frame_count = 0;
 
     //Pixel_count
-    logic pixel_div = 1;
+    logic pixel_div = 0;
     int x = 0;
     int y = 0;
 
@@ -32,34 +42,63 @@ class Monitor;
         this.no_packets = no_packets;
     endfunction
 
-    task print();
+    function void coordinates();
+        pixel_div = ~pixel_div;
         if (last_VSYNC && !`monitor_vintf.VSYNC) 
         begin
-            $display("[Monitor] New Frame no. %0d at T = %0t", frame_count+1, $time);
-            $fdisplay(fd ,"New Frame no. %0d at T = %0t", frame_count+1, $time);
             frame_count++;
             x = 0;  // Reset Count
             y = 0;  // Reset Count
         end
         if (last_HSYNC && !`monitor_vintf.HSYNC)    // New line
         begin 
+            y++;    //Increment y
+            x = 0;  //Restart x
             $fwrite(fd ,"\n");
-            y++;
+        end
+        if(pixel_div)
+        begin
+            x++;
+        end
+        last_HSYNC = `monitor_vintf.HSYNC;
+        last_VSYNC = `monitor_vintf.VSYNC;
+    endfunction
+
+    function void FindConsoleArea();
+        if (((y-35) >= 0) && ((y-35) < y_max) && ((x-147) >= 0) && ((x-147) < 240))
+            console_area = 1;
+        else
+            console_area = 0;
+    endfunction
+
+    function void FindCharacterNo();
+        int row_no;
+        int col_no;
+
+        row_no = $floor((x-147)/cell_width);
+        col_no = $floor((y-35)/cell_height);  
+
+        cell_no = row_no + 30*(col_no);
+    endfunction
+
+    function void print();
+        if (x == 0 && y == 0)
+        begin
+            $display("[Monitor] New Frame no. %0d at T = %0t", frame_count+1, $time);
+            $fdisplay(fd ,"New Frame no. %0d at T = %0t", frame_count+1, $time);            
         end
         if(pixel_div)                               // Divide pixel print by 2, print only first pixel
-        x++;
         begin
-            if (`monitor_vintf.RGB == 8'h1C)
+            if ((!((y-35)%16) && !((x-147)%8)) && console_area)
+                $fwrite(fd ,"%0d", cell_no);
+            else if (`monitor_vintf.RGB == 8'h1C)
                 $fwrite(fd ,"#");
             else if (`monitor_vintf.RGB == 0)
                 $fwrite(fd ," "); 
             else 
                 $fwrite(fd ,"X"); 
         end
-        pixel_div = ~pixel_div;
-        last_HSYNC = `monitor_vintf.HSYNC;
-        last_VSYNC = `monitor_vintf.VSYNC;
-    endtask
+    endfunction
 
 
     task main();    
@@ -83,6 +122,9 @@ class Monitor;
             tr.VSYNC     = `monitor_vintf.VSYNC;
             tr.RGB       = `monitor_vintf.RGB;
 
+            coordinates();
+            FindConsoleArea();
+            FindCharacterNo();
             print();
 
             mon2scb.put(tr); 

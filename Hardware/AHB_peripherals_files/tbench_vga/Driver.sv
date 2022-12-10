@@ -70,14 +70,15 @@ class Driver;
 
     task test();        
         ahb_data_phase(16'h0000,0);                 // Start with 0
-        for(int j = 0; j < 5; j++)
+        for(int j = 0; j < 1; j++)
         begin
         for(int i = 8'h31; i < 8'h5a; i++)
         begin 
             ahb_data_phase(16'h0000,i);            
         end
         end
-        @(posedge ahbvga_driv_vintf.clk);           // Input no more characters
+        ahb_data_phase(16'h0000,0);                 //End with space 
+        //@(posedge ahbvga_driv_vintf.clk);           // Input no more characters
         `driver_vintf.HWRITE <= 0;
     endtask
 
