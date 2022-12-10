@@ -31,5 +31,6 @@
 - [x] Add display for VGA
     - [x] Letter unit level test
 - [ ] Top level test for VGA
+- [ ] Functional Verification
 
 ## Software
