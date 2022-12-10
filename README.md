@@ -20,7 +20,7 @@
     - [x] Implement Generator class
     - [x] Implement Driver class
     - [x] Make a checker
-    -  [] Check coverage
+    - [ ] Check coverage
 - [ ] Top coverage with CPU implementation 
  
 ### VGA - TODO
