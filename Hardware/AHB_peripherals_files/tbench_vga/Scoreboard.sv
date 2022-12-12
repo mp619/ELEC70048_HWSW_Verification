@@ -1,29 +1,40 @@
 `include "Monitor.sv"
 `include "font_lib.sv"
+
 class Scoreboard;
     virtual AHBVGA_intf ahbvga_scb_vintf;
     mailbox mon2scb;
 
     // Cell info
     int letter_count = 0;
-    logic [9:0] cell_no = 0;
-    int cell_width = 8;
-    int cell_height = 16;
     logic expected_pixel;
+
+    logic [9:0] cell_no = 0;
+    int CELL_WIDTH = 8;
+    int CELL_HEIGHT = 16;
+    logic [3:0] cell_row;
+    logic [3:0] cell_col;
 
     // Coordinates
     int x = 0;
     int y = 0;
-    int x_max = 240;
-    int y_max = 480;
+    int X_MAX = 240;
+    int Y_MAX = 480;
     logic console_area; 
-    logic pixel_div = 0; 
+    logic pixel_div = 0;  
 
     Transaction tr;
     Transaction tr_q [$:1];                 //Transaction queue size of 2
     logic [7:0] validletters_q [$];         //Valid Letters Queue
 
     localparam [23:0] sel_console = 12'h000000000000;
+
+    typedef struct {
+        int no = 0;           // Error Number
+        time time_q [$];            // Time_queue
+    } st_error;
+
+    st_error err;
 
     function new(virtual AHBVGA_intf ahbvga_scb_vintf, mailbox mon2scb);
         this.ahbvga_scb_vintf = ahbvga_scb_vintf;
@@ -38,21 +49,36 @@ class Scoreboard;
 
     function void displayInvalid();
         $display("-------------------[Time = %0t][Scoreboard][Queue]----------------------------", $time);
-        $display("ERROR Invalid ASCII Character");
+        $display("ERROR Invalid ASCII Character, Letter No. %0d", letter_count);
         $display("------------------------------------------------------------------------------");
+    endfunction
+
+    function void displayErrors();
+        $display("-------------------[Time = %0t][Scoreboard][Error Summary]---------------------", $time);
+        $display("Error No. %0d", err.no);
+        for(int i = 0; i < err.no; i++)
+        begin
+            $display("Error @ time %0t", err.time_q[i]);
+        end
     endfunction
 
     function void validletter();
         if (tr_q[0].HWRITE & tr_q[0].HSEL & tr_q[0].HTRANS[1] & tr_q[0].HREADYOUT & (tr_q[0].HADDR == sel_console))
         begin
-            if ((tr.HWDATA >= 8'h00) && (tr.HWDATA <= 8'h7f) )
+            if ((tr.HWDATA[6:0] >= 8'h00) && (tr.HWDATA[6:0] <= 8'h7f) )
             begin
-                validletters_q.push_back(tr.HWDATA);    //Save character in a queue/buffer
+                validletters_q.push_back(tr.HWDATA[6:0]);    //Save character in a queue/buffer
                 displayValid();
                 letter_count++;
             end
-            else 
+            else
+            begin
+                validletters_q.push_back(8'h00);    //Save character in a queue/buffer 
                 displayInvalid();
+                letter_count++;
+                err.no++;
+                err.time_q.push_back($time);
+               end
         end 
     endfunction
 
@@ -76,7 +102,7 @@ class Scoreboard;
     endfunction
 
     function void FindConsoleArea();
-        if (((y-35) >= 0) && ((y-35) < y_max) && ((x-147) >= 0) && ((x-147) < 240))
+        if (((y-35) >= 0) && ((y-35) < Y_MAX) && ((x-147) >= 0) && ((x-147) < X_MAX))
             console_area = 1;
         else
             console_area = 0;
@@ -86,20 +112,18 @@ class Scoreboard;
         int row_no;
         int col_no;
         
-        row_no = $floor((x-147)/cell_width);
-        col_no = $floor((y-35)/cell_height);  
+        row_no = $floor((x-147)/CELL_WIDTH);
+        col_no = $floor((y-35)/CELL_HEIGHT);  
 
         cell_no = row_no + 30*(col_no);
     endfunction
 
     function void GetExpectedPixel();
-        logic [3:0] cell_row;
-        logic [3:0] cell_col;
         logic [10:0] addr;
         logic [7:0] char_line;
 
-        cell_row = (y-35)%cell_height;
-        cell_col = (x-147)%cell_width;
+        cell_row = (y-35)%CELL_HEIGHT;
+        cell_col = (x-147)%CELL_WIDTH;
 
         if (cell_no < letter_count)                         // Check we are within the range of printed letters
         begin
@@ -115,13 +139,17 @@ class Scoreboard;
     endfunction
 
     function void CheckChar();
-
         logic pixel;
         pixel = |tr.RGB;        //Extract pixel data
         $display(", %0d", pixel);
         if (pixel != expected_pixel)
-            $display("[Time = %0t][Scoreboard] Pixel output fail in Cell no. %0d letter %0s", $time, cell_no, validletters_q[cell_no]);
-
+            begin
+            $display("[Time = %0t][Scoreboard] ERROR Pixel output fail in Cell no. %0d letter %0s", $time, cell_no, validletters_q[cell_no]);
+            err.no++;
+            err.time_q.push_back($time);
+            end
+        else if ((cell_row == (CELL_HEIGHT-1)) && (cell_col == (CELL_WIDTH-1)) && (cell_no < letter_count)) 
+            $display("[Time = %0t][Scoreboard] Complete character %0s in Cell no. %0d", $time, validletters_q[cell_no], cell_no);
     endfunction
 
     task main();
@@ -148,6 +176,7 @@ class Scoreboard;
                 end
             end
 
+            // Push oldest transaction out
             tr_q.delete(1);
             tr_q.push_front(tr);
             //pkt_count++;

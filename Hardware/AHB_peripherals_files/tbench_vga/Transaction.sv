@@ -1,5 +1,9 @@
 class Transaction;
     int count = 0;
+    // Special Characters
+    localparam [5:0] backspace  = 6'b001000;
+    localparam [5:0] newline0   = 6'b001101;
+    localparam [5:0] newline1   = 6'b001010;
 
     rand logic [31:0]    HADDR;
     rand logic [1:0]     HTRANS;
@@ -15,7 +19,9 @@ class Transaction;
     logic               VSYNC;
     logic [7:0]         RGB;         
 
-    //constraint addr_dist { HADDR dist {16'h0000:/42.5, 16'h0004:/42.5, [0:65535]:/15}; };
+    constraint hwdata_special { HWDATA[5:0] != newline0;
+                                HWDATA[5:0] != newline1;
+                                HWDATA[5:0] != backspace;}
 
     function void display();
         $display("[Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY");

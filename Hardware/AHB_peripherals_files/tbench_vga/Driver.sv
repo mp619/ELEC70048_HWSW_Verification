@@ -11,11 +11,10 @@ class Driver;
     // Number of Packets
     int no_packets;
 
-    // Number of frames
-    int frame_count = 0;
-
     // Packet count
     int pkt_count = 0;
+
+    int frame_count = 0;
 
     function new(virtual AHBVGA_intf ahbvga_driv_vintf, mailbox gen2driv, int no_packets);
         //get interface
@@ -62,12 +61,6 @@ class Driver;
         $display("[Driver] Reset End");
     endtask
 
-    task oneframe();
-        @(negedge `driver_vintf.VSYNC);
-        frame_count++;
-        $display("[Driver] End of frame no. %0d", frame_count);
-    endtask
-
     task test();        
         ahb_data_phase(16'h0000,0);                 // Start with 0
         for(int j = 0; j < 1; j++)
@@ -78,21 +71,22 @@ class Driver;
         end
         end
         ahb_data_phase(16'h0000,0);                 //End with space 
-        //@(posedge ahbvga_driv_vintf.clk);           // Input no more characters
         `driver_vintf.HWRITE <= 0;
     endtask
 
 
     task main();
         $display("[Driver] Starting at T=%0t", $time);
+        ahb_data_phase(32'h00000000, 0); 
         repeat(no_packets) begin 
             Transaction tr;
             $display("[Driver] Packet No. %0d", pkt_count+1);
-            gen2driv.get(tr);                                               // Get address phase random data
-            ahb_data_phase(tr.HADDR, tr.HWDATA);                            // Proceed with data phase
+            gen2driv.get(tr);                                        // Get address phase random data
+            ahb_data_phase(0, tr.HWDATA);                            // Proceed with data phase
             $display("[Driver] Packet Complete, T=%0t", $time);
-            //test();
             pkt_count++;
         end
+        ahb_data_phase(16'h0000,0);                 //End with space
+        `driver_vintf.HWRITE <= 0;
     endtask
 endclass : Driver

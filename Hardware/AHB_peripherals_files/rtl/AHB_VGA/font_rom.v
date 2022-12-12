@@ -3,7 +3,7 @@
 //                                                                              //
 //Copyright (c) 2012, ARM All rights reserved.                                  //
 //                                                                              //
-//THIS END USER LICENCE AGREEMENT (“LICENCE”) IS A LEGAL AGREEMENT BETWEEN      //
+//THIS END USER LICENCE AGREEMENT (ï¿½LICENCEï¿½) IS A LEGAL AGREEMENT BETWEEN      //
 //YOU AND ARM LIMITED ("ARM") FOR THE USE OF THE SOFTWARE EXAMPLE ACCOMPANYING  //
 //THIS LICENCE. ARM IS ONLY WILLING TO LICENSE THE SOFTWARE EXAMPLE TO YOU ON   //
 //CONDITION THAT YOU ACCEPT ALL OF THE TERMS IN THIS LICENCE. BY INSTALLING OR  //
@@ -2225,7 +2225,9 @@ module font_rom
          11'h7fc: data = 8'b00000000; // 
          11'h7fd: data = 8'b00000000; // 
          11'h7fe: data = 8'b00000000; // 
-         11'h7ff: data = 8'b00000000; // 	 
+         11'h7ff: data = 8'b00000000; // 	
+
+         default: data = 8'b00000000; // Added otherwise weird lines at 103 pkts
    endcase  
    	       
 endmodule 

@@ -13,7 +13,7 @@ class environment;
     mailbox gen2driv;
     mailbox mon2scb;
 
-    int no_packets = 2;
+    int no_packets = 898;
 
     function new(virtual AHBVGA_intf ahbvga_vintf_DRIVER, virtual AHBVGA_intf ahbvga_vintf_MONITOR);
         this.ahbvga_vintf = ahbvga_vintf_MONITOR;
@@ -29,14 +29,18 @@ class environment;
         driv.reset();
     endtask 
 
-    task waitframe();
-        driv.oneframe();
+    task endframe();
+        mon.oneframe();
+        scb.displayErrors();
+        mon.displayCoverage();
     endtask
 
     task test();
         fork
         begin
-            driv.test();
+            gen.main();
+            //driv.test();
+            driv.main();
         end
         mon.main();
         scb.main();
@@ -55,7 +59,7 @@ class environment;
         $display("[Environment] Exporting vga_out.txt at T = %0t", $time);
 
         // test();
-        waitframe();
+        endframe();
         $stop;
     endtask
 endclass

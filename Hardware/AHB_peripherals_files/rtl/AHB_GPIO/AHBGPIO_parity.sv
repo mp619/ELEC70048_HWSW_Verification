@@ -150,12 +150,12 @@ module AHBGPIO(
   // Check that gpio registers do not change if the direction register is a fail
    check_datain: assert property(
                                  @(posedge HCLK) disable iff(!HRESETn)
-                                  !(gpio_dir == 16'h0000 | gpio_dir == 16'h0001) |-> (gpio_datain_last == gpio_datain)
+                                  !(gpio_dir == 16'h0000 | gpio_dir == 16'h0001) |-> (gpio_datain_last[15:0] == gpio_datain[15:0])
                                  );
                             
    check_dataout: assert property(
                                  @(posedge HCLK) disable iff(!HRESETn)
-                                  !(gpio_dir == 16'h0000 | gpio_dir == 16'h0001) |-> (gpio_dataout_last == gpio_dataout)
+                                  !(gpio_dir == 16'h0000 | gpio_dir == 16'h0001) |-> (gpio_dataout_last[15:0] == gpio_dataout[15:0])
                                  );
 
 endmodule

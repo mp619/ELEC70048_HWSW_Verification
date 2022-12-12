@@ -41,9 +41,9 @@ module AHBGPIO_top;
 
     AHBGPIO_tb tb1(ahbgpio_intf);
 
-    initial begin 
-        $dumpfile("dump.vcd");
-        $dumpvars;
-    end
+    // initial begin 
+    //     $dumpfile("dump.vcd");
+    //     $dumpvars;
+    // end
     
 endmodule

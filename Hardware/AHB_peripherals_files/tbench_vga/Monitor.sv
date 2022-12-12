@@ -33,20 +33,37 @@ class Monitor;
 
     // File descriptor
     int fd; 
-        
 
+    covergroup cg_inputs;
+        cp_hwdata   : coverpoint `monitor_vintf.HWDATA[7:0] {
+                        bins zero   = {0};
+                        bins lo     = {[1:42]};
+                        bins med    = {[43:84]};
+                        bins hi     = {[85:126]};
+                        bins max    = {8'h7f};
+                        bins misc   = default;
+        }        
+    endgroup
 
     function new (virtual AHBVGA_intf ahbvga_mon_vintf, mailbox mon2scb, int no_packets);
         this.ahbvga_mon_vintf = ahbvga_mon_vintf;
         this.mon2scb = mon2scb;
         this.no_packets = no_packets;
+        cg_inputs = new();
     endfunction
+
+    task oneframe();
+        @(negedge `monitor_vintf.VSYNC);
+        frame_count++;
+        $display("[Time = %0t][Monitor] End of frame no. %0d", $time, frame_count);
+    endtask
 
     function void coordinates();
         pixel_div = ~pixel_div;
         if (last_VSYNC && !`monitor_vintf.VSYNC) 
         begin
             frame_count++;
+            $display("[Time = %0t][Monitor] End of frame no. %0d", $time, frame_count);
             x = 0;  // Reset Count
             y = 0;  // Reset Count
         end
@@ -100,6 +117,11 @@ class Monitor;
         end
     endfunction
 
+    function void displayCoverage();
+        $display("-------------------[Time = %0t][TestBench][Coverage]-------------------------", $time);
+        $display("HWDATA Coverage = %f %%", cg_inputs.cp_hwdata.get_inst_coverage());
+        $display("-----------------------------------------------------------------------------");
+    endfunction
 
     task main();    
         $display("[Monitor] Starting at T = %0t", $time);
@@ -126,7 +148,8 @@ class Monitor;
             FindConsoleArea();
             FindCharacterNo();
             print();
-
+            
+            cg_inputs.sample();
             mon2scb.put(tr); 
             pkt_count++;          
         end

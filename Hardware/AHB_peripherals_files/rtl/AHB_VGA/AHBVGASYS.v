@@ -180,7 +180,7 @@ module AHBVGA(
     if(!HRESETn)
       cin <= 8'h00;
     else 
-      if(pixel_x[9:0]< 240 )
+      if(pixel_x[9:0]<= 240 )  //Changed from < to <=
         cin <= console_rgb ;
       else
         cin <= 8'h00;

@@ -13,16 +13,18 @@ class environment;
     mailbox gen2driv;
     mailbox mon2scb;
 
-    int no_packets = 6;
+    int dir0_pkts = 25;
+    int dir1_pkts = 25;
+    int random_pkts = 100;
 
     function new(virtual AHBGPIO_intf ahbgpio_vintf_DRIVER, virtual AHBGPIO_intf ahbgpio_vintf_MONITOR);
         this.ahbgpio_vintf = ahbgpio_vintf;
         gen2driv = new();
-        gen = new(gen2driv, no_packets);
-        driv = new(ahbgpio_vintf_DRIVER, gen2driv, no_packets); 
+        gen = new(gen2driv, dir0_pkts, dir1_pkts, random_pkts);
+        driv = new(ahbgpio_vintf_DRIVER, gen2driv, dir0_pkts, dir1_pkts, random_pkts); 
         mon2scb = new();
-        mon = new(ahbgpio_vintf_MONITOR, mon2scb, no_packets);
-        scb = new(ahbgpio_vintf_MONITOR, mon2scb, no_packets);
+        mon = new(ahbgpio_vintf_MONITOR, mon2scb, dir0_pkts + dir1_pkts + random_pkts);
+        scb = new(ahbgpio_vintf_MONITOR, mon2scb, dir0_pkts + dir1_pkts + random_pkts);
     endfunction
 
     task init();
@@ -33,8 +35,8 @@ class environment;
         fork 
         // Thread 1
         begin
-            //gen.main();
-            driv.test();    
+            gen.main();
+            driv.main();    
         end
         // Thread 2
         mon.main();
@@ -43,16 +45,17 @@ class environment;
     endtask
 
     task post_test();
-        wait(gen.no_packets == driv.pkt_count);
+        scb.displayErrors();
+        mon.displayCoverage();
     endtask
 
     task run_test();
         $display("[Environment] Starting at T = %0t", $time);
         init();
         test();
-        $display("[Environment] gen.no_packets = %0d", gen.no_packets);
+        $display("[Environment] gen.no_packets = %0d", gen.pkt_count);
         $display("[Environment] driv.pkt_count = %0d", driv.pkt_count);
-        //post_test();
+        post_test();
         $stop;
     endtask
 endclass

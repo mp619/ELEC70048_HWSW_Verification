@@ -1,6 +1,7 @@
 // Used to monitor interface and send data to scoreboard
 `define monitor_vintf ahbgpio_mon_vintf.cb_MONITOR
 `include "Driver.sv"
+
 class Monitor; 
     virtual AHBGPIO_intf ahbgpio_mon_vintf;
     mailbox mon2scb;   // Monitor to scoreboard
@@ -9,10 +10,41 @@ class Monitor;
     // Packet count
     int pkt_count = 0;
 
+    covergroup cg_inputs;
+        cp_haddr    : coverpoint `monitor_vintf.HADDR {
+                        bins data   = {16'h0000};
+                        bins dir    = {16'h0004};
+                        bins misc   = default;
+        }
+        cp_hwdata   : coverpoint `monitor_vintf.HWDATA {
+                        bins dir0   = {16'h0000};
+                        bins dir1   = {16'h0001};
+                        bins misc   = default;
+        }        
+    endgroup
+
+    covergroup cg_outputs;
+        cp_dir      : coverpoint `monitor_vintf.GPIODIR {
+                        bins dir0   = {16'h0000};
+                        bins dir1   = {16'h0001};
+                        bins misc   = default;
+        }
+    endgroup
+
     function new (virtual AHBGPIO_intf ahbgpio_mon_vintf, mailbox mon2scb, int no_packets);
         this.ahbgpio_mon_vintf = ahbgpio_mon_vintf;
         this.mon2scb = mon2scb;
         this.no_packets = no_packets;
+        cg_inputs = new();
+        cg_outputs = new();
+    endfunction
+
+    function void displayCoverage();
+        $display("-------------------[Time = %0t][TestBench][Coverage]-------------------------", $time);
+        $display("HADDR Coverage = %f %%", cg_inputs.cp_haddr.get_inst_coverage());
+        $display("HWDATA Coverage = %f %%", cg_inputs.cp_hwdata.get_inst_coverage());
+        $display("Direction Coverage = %f %%", cg_outputs.cp_dir.get_inst_coverage());
+        $display("-----------------------------------------------------------------------------");
     endfunction
 
     task main();
@@ -20,7 +52,7 @@ class Monitor;
             Transaction tr;
             tr = new();
             @(posedge ahbgpio_mon_vintf.clk);                                           //Miss out address phase
-            $display("[Monitor] Sampling output No. %0d, T = %0t", pkt_count+1, $time);
+            $display("[Time = %0t][Monitor] Sampling output No. %0d", $time, pkt_count);
             tr.HADDR     = `monitor_vintf.HADDR;
             tr.HTRANS    = `monitor_vintf.HTRANS;
             tr.HSEL      = `monitor_vintf.HSEL;
@@ -36,6 +68,9 @@ class Monitor;
             tr.PARITYERR = `monitor_vintf.PARITYERR;
             tr.GPIODIR   = `monitor_vintf.GPIODIR;
 
+            //tr.display(); 
+            cg_inputs.sample();  
+            cg_outputs.sample();    
             mon2scb.put(tr); 
             pkt_count++;          
         end
