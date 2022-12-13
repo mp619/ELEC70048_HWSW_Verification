@@ -11,10 +11,10 @@
     - [x] Input PARITYSEL 'Parity selection input pin;
                             Odd parity if PARITYSEL = 1,
                             Even parity if PARITYSEL = 0'
-- [ ] Function Verification
-    - [ ] Add Assertions
-    - [ ] Test with JasperGold
-- [ ] Unit Level Tests
+- [x] Function Verification
+    - [x] Add Assertions
+    - [x] Test with JasperGold
+- [x] Unit Level Tests
     - [x] Get GPIO Read/Write to work for initial tests
     - [x] Implement transaction class to randomize
     - [x] Implement Generator class
