@@ -5,27 +5,11 @@
 # version   : 2018.06p002 64 bits
 # build date: 2018.08.27 18:04:53 PDT
 #----------------------------------------
-# started Wed Nov 09 18:22:33 GMT 2022
+# started Tue Dec 13 16:46:28 GMT 2022
 # hostname  : ee-mill3.ee.ic.ac.uk
-# pid       : 153810
-# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:33746' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/.tmp/.initCmds.tcl' 'AHBGPIO.tcl'
+# pid       : 44942
+# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:40230' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/.tmp/.initCmds.tcl' 'AHBGPIO.tcl'
 
 clear -all
 analyze -clear
-analyze -sv AHBGPIO.sv
-elaborate -bbox_mul 64 -top AHBGPIO
-
-# Setup global clocks and resets
-clock HCLK
-reset -expression !(HRESETn)
-
-# Setup task
-task -set <embedded>
-set_proofgrid_max_jobs 4
-set_proofgrid_max_local_jobs 4
-
-prove -bg -property {<embedded>::AHBGPIO.check_datain}
-prove -bg -property {<embedded>::AHBGPIO.check_datain:precondition1}
-prove -bg -property {<embedded>::AHBGPIO.check_dataout}
-prove -bg -property {<embedded>::AHBGPIO.check_dataout:precondition1}
-visualize -violation -property <embedded>::AHBGPIO.check_datain -new_window
+analyze -sv AHBGPIO_parity.sv

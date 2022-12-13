@@ -74,6 +74,26 @@ class Driver;
         `driver_vintf.HWRITE <= 0;
     endtask
 
+    // task insert_bug();
+    //     int count = 0;
+    //     forever
+    //     begin
+    //         @(posedge ahbvga_driv_vintf.clk)
+    //         begin 
+    //             if(count == 50)
+    //             begin
+    //                 `driver_vintf.inject_bug <= 1;
+    //                 count = 0;
+    //             end
+    //             else 
+    //             begin
+    //                 `driver_vintf.inject_bug <= 0;
+    //                 count++; 
+    //             end               
+    //         end
+    //     end
+    // endtask
+
 
     task main();
         $display("[Driver] Starting at T=%0t", $time);
@@ -83,6 +103,7 @@ class Driver;
             $display("[Driver] Packet No. %0d", pkt_count+1);
             gen2driv.get(tr);                                        // Get address phase random data
             ahb_data_phase(0, tr.HWDATA);                            // Proceed with data phase
+            `driver_vintf.inject_bug <= tr.inject_bug;
             $display("[Driver] Packet Complete, T=%0t", $time);
             pkt_count++;
         end

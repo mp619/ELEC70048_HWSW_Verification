@@ -14,8 +14,11 @@ module AHBVGADLS(
     output wire HSYNC,
     output wire VSYNC,
     output wire [7:0] RGB,
-    output wire DLS_ERROR
+    output wire DLS_ERROR,
+
+    input wire [4:0] inject_bug       // Testing Purposes
 );
+    reg         dls_error;
 
     wire [31:0] s_HRDATA;
     wire        s_HREADYOUT;
@@ -23,7 +26,6 @@ module AHBVGADLS(
     wire        s_VSYNC;
     wire [7:0]  s_RGB;
 
-    reg         dls_error;
 
     
 
@@ -61,14 +63,20 @@ module AHBVGADLS(
         .RGB(s_RGB)
     );
 
-    always @(posedge HCLK, negedge HRESETn) begin
+    always @(posedge HCLK or negedge HRESETn) begin
         if (!HRESETn)
             dls_error <= 0;
         else
-        //DLS_ERROR <= ((HRDATA ^ s_HRDATA) || (HREADYOUT ^ s_HREADYOUT) || (HSYNC ^ s_HSYNC) || (VSYNC ^ s_VSYNC) || (RGB ^ s_RGB));
-        dls_error <= ((HREADYOUT ^ s_HREADYOUT) || (HSYNC ^ s_HSYNC) || (VSYNC ^ s_VSYNC) || (HRDATA ^ s_HRDATA) || (RGB ^ s_RGB));
+        begin
+            dls_error <= ((HREADYOUT ^ (s_HREADYOUT+inject_bug[0])) || (HSYNC ^ (s_HSYNC+inject_bug[1])) || (VSYNC ^ (s_VSYNC+inject_bug[2])) || (HRDATA ^ (s_HRDATA+inject_bug[3])) || (RGB ^ (s_RGB)+inject_bug[4]));
+        end
     end
 
     assign DLS_ERROR = dls_error;
+
+// Possible Assertions
+//---------------------------------------------------------------------------------
+
+
 
 endmodule

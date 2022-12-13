@@ -1,33 +1,39 @@
 testbench_gpio:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO_parity.sv tbench_gpio/*
+	vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO_parity.sv tbench_gpio/*
 
 	echo "Optimizing..."
 	vopt -work work AHBGPIO_top -o work_opt
 
 	echo "Opening vsim"
-	vsim work_opt -gui
+	vsim work_opt -gui -coverage
+
+gpio_coverage:
+	vcover report -details -html gpio.ucdb
 
 testbench_gpio_nogui:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO_parity.sv tbench_gpio/*
+	vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps rtl/AHB_GPIO/AHBGPIO_parity.sv tbench_gpio/*
 
 	echo "Optimizing..."
 	vopt -work work AHBGPIO_top -o work_opt
 
 	echo "Opening vsim"
-	vsim work_opt -c -do setup.do \
-		-l out.log &
+	vsim work_opt -c -coverage -do setup.do \
+		-l out.log & \
 
 testbench_vga:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_VGA/* tbench_vga/*
+	vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps rtl/AHB_VGA/* tbench_vga/*
 
 	echo "Optimizing..."
 	vopt -work work AHBVGA_top -o work_opt
 
 	echo "Opening vsim"
-	vsim work_opt -gui
+	vsim work_opt -gui -coverage
+
+vga_coverage:
+	vcover report -details -html vga.ucdb
 
 testbench_vga_nogui:
 	echo "Compiling..."
@@ -56,4 +62,6 @@ testbench_jg:
 setdisplay:
 	export DISPLAY=localhost:16.0
 	source /usr/local/cadence/JASPER_2018.06.002/settings.sh 
+
+
 

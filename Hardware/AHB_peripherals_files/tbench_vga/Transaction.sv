@@ -17,15 +17,20 @@ class Transaction;
     logic [31:0]        HRDATA;
     logic               HSYNC;
     logic               VSYNC;
-    logic [7:0]         RGB;         
+    logic [7:0]         RGB;
+
+    // Bug injection
+    rand logic  [4:0]   inject_bug;         
 
     constraint hwdata_special { HWDATA[5:0] != newline0;
                                 HWDATA[5:0] != newline1;
                                 HWDATA[5:0] != backspace;}
 
+    //constraint bug { inject_bug dist {5'b00000:/85, [0:31]:/90 };}
+
     function void display();
-        $display("[Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY");
-        $display("[Transaction] Values: %0h, %0h, %0h, %0b, %0b, %0b", HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY);
+        $display("[Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, BUG");
+        $display("[Transaction] Values: %0h, %0h, %0h, %0b, %0b, %0b, %0h", HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, inject_bug);
     endfunction
 
     function void reset();
@@ -35,6 +40,8 @@ class Transaction;
         HWDATA = 0;
         HWRITE = 0;
         HREADY = 0;
+        
+        inject_bug = 0;
     endfunction
 
     function void post_randomize();

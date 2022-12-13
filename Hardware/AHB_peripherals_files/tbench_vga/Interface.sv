@@ -22,6 +22,9 @@ interface AHBVGA_intf
     logic [7:0]     RGB;
     logic           DLS_ERROR;
 
+    // Bug injection
+    logic [4:0]     inject_bug;
+
     clocking cb_DRIVER @(posedge clk);
         output  HADDR;
         output  HTRANS;
@@ -35,7 +38,9 @@ interface AHBVGA_intf
         input   HSYNC;
         input   VSYNC;
         input   RGB; 
-        input   DLS_ERROR;             
+        input   DLS_ERROR;
+
+        output  inject_bug;             
     endclocking    
 
     clocking cb_MONITOR @(posedge clk);
@@ -51,7 +56,9 @@ interface AHBVGA_intf
         input   HSYNC;
         input   VSYNC;
         input   RGB;
-        input   DLS_ERROR;            
+        input   DLS_ERROR;  
+
+        inout   inject_bug;          
     endclocking
 
     modport DRIVER

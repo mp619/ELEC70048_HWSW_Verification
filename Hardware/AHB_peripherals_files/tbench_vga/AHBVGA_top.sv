@@ -38,7 +38,8 @@ module AHBVGA_top;
                      .HSYNC(ahbvga_intf.HSYNC),
                      .VSYNC(ahbvga_intf.VSYNC),
                      .RGB(ahbvga_intf.RGB),
-                     .DLS_ERROR(ahbvga_intf.DLS_ERROR));
+                     .DLS_ERROR(ahbvga_intf.DLS_ERROR),
+                     .inject_bug(ahbvga_intf.inject_bug));
 
     //AHBGPIO_tb ahbgpio_tb(ahbgpio_intf);
     AHBVGA_tb tb1(ahbvga_intf);

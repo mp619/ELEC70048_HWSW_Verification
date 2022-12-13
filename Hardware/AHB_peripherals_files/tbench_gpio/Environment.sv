@@ -15,7 +15,7 @@ class environment;
 
     int dir0_pkts = 25;
     int dir1_pkts = 25;
-    int random_pkts = 100;
+    int random_pkts = 400;
 
     function new(virtual AHBGPIO_intf ahbgpio_vintf_DRIVER, virtual AHBGPIO_intf ahbgpio_vintf_MONITOR);
         this.ahbgpio_vintf = ahbgpio_vintf;

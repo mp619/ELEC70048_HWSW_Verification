@@ -133,7 +133,7 @@ class Driver;
             gen2driv.get(tr); 
             $display("[Time = %0t][Driver] Packet No. %0d", $time, pkt_count+1);
             `driver_vintf.GPIOIN <= tr.GPIOIN;       // Set GPIOIN
-            ahb_data_phase(tr.HADDR, tr.HWDATA, tr.HWRITE, tr.HSEL, 1, 2, tr.PARITYSEL);
+            ahb_data_phase(tr.HADDR, tr.HWDATA, tr.HWRITE, tr.HSEL, tr.HREADY, tr.HTRANS, tr.PARITYSEL);
             pkt_count++;
             $display("[Time = %0t][Driver] Packet Complete", $time);
         end

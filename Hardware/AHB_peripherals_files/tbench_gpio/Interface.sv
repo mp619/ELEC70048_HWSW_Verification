@@ -37,7 +37,7 @@ interface AHBGPIO_intf
         input   HRDATA;
         input   GPIOOUT;
         input   PARITYERR;
-        input   GPIODIR;              
+        input   GPIODIR;            
     endclocking    
 
     clocking cb_MONITOR @(posedge clk);
@@ -54,7 +54,7 @@ interface AHBGPIO_intf
         input   HRDATA;
         input   GPIOOUT;  
         input   PARITYERR; 
-        input   GPIODIR;           
+        input   GPIODIR;        
     endclocking
 
     modport DRIVER

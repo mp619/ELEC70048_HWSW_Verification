@@ -1,7 +1,7 @@
 
 clear -all
 analyze -clear
-analyze -sv AHBGPIO.sv
+analyze -sv AHBGPIO_parity.sv
 elaborate -bbox_mul 64 -top AHBGPIO
 
 # Setup global clocks and resets

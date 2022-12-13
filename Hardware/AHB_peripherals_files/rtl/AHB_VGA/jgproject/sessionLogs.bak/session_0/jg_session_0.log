@@ -1,0 +1,73 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2018.06
+# platform  : Linux 3.10.0-957.21.3.el7.x86_64
+# version   : 2018.06p002 64 bits
+# build date: 2018.08.27 18:04:53 PDT
+#----------------------------------------
+# started Tue Dec 13 16:55:17 GMT 2022
+# hostname  : ee-mill3.ee.ic.ac.uk
+# pid       : 100152
+# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:36057' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/.tmp/.initCmds.tcl' 'AHBVGA.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2018 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/mp619/.config/jasper/jaspergold.conf".
+% 
+% clear -all
+INFO (IPF121): Cleared environment completely for new design analysis.
+% analyze -clear
+% analyze -sv AHBVGADLS.sv
+[-- (VERI-1482)] Analyzing Verilog file '/usr/local/cadence/JASPER_2018.06.002/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'AHBVGADLS.sv'
+% elaborate -bbox_mul 64 -top AHBVGADLS
+INFO (ISW003): Top module name is "AHBVGADLS".
+[INFO (VERI-1018)] AHBVGADLS.sv(1): compiling module 'AHBVGADLS'
+[WARN (VERI-1063)] AHBVGADLS.sv(47): instantiating unknown module 'AHBVGA'
+ERROR (ENL058): Unable to elaborate module/entity "AHBVGA" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m AHBVGA" if you want to black box this module/entity.
+WARNING (WNL059): If you are analyzing with "-mfcu" or "-sfcu" and "-L", try using "elaborate -L libname", "set_analyze_libunboundsearch" or "analyze +libunboundsearch"
+Summary of errors detected:
+	ERROR (ENL058): Unable to elaborate module/entity "AHBVGA" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m AHBVGA" if you want to black box this module/entity.
+ERROR (ENL034): 1 errors detected in the design file(s).
+
+ERROR: problem encountered at line 5 in file AHBVGA.tcl
+
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.

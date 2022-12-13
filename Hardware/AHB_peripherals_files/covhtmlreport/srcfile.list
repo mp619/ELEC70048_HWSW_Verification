@@ -1,0 +1,10 @@
+rtl/AHB_GPIO/AHBGPIO_parity.sv
+tbench_gpio/AHBGPIO_tb.sv
+tbench_gpio/AHBGPIO_top.sv
+tbench_gpio/Driver.sv
+tbench_gpio/Environment.sv
+tbench_gpio/Generator.sv
+tbench_gpio/Interface.sv
+tbench_gpio/Monitor.sv
+tbench_gpio/Scoreboard.sv
+tbench_gpio/Transaction.sv

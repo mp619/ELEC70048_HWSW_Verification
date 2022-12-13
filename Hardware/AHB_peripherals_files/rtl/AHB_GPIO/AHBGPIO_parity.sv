@@ -138,24 +138,63 @@ module AHBGPIO(
    // Possible Assertions
    //---------------------------------------------------------------------------------
 
-  logic [15:0] gpio_datain_last;
   logic [15:0] gpio_dataout_last;
+  wire WRITE_MODE; 
 
   always @(posedge HCLK, negedge HRESETn)
   begin 
-    gpio_datain_last <= gpio_datain;
     gpio_dataout_last <= gpio_dataout; 
   end
 
-  // Check that gpio registers do not change if the direction register is a fail
-   check_datain: assert property(
-                                 @(posedge HCLK) disable iff(!HRESETn)
-                                  !(gpio_dir == 16'h0000 | gpio_dir == 16'h0001) |-> (gpio_datain_last[15:0] == gpio_datain[15:0])
-                                 );
+  assign WRITE_MODE = HSEL & HWRITE & HTRANS[1];
+
+  //----------------------------------------------------------------------------------
                             
-   check_dataout: assert property(
-                                 @(posedge HCLK) disable iff(!HRESETn)
-                                  !(gpio_dir == 16'h0000 | gpio_dir == 16'h0001) |-> (gpio_dataout_last[15:0] == gpio_dataout[15:0])
-                                 );
+  check_dataout: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    !(gpio_dir == 16'h0000 | gpio_dir == 16'h0001) |-> (gpio_dataout_last[15:0] == gpio_dataout[15:0])
+  );
+
+  // Check direction register is correctly written to
+  check_dir: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (WRITE_MODE) && (HADDR[7:0] == gpio_dir_addr) && (HREADY) |-> ##2 (gpio_dir == $past(HWDATA[15:0]))
+  );
+
+  // Check write to GPIOOUT 
+  check_write: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (WRITE_MODE)  && (HADDR[7:0] == gpio_data_addr) && (HREADY) ##1 (gpio_dir == 16'h0001) |-> ##1 (GPIOOUT[15:0] == $past(HWDATA[15:0]))
+  );
+
+  // Check read from GPIOIN
+  check_read_in: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (gpio_dir == 16'h0000) |-> ##1 HRDATA[15:0] == $past(GPIOIN[15:0])
+  );
+
+  // Check read from GPIOOUT
+  check_read_out: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (gpio_dir == 16'h0001) |-> ##1 HRDATA[15:0] == $past(GPIOOUT[15:0])
+  );
+  
+  // Check parity output bit
+  check_parity_out: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (WRITE_MODE)  && (HADDR[7:0] == gpio_data_addr) && (HREADY) ##1 (gpio_dir == 16'h0001) |-> ##1 (GPIOOUT[16] == ^($past(HWDATA[15:0])^$past(PARITYSEL)))
+  );
+
+  // Check parityerr from GPIOIN
+  check_parityerr_in: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (gpio_dir == 16'h0000) |-> ##1 PARITYERR == (^$past(GPIOIN[16:0]))^$past(PARITYSEL)
+  );  
+
+  // Check parityerr from GPIOOUT
+  check_parityerr_out: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (gpio_dir == 16'h0001) |-> ##1 PARITYERR == (^$past(GPIOOUT[16:0]))^$past(PARITYSEL)
+  );  
 
 endmodule
