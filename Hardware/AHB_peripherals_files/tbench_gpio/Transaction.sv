@@ -16,6 +16,14 @@ class Transaction;
     logic                   PARITYERR;  
     logic [31:0]            GPIODIR;          
 
+    constraint gpioin {
+        GPIOIN dist {17'h00000:/2, 17'hFFFFF:/2, [0:131072]:/96};
+    };
+
+    constraint htrans {
+        HTRANS dist {2'b10:/90, [0:3]:/10};
+    };
+
     // constraint test3 { 
     //     HADDR dist {16'h0000:/20, 16'h0004:/10, [0:65535]:/70};    
     //     HWDATA dist {16'h0000:/10, 16'h0001:/10, [0:65535]:/80};

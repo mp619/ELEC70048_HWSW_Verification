@@ -143,6 +143,8 @@ class Monitor;
             tr.HSYNC     = `monitor_vintf.HSYNC;
             tr.VSYNC     = `monitor_vintf.VSYNC;
             tr.RGB       = `monitor_vintf.RGB;
+            tr.DLS_ERROR = `monitor_vintf.DLS_ERROR;
+            tr.inject_bug= `monitor_vintf.inject_bug;
 
             coordinates();
             FindConsoleArea();

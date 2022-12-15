@@ -18,6 +18,7 @@ class Transaction;
     logic               HSYNC;
     logic               VSYNC;
     logic [7:0]         RGB;
+    logic               DLS_ERROR;
 
     // Bug injection
     rand logic  [4:0]   inject_bug;         
@@ -26,7 +27,7 @@ class Transaction;
                                 HWDATA[5:0] != newline1;
                                 HWDATA[5:0] != backspace;}
 
-    //constraint bug { inject_bug dist {5'b00000:/85, [0:31]:/90 };}
+    constraint bug { inject_bug dist {5'b00000:/60, [0:31]:/40 };}
 
     function void display();
         $display("[Transaction] Outputs: HADDR, HTRANS, HWDATA, HWRITE, HSEL, HREADY, BUG");

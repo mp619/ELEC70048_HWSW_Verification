@@ -13,8 +13,8 @@ class environment;
     mailbox gen2driv;
     mailbox mon2scb;
 
-    int dir0_pkts = 25;
-    int dir1_pkts = 25;
+    int dir0_pkts = 150;
+    int dir1_pkts = 150;
     int random_pkts = 400;
 
     function new(virtual AHBGPIO_intf ahbgpio_vintf_DRIVER, virtual AHBGPIO_intf ahbgpio_vintf_MONITOR);

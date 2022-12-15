@@ -1,0 +1,7 @@
+var g_db_data = [
+{dummy:0},
+{name:'cg_inputs',f:1,type:6,id:526,tb:'8',h:'8',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/AHBGPIO_tb_sv_unit/Monitor',parent:'524'},
+{name:'cg_outputs',f:1,type:6,id:530,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/AHBGPIO_tb_sv_unit/Monitor',parent:'524'},
+{name:'cg_inputs',f:1,type:6,id:775,tb:'8',h:'8',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.AHBGPIO_tb_sv_unit::Monitor',parent:'773'},
+{name:'cg_outputs',f:1,type:6,id:779,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.AHBGPIO_tb_sv_unit::Monitor',parent:'773'}];
+processConsCovergroupsData(g_db_data);

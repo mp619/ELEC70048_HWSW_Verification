@@ -62,12 +62,12 @@ class Generator;                // Change to SINGLE TRANSACTION
             if (pkt_count%10 == 0)   //Change Direction
                 begin
                     tr.HADDR = gpio_dir_addr;
-                    tr.HWRITE = 1;
+                    //tr.HWRITE = 1;
                 end
             if ((pkt_count-1)%10 == 0)   //Change Direction
                 begin
                     tr.HWDATA = gpio_dir;
-                    tr.HWRITE = 1;
+                    //tr.HWRITE = 1;
                     gpio_dir = ~gpio_dir;
                 end
             tr.display();

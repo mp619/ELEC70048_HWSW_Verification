@@ -42,7 +42,6 @@ class environment;
             //driv.test();
             driv.main();
         end
-        //driv.insert_bug();
         mon.main();
         scb.main();
         join_any

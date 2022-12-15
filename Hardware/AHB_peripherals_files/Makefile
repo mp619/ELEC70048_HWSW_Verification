@@ -24,7 +24,7 @@ testbench_gpio_nogui:
 
 testbench_vga:
 	echo "Compiling..."
-	vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps rtl/AHB_VGA/* tbench_vga/*
+	vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps -f ahbvga_sys.vc
 
 	echo "Optimizing..."
 	vopt -work work AHBVGA_top -o work_opt
@@ -37,7 +37,7 @@ vga_coverage:
 
 testbench_vga_nogui:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps rtl/AHB_VGA/* tbench_vga/*
+	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps -f ahbvga_sys.vc 
 
 	echo "Optimizing..."
 	vopt -work work AHBVGA_top -o work_opt

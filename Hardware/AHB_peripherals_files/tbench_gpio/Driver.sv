@@ -104,7 +104,7 @@ class Driver;
             gen2driv.get(tr); 
             $display("[Driver] Packet No. %0d", pkt_count+1);
             `driver_vintf.GPIOIN <= tr.GPIOIN;       // Set GPIOIN
-            ahb_data_phase(0, tr.HWDATA, tr.HWRITE, tr.HSEL, 1, 2, tr.PARITYSEL);
+            ahb_data_phase(0, tr.HWDATA, tr.HWRITE, tr.HSEL, 1, tr.HTRANS, tr.PARITYSEL);
             pkt_count++;
             $display("[Driver] Packet Complete, T=%0t", $time);
         end
@@ -120,20 +120,21 @@ class Driver;
             gen2driv.get(tr); 
             $display("[Driver] Packet No. %0d", pkt_count+1);
             `driver_vintf.GPIOIN <= tr.GPIOIN;       // Set GPIOIN
-            ahb_data_phase(0, tr.HWDATA, tr.HWRITE, tr.HSEL, 1, 2, tr.PARITYSEL);
+            ahb_data_phase(0, tr.HWDATA, tr.HWRITE, tr.HSEL, 1, tr.HTRANS, tr.PARITYSEL);
             pkt_count++;
             $display("[Driver] Packet Complete, T=%0t", $time);
         end
     endtask
 
     task Test3();   // Test random test cases
+        ahb_data_phase(16'hFFFF, 16'hFFFF, 1, 1, 1, 2, 0);  // Test maximum
         repeat(random_pkts)
         begin
             Transaction tr;
             gen2driv.get(tr); 
             $display("[Time = %0t][Driver] Packet No. %0d", $time, pkt_count+1);
             `driver_vintf.GPIOIN <= tr.GPIOIN;       // Set GPIOIN
-            ahb_data_phase(tr.HADDR, tr.HWDATA, tr.HWRITE, tr.HSEL, tr.HREADY, tr.HTRANS, tr.PARITYSEL);
+            ahb_data_phase(tr.HADDR, tr.HWDATA, tr.HWRITE, tr.HSEL, 1, tr.HTRANS, tr.PARITYSEL);
             pkt_count++;
             $display("[Time = %0t][Driver] Packet Complete", $time);
         end

@@ -1,10 +1,12 @@
 var g_data = {
-c499:[4,'cp_haddr',[],,'498',1,1,'cg_inputs','496','/AHBGPIO_tb_sv_unit/Monitor',[[],[0,'1','52',,'data'],[0,'1','41',,'dir'],[1,'--','358',,'misc']],[]],
-c500:[4,'cp_hwdata',[],,'498',1,1,'cg_inputs','496','/AHBGPIO_tb_sv_unit/Monitor',[[],[0,'1','21',,'dir0'],[0,'1','22',,'dir1'],[1,'--','408',,'misc']],[]],
-c502:[4,'cp_dir',[],,'501',1,1,'cg_outputs','496','/AHBGPIO_tb_sv_unit/Monitor',[[],[0,'1','165',,'dir0'],[0,'1','257',,'dir1'],[1,'--','29',,'misc']],[]],
-c747:[4,'cp_haddr',[],,'746',1,1,'cg_inputs','744','work.AHBGPIO_tb_sv_unit::Monitor',[[],[0,'1','52',,'data'],[0,'1','41',,'dir'],[1,'--','358',,'misc']],[]],
-c748:[4,'cp_hwdata',[],,'746',1,1,'cg_inputs','744','work.AHBGPIO_tb_sv_unit::Monitor',[[],[0,'1','21',,'dir0'],[0,'1','22',,'dir1'],[1,'--','408',,'misc']],[]],
-c750:[4,'cp_dir',[],,'749',1,1,'cg_outputs','744','work.AHBGPIO_tb_sv_unit::Monitor',[[],[0,'1','165',,'dir0'],[0,'1','257',,'dir1'],[1,'--','29',,'misc']],[]],
+c496:[4,'cp_haddr',[],,'495',1,1,'cg_inputs','493','/AHBGPIO_tb_sv_unit/Monitor',[[],[0,'1','302',,'data'],[0,'1','41',,'dir'],[0,'1','1',,'max'],[1,'--','358',,'misc']],[]],
+c497:[4,'cp_hwdata',[],,'495',1,1,'cg_inputs','493','/AHBGPIO_tb_sv_unit/Monitor',[[],[0,'1','21',,'dir0'],[0,'1','22',,'dir1'],[0,'1','1',,'max'],[1,'--','658',,'misc']],[]],
+c498:[4,'cp_gpioin',[],,'495',1,1,'cg_inputs','493','/AHBGPIO_tb_sv_unit/Monitor',[[],[0,'1','4',,'min'],[0,'1','7',,'max']],[]],
+c500:[4,'cp_dir',[],,'499',1,1,'cg_outputs','493','/AHBGPIO_tb_sv_unit/Monitor',[[],[0,'1','362',,'dir0'],[0,'1','333',,'dir1'],[1,'--','7',,'misc']],[]],
+c745:[4,'cp_haddr',[],,'744',1,1,'cg_inputs','742','work.AHBGPIO_tb_sv_unit::Monitor',[[],[0,'1','302',,'data'],[0,'1','41',,'dir'],[0,'1','1',,'max'],[1,'--','358',,'misc']],[]],
+c746:[4,'cp_hwdata',[],,'744',1,1,'cg_inputs','742','work.AHBGPIO_tb_sv_unit::Monitor',[[],[0,'1','21',,'dir0'],[0,'1','22',,'dir1'],[0,'1','1',,'max'],[1,'--','658',,'misc']],[]],
+c747:[4,'cp_gpioin',[],,'744',1,1,'cg_inputs','742','work.AHBGPIO_tb_sv_unit::Monitor',[[],[0,'1','4',,'min'],[0,'1','7',,'max']],[]],
+c749:[4,'cp_dir',[],,'748',1,1,'cg_outputs','742','work.AHBGPIO_tb_sv_unit::Monitor',[[],[0,'1','362',,'dir0'],[0,'1','333',,'dir1'],[1,'--','7',,'misc']],[]],
 dummyEnd:0
 };
 processCovergroupsData(g_data);

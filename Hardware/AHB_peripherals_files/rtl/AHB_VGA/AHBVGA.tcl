@@ -1,7 +1,7 @@
-
 clear -all
 analyze -clear
-analyze -sv AHBVGADLS.sv
+analyze -sv -f ahbvga_form.vc
+elaborate -bbox_m test -top AHBVGADLS
 
 # Setup global clocks and resets
 clock HCLK

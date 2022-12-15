@@ -62,6 +62,11 @@ class Scoreboard;
         end
     endfunction
 
+    function void checkDLS();
+        if (!(|tr_q[0].inject_bug == tr.DLS_ERROR)) //ERROR
+            $display("ERROR Bug injected DLS_ERROR fail expecting %0d actual %0d", |tr_q[0].inject_bug, tr.DLS_ERROR);
+    endfunction
+
     function void validletter();
         if (tr_q[0].HWRITE & tr_q[0].HSEL & tr_q[0].HTRANS[1] & tr_q[0].HREADYOUT & (tr_q[0].HADDR == sel_console))
         begin
@@ -163,6 +168,7 @@ class Scoreboard;
             mon2scb.get(tr);
 
             // Testing sequance
+            checkDLS();
             validletter();
             coordinates();
             if (pixel_div)

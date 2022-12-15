@@ -80,7 +80,7 @@ class Scoreboard;
             end
 
             //Check direction
-            if((tr_q[1].HADDR == gpio_dir_addr) & (tr_q[1].HSEL) & tr_q[1].HWRITE & tr_q[1].HTRANS[1])
+            if((tr_q[1].HADDR[7:0] == gpio_dir_addr) & (tr_q[1].HSEL) & tr_q[1].HWRITE & tr_q[1].HTRANS[1])
             begin
                 if(!(tr.GPIODIR[15:0] == tr_q[0].HWDATA[15:0])) 
                 begin

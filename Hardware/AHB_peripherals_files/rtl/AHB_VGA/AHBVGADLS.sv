@@ -77,6 +77,21 @@ module AHBVGADLS(
 // Possible Assertions
 //---------------------------------------------------------------------------------
 
+    wire CONTROL;
+    assign CONTROL = HTRANS[1] && HREADY && HWRITE && HSEL;
+
+  // Check DLS
+  check_dls: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    (!(HREADYOUT == s_HREADYOUT) || !(HSYNC == s_HSYNC) || !(VSYNC == s_VSYNC) || !(HRDATA == s_HRDATA) || !(RGB == s_RGB)) && inject_bug == 0 |-> ##1 DLS_ERROR
+  );
+
+  // Check length of HSYNC
+  check_hsync: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    $past(HSYNC) & !HSYNC ##1 CONTROL[*1602] |-> !HSYNC & $past(HSYNC) |-> ##1 !HSYNC
+  );  
+  
 
 
 endmodule

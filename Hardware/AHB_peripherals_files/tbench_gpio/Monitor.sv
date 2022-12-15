@@ -11,16 +11,24 @@ class Monitor;
     int pkt_count = 0;
 
     covergroup cg_inputs;
-        cp_haddr    : coverpoint `monitor_vintf.HADDR {
+        cp_haddr    : coverpoint `monitor_vintf.HADDR[15:0] {
                         bins data   = {16'h0000};
                         bins dir    = {16'h0004};
+                        bins max    = {16'hFFFF};
                         bins misc   = default;
         }
-        cp_hwdata   : coverpoint `monitor_vintf.HWDATA {
+        cp_hwdata   : coverpoint `monitor_vintf.HWDATA[15:0] {
                         bins dir0   = {16'h0000};
                         bins dir1   = {16'h0001};
+                        bins max    = {16'hFFFF};
                         bins misc   = default;
-        }        
+        }
+        cp_gpioin   : coverpoint `monitor_vintf.GPIOIN {
+                        //bins even   = cp_gpioin with (item%2 == 0);
+                        //bins odd    = cp_gpioin with (item%2 == 1);
+                        bins min    = {16'h0000};
+                        bins max    = {17'h1FFFF};
+        }       
     endgroup
 
     covergroup cg_outputs;
@@ -43,6 +51,7 @@ class Monitor;
         $display("-------------------[Time = %0t][TestBench][Coverage]-------------------------", $time);
         $display("HADDR Coverage = %f %%", cg_inputs.cp_haddr.get_inst_coverage());
         $display("HWDATA Coverage = %f %%", cg_inputs.cp_hwdata.get_inst_coverage());
+        $display("GPIOIN Coverage = %f %%", cg_inputs.cp_gpioin.get_inst_coverage());
         $display("Direction Coverage = %f %%", cg_outputs.cp_dir.get_inst_coverage());
         $display("-----------------------------------------------------------------------------");
     endfunction
