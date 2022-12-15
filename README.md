@@ -27,10 +27,10 @@
 
 - [ ] Verification Checklist
 - [x] Dual Lock-Step Configuration of VGA Peripheral
-    - [ ] Unit level test for Dual Lock-Step
+    - [x] Unit level test for Dual Lock-Step
 - [x] Add display for VGA
     - [x] Letter unit level test
 - [ ] Top level test for VGA
-- [ ] Functional Verification
+- [x] Functional Verification
 
 ## Software
