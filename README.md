@@ -48,4 +48,6 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
 
 Please see [Verification Plan](./Hardware/AHB_peripherals_files/docs/Verification_Plan.md) for further information about testbench structure
 
-Plase see [Verification Report ](./Hardware/AHB_peripherals_files/docs/Verification_Report.md) for information about bugs found, fixes made and top level integration waveforms
+Please see [Verification Report ](./Hardware/AHB_peripherals_files/docs/Verification_Report.md) for information about bugs found, fixes made and top level integration waveforms
+
+Please see [Code Coverage](./Hardware/AHB_peripherals_files/code_coverage) for report full html reports for Code coverage in GPIO and VGA. 
