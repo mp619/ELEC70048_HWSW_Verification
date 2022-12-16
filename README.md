@@ -6,18 +6,19 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
 
 ```bash
 .
-└───AHB_peripherals_files       # AHB_Files
-    ├───filesdo                 # Do files
-    ├───filesVC                 # VC files
-    ├───Hex                     # Hex Code
-    ├───Logs                    # Logs
-    ├───outputs                 # Testbench Outputs
-    ├───rtl                     # RTL
-    ├───src                     # Source Files   
-    ├───tbench                  # Top level Testbench
-    ├───tbench_gpio             # GPIO Testbench
-    ├───tbench_vga              # VGA Testbench
-    └───work                    # QuantaSim Work Folder
+└───Hardware                        # Hardware top directory
+    └───AHB_peripherals_files       # AHB_Files
+        ├───filesdo                 # Do files
+        ├───filesVC                 # VC files
+        ├───Hex                     # Hex Code
+        ├───Logs                    # Logs
+        ├───outputs                 # Testbench Outputs
+        ├───rtl                     # RTL
+        ├───src                     # Source Files   
+        ├───tbench                  # Top level Testbench
+        ├───tbench_gpio             # GPIO Testbench
+        ├───tbench_vga              # VGA Testbench
+        └───work                    # QuantaSim Work Folder
 ```
 
 ## Setup
