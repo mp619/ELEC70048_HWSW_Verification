@@ -19,12 +19,12 @@ testbench_gpio_nogui:
 	vopt -work work AHBGPIO_top -o work_opt
 
 	echo "Opening vsim"
-	vsim work_opt -c -coverage -do setup.do \
+	vsim work_opt -c -coverage -do ./filesdo/setup.do \
 		-l out.log & \
 
 testbench_vga:
 	echo "Compiling..."
-	vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps -f ahbvga_sys.vc
+	vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps -f ./filesVC/ahbvga_sys.vc 
 
 	echo "Optimizing..."
 	vopt -work work AHBVGA_top -o work_opt
@@ -37,13 +37,13 @@ vga_coverage:
 
 testbench_vga_nogui:
 	echo "Compiling..."
-	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps -f ahbvga_sys.vc 
+	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps -f ./filesVC/ahbvga_sys.vc 
 
 	echo "Optimizing..."
 	vopt -work work AHBVGA_top -o work_opt
 
 	echo "Opening vsim"
-	vsim work_opt -c -do setupvga.do \
+	vsim work_opt -c -do ./filesdo/setupvga.do \
 		-l out.log &
 
 testbench_top:
@@ -51,7 +51,7 @@ testbench_top:
 	vlog -f ahblite_sys.vc
 
 	echo "Optimizing..."
-	vopt -work work +acc=blnr -noincr -timescale 1ns/1ps ahblite_sys_tb -o work_opt
+	vopt -work work +acc=blnr -noincr -timescale 1ns/1ps ./filesVC/ahblite_sys_tb -o work_opt
 
 	echo "Opening vsim"
 	vsim work_opt -gui

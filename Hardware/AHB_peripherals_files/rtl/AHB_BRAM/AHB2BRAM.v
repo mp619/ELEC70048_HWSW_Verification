@@ -37,7 +37,7 @@ module AHB2MEM
 
   initial
   begin
-    $readmemh("code.hex", memory);
+    $readmemh("top_level.hex", memory);
   end
   
   // Registers to store Adress Phase Signals

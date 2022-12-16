@@ -125,7 +125,7 @@ class Monitor;
 
     task main();    
         $display("[Monitor] Starting at T = %0t", $time);
-        fd = $fopen("./vga_out.txt", "w");
+        fd = $fopen($sformatf("./outputs/vga_out.txt"),"w");
         forever begin
             Transaction tr;
             tr = new();

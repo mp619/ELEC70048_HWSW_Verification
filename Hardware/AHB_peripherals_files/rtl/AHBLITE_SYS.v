@@ -116,10 +116,10 @@ wire            	fclk;                 // Free running clock
 wire            	reset_n = ~RESET;
 
 // Clock divider, divide the frequency by two, hence less time constraint 
-reg clk_div;
+reg clk_div = 0;
 always @(posedge CLK)
 begin
-    clk_div=~clk_div;
+    clk_div = ~clk_div;
 end
 
 assign fclk = clk_div; 
@@ -304,7 +304,7 @@ AHB2MEM uAHB2MEM (
 );
 
 // AHBLite VGA Peripheral
-AHBVGA uAHBVGA (
+AHBVGADLS uAHBVGA (
     .HCLK(HCLK), 
     .HRESETn(HRESETn), 
     .HADDR(HADDR), 
@@ -334,7 +334,7 @@ AHBGPIO uAHBGPIO(
 	.HRDATA(HRDATA_GPIO),
 	.HREADYOUT(HREADYOUT_GPIO),
     
-	.GPIOIN({8'b00000000,SW[7:0]}),
+	.GPIOIN({24'h000000,SW[7:0]}),
 	.GPIOOUT(LED[7:0])
 	);
 	

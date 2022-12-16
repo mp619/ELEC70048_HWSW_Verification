@@ -5,10 +5,10 @@
 # version   : 2018.06p002 64 bits
 # build date: 2018.08.27 18:04:53 PDT
 #----------------------------------------
-# started Wed Dec 14 00:38:53 GMT 2022
+# started Fri Dec 16 12:58:49 GMT 2022
 # hostname  : ee-mill3.ee.ic.ac.uk
-# pid       : 192732
-# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:37244' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/.tmp/.initCmds.tcl' 'AHBVGA.tcl'
+# pid       : 100161
+# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:42756' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/.tmp/.initCmds.tcl' 'AHBVGA.tcl'
 
 Any disclosure about the Cadence Design Systems software or its use
 model to any third party violates the written Non-Disclosure Agreement
@@ -99,15 +99,15 @@ INFO (IRS006): Current reset condition is "HRESETn".
 [<embedded>] % set_proofgrid_max_jobs 4
 [<embedded>] % set_proofgrid_max_local_jobs 4
 [<embedded>] % 
-[<embedded>] % prove -bg -property {<embedded>::AHBVGADLS.check_dls}
+[<embedded>] % prove -bg -property {<embedded>::AHBVGADLS.check_vsync_pulse}
+background 0
 INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
 INFO (IRS029): Starting reset analysis: phase 1 of 4.
 INFO (IRS030): Running reset analysis: phase 2 of 4.
 INFO (IRS031): Running reset analysis: phase 3 of 4.
 INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
-background 0
 INFO (IRS024): Reset iterations 0 to 5 analyzed.
-INFO (IRS018): Reset analysis simulation executed for 4 iterations. Assigned values for 283 of 511 design flops, 0 of 0 design latches, 4826 of 4826 internal elements.
+INFO (IRS018): Reset analysis simulation executed for 4 iterations. Assigned values for 283 of 511 design flops, 0 of 0 design latches, 11642 of 11642 internal elements.
 INFO (IRS039): Reset analysis complete.
 INFO (IPF031): Settings used for proof thread 0:
     orchestration                 = on (auto)
@@ -121,72 +121,611 @@ INFO (IPF031): Settings used for proof thread 0:
     proofgrid_restarts            = 10
 0: Using multistage preprocessing
 0: Starting reduce
-0: Finished reduce in 0.086s
+0: Finished reduce in 4.815s
 0.0.PRE: Performing Proof Simplification...
 0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Proof Simplification Iteration 1	[0.00 s]
 0.0.N: Proof Simplification Iteration 2	[0.00 s]
-0.0.N: Proof Simplification Iteration 3	[0.01 s]
-0.0.N: Proof Simplification Iteration 4	[0.01 s]
 0.0.PRE: A proof was found: No trace exists. [0.00 s]
 INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
 use check_assumptions -show to show this property in the property table
 0.0.PRE: A proof was found: No trace exists. [0.00 s]
 INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
 use check_assumptions -show to show this property in the property table
-0.0.PRE: Proof Simplification completed in 0.03 s
+0.0.PRE: Proof Simplification completed in 0.02 s
 0: About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
 0: =============================== ProofGrid start ===============================
 0: ProofGrid usable level: 1
 0: ProofGrid is starting event handling
-0.0.N: Proofgrid shell started at 195305@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_1
+0.0.N: Proofgrid shell started at 102547@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_1
+0.0.Hp: Proofgrid shell started at 102548@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_1
 0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-0.0.N: Last scan. Per property time limit: 0s
-0.0.N: Starting proof for property "AHBVGADLS.check_dls"	[0.00 s].
-0.0.Hp: Proofgrid shell started at 195306@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_1
-0.0.N: Trace Attempt  1	[0.00 s]
 0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Last scan. Per property time limit: 0s
+0.0.N: Starting proof for property "AHBVGADLS.check_vsync_pulse"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
 0.0.N: Trace Attempt  2	[0.00 s]
 0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.01 s]
+0.0.N: Trace Attempt  4	[0.02 s]
+0.0.N: Trace Attempt  5	[0.02 s]
+0.0.N: Trace Attempt  1	[0.02 s]
+0.0.N: Trace Attempt  2	[0.02 s]
 0.0.N: Trace Attempt  3	[0.02 s]
 0.0.N: Trace Attempt  4	[0.02 s]
-0.0.B: Proofgrid shell started at 195321@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_1
-0.0.Ht: Proofgrid shell started at 195320@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_1
-0.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: Proofgrid shell started at 102561@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_1
 0.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: Proofgrid shell started at 102562@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_1
+0.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.B: Last scan. Per property time limit: 0s
-0.0.B: Starting proof for property "AHBVGADLS.check_dls"	[0.00 s].
-0.0.N: Trace Attempt  4	[0.04 s]
-0.0.B: Trace Attempt  1	[0.01 s]
-0.0.N: Trace Attempt  5	[0.05 s]
-0.0.B: Trace Attempt  2	[0.02 s]
+0.0.B: Starting proof for property "AHBVGADLS.check_vsync_pulse"	[0.00 s].
 0.0.Ht: Trace Attempt  1	[0.02 s]
 0.0.Ht: Trace Attempt  2	[0.02 s]
 0.0.Ht: Trace Attempt  3	[0.02 s]
-0.0.N: Requesting engine job to stop
-0.0.B: Requesting engine job to stop
-0.0.Hp: Requesting engine job to terminate
+0.0.Ht: Trace Attempt  4	[0.02 s]
+0.0.Ht: Trace Attempt  5	[0.02 s]
+0.0.B: Trace Attempt  1	[0.01 s]
+0.0.B: Trace Attempt  2	[0.01 s]
+0.0.B: Trace Attempt  3	[0.02 s]
+0.0.B: Trace Attempt  4	[0.02 s]
+0.0.B: Trace Attempt  5	[0.03 s]
+0.0.Ht: Trace Attempt 3,498	[4.02 s]
+0.0.N: Trace Attempt 50	[4.07 s]
+0.0.B: Trace Attempt 162	[4.08 s]
+0.0.Ht: Trace Attempt 4,956	[8.02 s]
+0.0.N: Trace Attempt 66	[8.12 s]
+0.0.B: Trace Attempt 247	[8.09 s]
+0.0.B: Trace Attempt 296	[12.17 s]
+0.0.N: Trace Attempt 79	[12.38 s]
+0.0.Ht: Trace Attempt 6,681	[13.28 s]
+0.0.B: Trace Attempt 345	[16.18 s]
+0.0.N: Trace Attempt 90	[16.48 s]
+0.0.Ht: Trace Attempt 8,821	[17.28 s]
+0.0.B: Trace Attempt 383	[20.22 s]
+0.0.N: Trace Attempt 99	[21.05 s]
+0.0.Ht: Trace Attempt 10,832	[21.28 s]
+0.0.B: Trace Attempt 422	[24.27 s]
+0.0.N: Trace Attempt 107	[25.23 s]
+0.0.Ht: Trace Attempt 11,794	[28.07 s]
+0.0.B: Trace Attempt 455	[28.39 s]
+0.0.N: Trace Attempt 115	[29.78 s]
+0.0.Ht: Trace Attempt 14,063	[32.07 s]
+0.0.B: Trace Attempt 487	[32.51 s]
+0.0.N: Trace Attempt 123	[34.59 s]
+0.0.Ht: Trace Attempt 16,145	[36.07 s]
+0.0.B: Trace Attempt 516	[36.65 s]
+0.0.N: Trace Attempt 129	[38.85 s]
+0.0.Ht: Trace Attempt 18,173	[40.07 s]
+0.0.B: Trace Attempt 543	[40.74 s]
+0.0.N: Trace Attempt 135	[43.03 s]
+0.0.Ht: Trace Attempt 20,157	[44.07 s]
+0.0.B: Trace Attempt 571	[44.74 s]
+0.0.N: Trace Attempt 141	[47.05 s]
+0.0.B: Trace Attempt 600	[48.84 s]
+0.0.N: Trace Attempt 149	[51.23 s]
+0.0.B: Trace Attempt 626	[52.92 s]
+0.0.N: Trace Attempt 157	[56.32 s]
+0.0.B: Trace Attempt 654	[56.97 s]
+0.0.Ht: Trace Attempt 22,021	[58.63 s]
+0.0.B: Trace Attempt 676	[60.97 s]
+0.0.N: Trace Attempt 163	[61.05 s]
+0.0.Ht: Trace Attempt 24,307	[62.63 s]
+0.0.B: Trace Attempt 699	[65.14 s]
+0.0.N: Trace Attempt 168	[65.39 s]
+0.0.Ht: Trace Attempt 26,315	[66.63 s]
+0.0.B: Trace Attempt 726	[69.19 s]
+0.0.N: Trace Attempt 173	[69.97 s]
+0.0.Ht: Trace Attempt 28,312	[70.63 s]
+0.0.B: Trace Attempt 750	[73.26 s]
+0.0.N: Trace Attempt 177	[74.17 s]
+0.0.Ht: Trace Attempt 30,344	[74.63 s]
+0.0.B: Trace Attempt 769	[77.41 s]
+0.0.N: Trace Attempt 183	[78.27 s]
+0.0.Ht: Trace Attempt 32,360	[78.63 s]
+0.0.B: Trace Attempt 792	[81.49 s]
+0.0.Ht: Trace Attempt 34,364	[82.63 s]
+0.0.N: Trace Attempt 189	[83.55 s]
+0.0.B: Trace Attempt 812	[85.64 s]
+0.0.Ht: Trace Attempt 36,279	[86.63 s]
+0.0.N: Trace Attempt 194	[87.67 s]
+0.0.B: Trace Attempt 834	[89.73 s]
+0.0.Ht: Trace Attempt 38,405	[90.63 s]
+0.0.N: Trace Attempt 200	[91.89 s]
+0.0.B: Trace Attempt 856	[93.86 s]
+0.0.Ht: Trace Attempt 40,371	[94.63 s]
+0.0.N: Trace Attempt 205	[96.82 s]
+0.0.B: Trace Attempt 873	[97.89 s]
+0.0.Ht: Trace Attempt 42,290	[98.63 s]
+0.0.N: Trace Attempt 209	[101.13 s]
+0.0.B: Trace Attempt 890	[101.91 s]
+0.0.N: Trace Attempt 213	[105.71 s]
+0.0.B: Trace Attempt 907	[105.93 s]
+0.0.B: Trace Attempt 928	[110.04 s]
+0.0.N: Trace Attempt 219	[110.26 s]
+0.0.B: Trace Attempt 947	[114.30 s]
+0.0.N: Trace Attempt 224	[114.36 s]
+0.0.B: Trace Attempt 964	[118.44 s]
+0.0.N: Trace Attempt 229	[119.51 s]
+0.0.Ht: Trace Attempt 42,475	[120.52 s]
+0.0.B: Trace Attempt 980	[122.70 s]
+0.0.N: Trace Attempt 233	[123.64 s]
+0.0.Ht: Trace Attempt 44,573	[124.52 s]
+0.0.B: Trace Attempt 995	[126.77 s]
+0.0.N: Trace Attempt 237	[128.52 s]
+0.0.Ht: Trace Attempt 46,802	[128.52 s]
+0.0.B: Trace Attempt 1,011	[131.02 s]
+0.0.Ht: Trace Attempt 48,654	[132.52 s]
+0.0.N: Trace Attempt 241	[133.89 s]
+0.0.B: Trace Attempt 1,026	[135.16 s]
+0.0.Ht: Trace Attempt 50,672	[136.52 s]
+0.0.N: Trace Attempt 245	[138.75 s]
+0.0.B: Trace Attempt 1,043	[139.32 s]
+0.0.Ht: Trace Attempt 52,593	[140.52 s]
+0.0.N: Trace Attempt 250	[142.99 s]
+0.0.B: Trace Attempt 1,058	[143.33 s]
+0.0.Ht: Trace Attempt 54,511	[144.52 s]
+0.0.B: Trace Attempt 1,075	[147.45 s]
+0.0.N: Trace Attempt 255	[148.39 s]
+0.0.Ht: Trace Attempt 56,360	[148.52 s]
+0.0.B: Trace Attempt 1,090	[151.68 s]
+0.0.Ht: Trace Attempt 58,227	[152.52 s]
+0.0.N: Trace Attempt 259	[153.63 s]
+0.0.B: Trace Attempt 1,104	[155.85 s]
+0.0.Ht: Trace Attempt 60,069	[156.52 s]
+0.0.N: Trace Attempt 263	[159.03 s]
+0.0.B: Trace Attempt 1,118	[159.85 s]
+0.0.Ht: Trace Attempt 61,925	[160.52 s]
+0.0.B: Trace Attempt 1,132	[164.02 s]
+0.0.N: Trace Attempt 267	[164.07 s]
+0.0.Ht: Trace Attempt 63,732	[164.52 s]
+0.0.B: Trace Attempt 1,147	[168.22 s]
+0.0.Ht: Trace Attempt 65,466	[168.52 s]
+0.0.N: Trace Attempt 271	[170.08 s]
+0.0.B: Trace Attempt 1,163	[172.44 s]
+0.0.Ht: Trace Attempt 67,328	[172.53 s]
+0.0.N: Trace Attempt 274	[174.09 s]
+0.0.Ht: Trace Attempt 69,207	[176.53 s]
+0.0.B: Trace Attempt 1,176	[176.61 s]
+0.0.N: Trace Attempt 278	[178.45 s]
+0.0.Ht: Trace Attempt 71,206	[180.53 s]
+0.0.B: Trace Attempt 1,191	[180.69 s]
+0.0.N: Stopped processing property "AHBVGADLS.check_vsync_pulse"	[181.14 s].
+0.0.N: Morphing to AM
+0.0.N: Trace Attempt 281	[180.66 s]
+0.0.N: All properties determined. [0.00 s]
+0.0.N: Exited with Success (@ 0.00 s)
+0.0.AM: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AM: Starting proof for property "AHBVGADLS.check_vsync_pulse"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  1	[0.03 s]
+0.0.AM: Trace Attempt  2	[0.03 s]
+0.0.AM: Trace Attempt  3	[0.03 s]
+0.0.AM: Trace Attempt  1	[0.04 s]
+0.0.AM: Trace Attempt  2	[0.04 s]
+0.0.AM: Trace Attempt  3	[0.04 s]
+0.0.AM: Trace Attempt  1	[0.06 s]
+0.0.AM: Trace Attempt  2	[0.06 s]
+0.0.AM: Trace Attempt  3	[0.06 s]
+0.0.Hp: Interrupted (multi)
+0.0.Hp: Morphing to R
+0.0.Hp: All properties determined. [0.00 s]
+0.0.Hp: Exited with Success (@ 0.00 s)
+0.0.R: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AM: Trace Attempt  1	[0.09 s]
+0.0.AM: Trace Attempt  2	[0.09 s]
+0.0.AM: Trace Attempt  3	[0.09 s]
+0.0.AM: Trace Attempt  1	[0.11 s]
+0.0.AM: Trace Attempt  2	[0.11 s]
+0.0.AM: Trace Attempt  3	[0.12 s]
+0.0.AM: Trace Attempt  1	[0.15 s]
+0.0.AM: Trace Attempt  2	[0.15 s]
+0.0.AM: Trace Attempt  3	[0.15 s]
+0.0.R:    0.00" ---- Attempting proof of 1 remaining property ----
+0.0.AM: Trace Attempt  1	[0.21 s]
+0.0.AM: Trace Attempt  2	[0.22 s]
+0.0.AM: Trace Attempt  3	[0.22 s]
+0.0.R: Trace Attempt  1	[0.16 s]
+0.0.R: Trace Attempt  2	[0.16 s]
+0.0.R: Trace Attempt  3	[0.16 s]
+0.0.R: Trace Attempt  4	[0.16 s]
+0.0.R: Trace Attempt  5	[0.17 s]
+0.0.AM: Trace Attempt  1	[0.29 s]
+0.0.AM: Trace Attempt  2	[0.29 s]
+0.0.AM: Trace Attempt  3	[0.29 s]
+0.0.AM: Trace Attempt  1	[0.37 s]
+0.0.AM: Trace Attempt  2	[0.37 s]
+0.0.AM: Trace Attempt  3	[0.37 s]
+0.0.AM: Trace Attempt  1	[0.47 s]
+0.0.AM: Trace Attempt  2	[0.47 s]
+0.0.AM: Trace Attempt  3	[0.47 s]
+0.0.AM: Trace Attempt  1	[0.57 s]
+0.0.AM: Trace Attempt  2	[0.57 s]
+0.0.AM: Trace Attempt  3	[0.57 s]
+0.0.AM: Trace Attempt  1	[0.69 s]
+0.0.AM: Trace Attempt  2	[0.69 s]
+0.0.AM: Trace Attempt  3	[0.69 s]
+0.0.B: Stopped processing property "AHBVGADLS.check_vsync_pulse"	[181.82 s].
+0.0.B: Morphing to Tri
+0.0.B: Trace Attempt 1,192	[181.02 s]
+0.0.B: All properties determined. [0.00 s]
+0.0.B: Exited with Success (@ 0.00 s)
+0.0.Tri: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Tri: Starting proof for property "AHBVGADLS.check_vsync_pulse"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.Tri:    0.00" ---- Launching main thread ----
+0.0.Tri:    0.02" ---- Launching abstraction thread ----
+0.0.Tri:    0.02" ---- Launching multi-phase simplification thread ----
+0.0.AM: Trace Attempt  1	[0.81 s]
+0.0.AM: Trace Attempt  2	[0.81 s]
+0.0.AM: Trace Attempt  3	[0.81 s]
+0.0.Tri: Trace Attempt  2	[0.12 s]
+0.0.Tri: Trace Attempt  3	[0.12 s]
+0.0.Tri: Trace Attempt  4	[0.12 s]
+0.0.Tri: Trace Attempt  5	[0.12 s]
+0.0.AM: Trace Attempt  1	[0.95 s]
+0.0.AM: Trace Attempt  2	[0.95 s]
+0.0.AM: Trace Attempt  3	[0.95 s]
+WARNING (WPF042): 0: A single property remains, and one of the engines "Ht", "Hts", "Hp", "Hps", "B", or "Bm" is already running. Ignoring "Hts".
+0.0.AM: Trace Attempt  1	[1.10 s]
+0.0.AM: Trace Attempt  2	[1.10 s]
+0.0.AM: Trace Attempt  3	[1.10 s]
+0.0.Tri: Stopped processing property "AHBVGADLS.check_vsync_pulse"	[0.45 s].
+0.0.Tri: Morphing to D
+0.0.Tri: Trace Attempt 1,752	[0.44 s]
+0.0.Tri: All properties determined. [0.00 s]
+0.0.Tri: Exited with Success (@ 0.00 s)
+0.0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.D: Starting proof for property "AHBVGADLS.check_vsync_pulse"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.00 s]
+0.0.D: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  1	[1.25 s]
+0.0.AM: Trace Attempt  2	[1.25 s]
+0.0.AM: Trace Attempt  3	[1.25 s]
+0.0.D: Trace Attempt  3	[0.04 s]
+0.0.D: Trace Attempt  4	[0.07 s]
+0.0.D: Trace Attempt  5	[0.11 s]
+0.0.AM: Trace Attempt  1	[1.35 s]
+0.0.AM: Trace Attempt  2	[1.35 s]
+0.0.AM: Trace Attempt  3	[1.36 s]
+0.0.AM: Trace Attempt  1	[1.47 s]
+0.0.AM: Trace Attempt  2	[1.47 s]
+0.0.AM: Trace Attempt  3	[1.47 s]
+0.0.AM: Trace Attempt  1	[1.59 s]
+0.0.AM: Trace Attempt  2	[1.59 s]
+0.0.AM: Trace Attempt  3	[1.59 s]
+0.0.AM: Trace Attempt  1	[1.77 s]
+0.0.AM: Trace Attempt  2	[1.77 s]
+0.0.AM: Trace Attempt  3	[1.77 s]
+0.0.AM: Trace Attempt  1	[2.02 s]
+0.0.AM: Trace Attempt  2	[2.02 s]
+0.0.AM: Trace Attempt  3	[2.02 s]
+0.0.AM: Trace Attempt  1	[2.30 s]
+0.0.AM: Trace Attempt  2	[2.30 s]
+0.0.AM: Trace Attempt  3	[2.30 s]
+0.0.AM: Trace Attempt  1	[2.59 s]
+0.0.AM: Trace Attempt  2	[2.59 s]
+0.0.AM: Trace Attempt  3	[2.59 s]
+0.0.AM: Trace Attempt  1	[2.83 s]
+0.0.AM: Trace Attempt  2	[2.83 s]
+0.0.AM: Trace Attempt  3	[2.83 s]
+0.0.AM: Trace Attempt  1	[3.02 s]
+0.0.AM: Trace Attempt  2	[3.02 s]
+0.0.AM: Trace Attempt  3	[3.02 s]
+0.0.AM: Trace Attempt  1	[3.25 s]
+0.0.AM: Trace Attempt  2	[3.25 s]
+0.0.AM: Trace Attempt  3	[3.26 s]
+0.0.Ht: Trace Attempt 73,193	[184.53 s]
+0.0.AM: Trace Attempt  1	[3.54 s]
+0.0.AM: Trace Attempt  2	[3.54 s]
+0.0.AM: Trace Attempt  3	[3.54 s]
+0.0.AM: Trace Attempt  1	[3.78 s]
+0.0.AM: Trace Attempt  2	[3.78 s]
+0.0.AM: Trace Attempt  3	[3.78 s]
+0.0.AM: Trace Attempt  1	[4.04 s]
+0.0.AM: Trace Attempt  2	[4.04 s]
+0.0.AM: Trace Attempt  3	[4.04 s]
+0.0.R: Trace Attempt 53	[4.19 s]
+0.0.AM: Trace Attempt  1	[4.33 s]
+0.0.AM: Trace Attempt  2	[4.33 s]
+0.0.AM: Trace Attempt  3	[4.33 s]
+0.0.AM: Trace Attempt  1	[4.65 s]
+0.0.AM: Trace Attempt  2	[4.65 s]
+0.0.AM: Trace Attempt  3	[4.65 s]
+0.0.AM: Trace Attempt  1	[4.98 s]
+0.0.AM: Trace Attempt  2	[4.98 s]
+0.0.AM: Trace Attempt  3	[4.98 s]
+0.0.AM: Trace Attempt  1	[5.32 s]
+0.0.AM: Trace Attempt  2	[5.32 s]
+0.0.AM: Trace Attempt  3	[5.33 s]
+0.0.D: Trace Attempt 23	[4.20 s]
+0.0.AM: Trace Attempt  1	[5.68 s]
+0.0.AM: Trace Attempt  2	[5.69 s]
+0.0.AM: Trace Attempt  3	[5.69 s]
+0.0.AM: Trace Attempt  1	[6.08 s]
+0.0.AM: Trace Attempt  2	[6.08 s]
+0.0.AM: Trace Attempt  3	[6.08 s]
+0.0.AM: Trace Attempt  1	[6.59 s]
+0.0.AM: Trace Attempt  2	[6.59 s]
+0.0.AM: Trace Attempt  3	[6.59 s]
+0.0.AM: Trace Attempt  1	[7.28 s]
+0.0.AM: Trace Attempt  2	[7.28 s]
+0.0.AM: Trace Attempt  3	[7.28 s]
+0.0.Ht: Trace Attempt 75,110	[188.53 s]
+0.0.AM: Trace Attempt  1	[7.99 s]
+0.0.AM: Trace Attempt  2	[7.99 s]
+0.0.AM: Trace Attempt  3	[8.00 s]
+0.0.R: Trace Attempt 141	[8.20 s]
+0.0.AM: Trace Attempt  1	[8.75 s]
+0.0.AM: Trace Attempt  2	[8.75 s]
+0.0.AM: Trace Attempt  3	[8.75 s]
+0.0.AM: Trace Attempt  1	[9.31 s]
+0.0.AM: Trace Attempt  2	[9.31 s]
+0.0.AM: Trace Attempt  3	[9.31 s]
+0.0.D: Trace Attempt 31	[8.26 s]
+0.0.AM: Trace Attempt  1	[9.90 s]
+0.0.AM: Trace Attempt  2	[9.90 s]
+0.0.AM: Trace Attempt  3	[9.90 s]
+0.0.AM: Trace Attempt  1	[10.79 s]
+0.0.AM: Trace Attempt  2	[10.79 s]
+0.0.AM: Trace Attempt  3	[10.80 s]
+0.0.D: Stopped processing property "AHBVGADLS.check_vsync_pulse"	[9.81 s].
+0.0.D: Morphing to Tri
+0.0.D: Trace Attempt 33	[9.72 s]
+0.0.D: All properties determined. [0.00 s]
+0.0.D: Exited with Success (@ 0.00 s)
+0.0.Tri: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Tri: Starting proof for property "AHBVGADLS.check_vsync_pulse"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.Tri:    0.00" ---- Launching main thread ----
+0.0.Tri:    0.02" ---- Launching abstraction thread ----
+0.0.Tri:    0.02" ---- Launching multi-phase simplification thread ----
+0.0.Tri: Trace Attempt  2	[0.15 s]
+0.0.Tri: Trace Attempt  3	[0.15 s]
+0.0.Tri: Trace Attempt  4	[0.15 s]
+0.0.Tri: Trace Attempt  5	[0.15 s]
+0.0.Ht: Trace Attempt 77,210	[192.53 s]
+0.0.AM: Trace Attempt  1	[11.71 s]
+0.0.AM: Trace Attempt  2	[11.71 s]
+0.0.AM: Trace Attempt  3	[11.71 s]
+0.0.Tri:    0.96" Simplification phase 1 complete
+0.0.R: Trace Attempt 255	[12.22 s]
+0.0.AM: Trace Attempt  1	[12.40 s]
+0.0.AM: Trace Attempt  2	[12.40 s]
+0.0.AM: Trace Attempt  3	[12.41 s]
+0.0.AM: Trace Attempt  1	[13.17 s]
+0.0.AM: Trace Attempt  2	[13.17 s]
+0.0.AM: Trace Attempt  3	[13.17 s]
+0.0.AM: Trace Attempt  1	[14.09 s]
+0.0.AM: Trace Attempt  2	[14.10 s]
+0.0.AM: Trace Attempt  3	[14.10 s]
+0.0.AM: Trace Attempt  1	[15.18 s]
+0.0.AM: Trace Attempt  2	[15.18 s]
+0.0.AM: Trace Attempt  3	[15.18 s]
+0.0.Tri: Trace Attempt 2,799	[4.15 s]
+0.0.Ht: Trace Attempt 79,018	[196.53 s]
+0.0.AM: Trace Attempt  1	[16.28 s]
+0.0.AM: Trace Attempt  2	[16.28 s]
+0.0.AM: Trace Attempt  3	[16.28 s]
+0.0.R: Trace Attempt 392	[16.25 s]
+0.0.AM: Trace Attempt  1	[17.34 s]
+0.0.AM: Trace Attempt  2	[17.34 s]
+0.0.AM: Trace Attempt  3	[17.34 s]
+0.0.AM: Trace Attempt  1	[18.13 s]
+0.0.AM: Trace Attempt  2	[18.13 s]
+0.0.AM: Trace Attempt  3	[18.13 s]
+0.0.AM: Trace Attempt  1	[19.17 s]
+0.0.AM: Trace Attempt  2	[19.17 s]
+0.0.AM: Trace Attempt  3	[19.18 s]
+0.0.Ht: Trace Attempt 80,862	[200.53 s]
+0.0.Tri: Trace Attempt 3,848	[8.63 s]
+0.0.R: Trace Attempt 590	[20.25 s]
+0.0.AM: Trace Attempt  1	[20.46 s]
+0.0.AM: Trace Attempt  2	[20.46 s]
+0.0.AM: Trace Attempt  3	[20.46 s]
+0.0.AM: Trace Attempt  1	[21.64 s]
+0.0.AM: Trace Attempt  2	[21.64 s]
+0.0.AM: Trace Attempt  3	[21.64 s]
+0.0.AM: Trace Attempt  1	[22.61 s]
+0.0.AM: Trace Attempt  2	[22.61 s]
+0.0.AM: Trace Attempt  3	[22.61 s]
+0.0.Ht: Trace Attempt 82,687	[204.53 s]
+0.0.AM: Trace Attempt  1	[23.60 s]
+0.0.AM: Trace Attempt  2	[23.60 s]
+0.0.AM: Trace Attempt  3	[23.60 s]
+0.0.Tri: Trace Attempt 5,111	[12.63 s]
+0.0.R: Trace Attempt 817	[24.26 s]
+0.0.AM: Trace Attempt  1	[24.91 s]
+0.0.AM: Trace Attempt  2	[24.91 s]
+0.0.AM: Trace Attempt  3	[24.92 s]
+0.0.AM: Trace Attempt  1	[26.33 s]
+0.0.AM: Trace Attempt  2	[26.33 s]
+0.0.AM: Trace Attempt  3	[26.33 s]
+0.0.AM: Trace Attempt  1	[27.49 s]
+0.0.AM: Trace Attempt  2	[27.49 s]
+0.0.AM: Trace Attempt  3	[27.50 s]
+0.0.R: Trace Attempt 1,209	[28.27 s]
+0.0.Tri: Trace Attempt 6,086	[17.34 s]
+0.0.AM: Trace Attempt  1	[29.20 s]
+0.0.AM: Trace Attempt  2	[29.20 s]
+0.0.AM: Trace Attempt  3	[29.21 s]
+0.0.AM: Trace Attempt  1	[31.01 s]
+0.0.AM: Trace Attempt  2	[31.01 s]
+0.0.AM: Trace Attempt  3	[31.01 s]
+0.0.AM: Trace Attempt  1	[32.82 s]
+0.0.AM: Trace Attempt  2	[32.82 s]
+0.0.AM: Trace Attempt  3	[32.82 s]
+0.0.Tri: Trace Attempt 7,346	[22.11 s]
+0.0.AM: Trace Attempt  1	[34.58 s]
+0.0.AM: Trace Attempt  2	[34.59 s]
+0.0.AM: Trace Attempt  3	[34.59 s]
+0.0.AM: Trace Attempt  1	[36.49 s]
+0.0.AM: Trace Attempt  2	[36.49 s]
+0.0.AM: Trace Attempt  3	[36.50 s]
+0.0.Tri: Trace Attempt 8,505	[26.11 s]
+0.0.AM: Trace Attempt  1	[38.30 s]
+0.0.AM: Trace Attempt  2	[38.30 s]
+0.0.AM: Trace Attempt  3	[38.30 s]
+0.0.AM: Trace Attempt  1	[39.69 s]
+0.0.AM: Trace Attempt  2	[39.69 s]
+0.0.AM: Trace Attempt  3	[39.69 s]
+0.0.AM: Trace Attempt  1	[41.68 s]
+0.0.AM: Trace Attempt  2	[41.69 s]
+0.0.AM: Trace Attempt  3	[41.69 s]
+0.0.Tri: Trace Attempt 9,352	[30.77 s]
+0.0.AM: Trace Attempt  1	[43.27 s]
+0.0.AM: Trace Attempt  2	[43.27 s]
+0.0.AM: Trace Attempt  3	[43.28 s]
+0.0.AM: Trace Attempt  1	[45.14 s]
+0.0.AM: Trace Attempt  2	[45.14 s]
+0.0.AM: Trace Attempt  3	[45.14 s]
+0.0.Tri: Trace Attempt 10,216	[35.48 s]
+0.0.AM: Trace Attempt  1	[47.51 s]
+0.0.AM: Trace Attempt  2	[47.51 s]
+0.0.AM: Trace Attempt  3	[47.51 s]
+0.0.AM: Trace Attempt  1	[49.96 s]
+0.0.AM: Trace Attempt  2	[49.96 s]
+0.0.AM: Trace Attempt  3	[49.97 s]
+0.0.Tri: Trace Attempt 11,342	[40.09 s]
+0.0.AM: Trace Attempt  1	[52.60 s]
+0.0.AM: Trace Attempt  2	[52.60 s]
+0.0.AM: Trace Attempt  3	[52.60 s]
+0.0.Tri: Trace Attempt 12,554	[44.68 s]
+0.0.AM: Trace Attempt  1	[55.85 s]
+0.0.AM: Trace Attempt  2	[55.85 s]
+0.0.AM: Trace Attempt  3	[55.86 s]
+0.0.AM: Trace Attempt  1	[58.91 s]
+0.0.AM: Trace Attempt  2	[58.91 s]
+0.0.AM: Trace Attempt  3	[58.91 s]
+0.0.Tri: Trace Attempt 13,672	[49.35 s]
+0.0.AM: Trace Attempt  1	[61.67 s]
+0.0.AM: Trace Attempt  2	[61.67 s]
+0.0.AM: Trace Attempt  3	[61.67 s]
+0.0.AM: Trace Attempt  1	[64.05 s]
+0.0.AM: Trace Attempt  2	[64.05 s]
+0.0.AM: Trace Attempt  3	[64.06 s]
+0.0.Tri: Trace Attempt 14,778	[54.04 s]
+0.0.AM: Trace Attempt  1	[67.14 s]
+0.0.AM: Trace Attempt  2	[67.14 s]
+0.0.AM: Trace Attempt  3	[67.14 s]
+0.0.Tri:   57.05" Simplification phase 2 complete
+0.0.Tri: Trace Attempt 16,002	[58.79 s]
+0.0.AM: Trace Attempt  1	[70.25 s]
+0.0.AM: Trace Attempt  2	[70.25 s]
+0.0.AM: Trace Attempt  3	[70.26 s]
+0.0.Ht: Trace Attempt 83,383	[252.25 s]
+0.0.AM: Trace Attempt  1	[73.59 s]
+0.0.AM: Trace Attempt  2	[73.59 s]
+0.0.AM: Trace Attempt  3	[73.59 s]
+0.0.Tri: Trace Attempt 16,855	[63.55 s]
+0.0.Ht: Trace Attempt 85,477	[256.25 s]
+0.0.AM: Trace Attempt  1	[76.86 s]
+0.0.AM: Trace Attempt  2	[76.86 s]
+0.0.AM: Trace Attempt  3	[76.87 s]
+0.0.Ht: Trace Attempt 87,365	[260.25 s]
+0.0.Tri: Trace Attempt 17,864	[68.18 s]
+0.0.AM: Trace Attempt  1	[80.67 s]
+0.0.AM: Trace Attempt  2	[80.67 s]
+0.0.AM: Trace Attempt  3	[80.67 s]
+0.0.Ht: Trace Attempt 89,182	[264.25 s]
+0.0.AM: Trace Attempt  1	[83.80 s]
+0.0.AM: Trace Attempt  2	[83.80 s]
+0.0.AM: Trace Attempt  3	[83.81 s]
+0.0.Tri: Trace Attempt 18,827	[72.86 s]
+0.0.AM: Trace Attempt  1	[87.04 s]
+0.0.AM: Trace Attempt  2	[87.04 s]
+0.0.AM: Trace Attempt  3	[87.04 s]
+0.0.Ht: Trace Attempt 91,044	[268.25 s]
+0.0.Tri: Trace Attempt 19,660	[77.66 s]
+0.0.AM: Trace Attempt  1	[90.11 s]
+0.0.AM: Trace Attempt  2	[90.11 s]
+0.0.AM: Trace Attempt  3	[90.11 s]
+0.0.Ht: Trace Attempt 92,865	[272.25 s]
+0.0.Tri: Trace Attempt 20,785	[82.16 s]
+0.0.AM: Trace Attempt  1	[94.10 s]
+0.0.AM: Trace Attempt  2	[94.10 s]
+0.0.AM: Trace Attempt  3	[94.11 s]
+0.0.Ht: Trace Attempt 94,722	[276.25 s]
+0.0.Tri: Trace Attempt 21,859	[86.58 s]
+0.0.AM: Trace Attempt  1	[97.71 s]
+0.0.AM: Trace Attempt  2	[97.71 s]
+0.0.AM: Trace Attempt  3	[97.72 s]
+0.0.Ht: Trace Attempt 96,810	[280.25 s]
+0.0.AM: Trace Attempt  1	[101.96 s]
+0.0.AM: Trace Attempt  2	[101.96 s]
+0.0.AM: Trace Attempt  3	[101.97 s]
+0.0.Tri: Trace Attempt 22,785	[91.14 s]
+0.0.Ht: Trace Attempt 98,702	[284.26 s]
+0.0.AM: Trace Attempt 630	[106.13 s]
+0.0.Tri: Trace Attempt 24,092	[95.83 s]
+0.0.AM: Trace Attempt  1	[106.96 s]
+0.0.AM: Trace Attempt  2	[106.97 s]
+0.0.AM: Trace Attempt  3	[106.97 s]
+0.0.Ht: Trace Attempt 100,548	[288.26 s]
+0.0.AM: Trace Attempt  1	[110.94 s]
+0.0.AM: Trace Attempt  2	[110.94 s]
+0.0.AM: Trace Attempt  3	[110.94 s]
+WARNING (WPF042): 0: A single property remains, and one of the engines "Ht", "Hts", "Hp", "Hps", "B", or "Bm" is already running. Ignoring "Hts".
+0.0.AM: Stopped processing property "AHBVGADLS.check_vsync_pulse"	[110.97 s].
+0.0.AM: Morphing to D
+0.0.AM: All properties determined. [0.00 s]
+0.0.AM: Exited with Success (@ 0.00 s)
+0.0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.D: Starting proof for property "AHBVGADLS.check_vsync_pulse"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.01 s]
+0.0.D: Trace Attempt  2	[0.02 s]
+0.0.D: Trace Attempt  3	[0.06 s]
+0.0.D: Trace Attempt  4	[0.12 s]
+0.0.Ht: Trace Attempt 102,393	[292.26 s]
+0.0.D: Trace Attempt  5	[0.20 s]
+0.0.Tri: Trace Attempt 25,201	[100.33 s]
+0.0.Ht: Trace Attempt 104,328	[296.26 s]
+0.0.D: Trace Attempt 21	[4.21 s]
+0.0.Tri: Trace Attempt 26,208	[104.85 s]
+0.0.Tri: Requesting engine job to stop
+0.0.D: Requesting engine job to stop
 0.0.Ht: Requesting engine job to terminate
-INFO (IPF144): 0: Initiating shutdown of proof [0.06]
-0.0.Hp: A proof was found: No trace exists. [0.06 s]
-INFO (IPF057): 0.0.Hp: The property "AHBVGADLS.check_dls" was proven in 0.08 s.
-0.0.Hp: All properties determined. [0.06 s]
-0.0.Hp: Exited with Success (@ 0.06 s)
-0: ProofGrid usable level: 0
+0.0.R: Requesting engine job to terminate
+INFO (IPF144): 0: Initiating shutdown of proof [299.27]
+0.0.R: Trace Attempt 1,607	[29.70 s]
+0.0.R: A proof was found: No trace exists. [118.05 s]
+INFO (IPF057): 0.0.R: The property "AHBVGADLS.check_vsync_pulse" was proven in 118.02 s.
 0.0.Ht: Interrupted (multi)
-0.0.Ht: All properties determined. [0.03 s]
-0.0.Ht: Exited with Success (@ 0.06 s)
-0.0.N: Stopped processing property "AHBVGADLS.check_dls"	[0.13 s].
-0.0.N: All properties determined. [0.07 s]
-0.0.B: Trace Attempt  3	[0.03 s]
-0.0.N: Exited with Success (@ 0.07 s)
-0.0.B: Stopped processing property "AHBVGADLS.check_dls"	[0.10 s].
-0.0.B: All properties determined. [0.04 s]
-0.0.B: Exited with Success (@ 0.07 s)
+0.0.Ht: Trace Attempt 105,694	[299.24 s]
+0.0.Ht: All properties determined. [298.29 s]
+0: ProofGrid usable level: 0
+0.0.Tri: Stopped processing property "AHBVGADLS.check_vsync_pulse"	[107.18 s].
+0.0.Tri: Trace Attempt 26,879	[106.78 s]
+0.0.Tri: All properties determined. [191.87 s]
+0.0.D: Stopped processing property "AHBVGADLS.check_vsync_pulse"	[7.33 s].
+0.0.Tri: Exited with Success (@ 299.45 s)
+0.0.D: Trace Attempt 27	[7.24 s]
+0.0.D: All properties determined. [298.08 s]
+0.0.D: Exited with Success (@ 299.46 s)
+0.0.R: All properties determined. [180.88 s]
+0.0.Ht: Exited with Success (@ 301.46 s)
+0.0.R: Sending SIGKILL
+0.0.R: Exited with Success (@ 301.46 s)
 0: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
-     engines started                               :   4
+     engines started                               :   8
      engine jobs started                           :   4
      jobs where 1 minute load exceeded core count  :   4
      jobs where 5 minute load exceeded core count  :   4
@@ -196,19 +735,19 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.09        0.06        0.00       42.09 %
-     Hp        0.03        0.06        0.00       62.10 %
-     Ht        0.03        0.03        0.00       43.93 %
-      B        0.03        0.03        0.00       44.40 %
-    all        0.05        0.04        0.00       47.84 %
+     Ht        0.03      299.25        0.00       99.99 %
+      R        0.03      299.16        0.00       99.99 %
+    Tri        0.03      298.20        0.00       99.99 %
+      D        0.05      299.23        0.00       99.98 %
+    all        0.04      298.96        0.00       99.99 %
 
-    Data read    : 2.06 kiB
-    Data written : 2.40 kiB
+    Data read    : 5.04 MiB
+    Data written : 4.12 MiB
 
 0: ProofGrid usable level: 0
 0: All pending notifications were processed.
 INFO (IPF059): Completed proof on task: "<embedded>"
-[<embedded>] % prove -bg -property {<embedded>::AHBVGADLS.check_dls:precondition1}
+[<embedded>] % prove -bg -property {<embedded>::AHBVGADLS.check_vsync_pulse:precondition1}
 INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
 background 1
 INFO (IPF031): Settings used for proof thread 1:
@@ -223,73 +762,158 @@ INFO (IPF031): Settings used for proof thread 1:
     proofgrid_restarts            = 10
 1: Using multistage preprocessing
 1: Starting reduce
-1: Finished reduce in 0.059s
+1: Finished reduce in 1.851s
 1.0.PRE: Performing Proof Simplification...
 1.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 1.0.N: Proof Simplification Iteration 1	[0.00 s]
 1.0.N: Proof Simplification Iteration 2	[0.00 s]
 1.0.N: Proof Simplification Iteration 3	[0.01 s]
-1.0.N: Proof Simplification Iteration 4	[0.01 s]
 1.0.PRE: A proof was found: No trace exists. [0.00 s]
 INFO (IPF057): 1.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
 use check_assumptions -show to show this property in the property table
-1.0.PRE: Proof Simplification completed in 0.03 s
+1.0.PRE: Proof Simplification completed in 0.02 s
 1: About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
 1: =============================== ProofGrid start ===============================
 1: ProofGrid usable level: 1
 1: ProofGrid is starting event handling
-1.0.N: Proofgrid shell started at 195647@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_2
+1.0.N: Proofgrid shell started at 176653@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_2
+1.0.Hp: Proofgrid shell started at 176654@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_2
 1.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-1.0.Hp: Proofgrid shell started at 195648@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_2
 1.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 1.0.N: Last scan. Per property time limit: 0s
-1.0.N: Starting proof for property "AHBVGADLS.check_dls:precondition1"	[0.00 s].
+1.0.N: Starting proof for property "AHBVGADLS.check_vsync_pulse:precondition1"	[0.00 s].
 1.0.N: Trace Attempt  1	[0.00 s]
 1.0.N: Trace Attempt  2	[0.00 s]
 1.0.N: Trace Attempt  3	[0.00 s]
-1.0.N: Trace Attempt  3	[0.02 s]
-1.0.B: Proofgrid shell started at 195662@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_2
+1.0.Hp: Trace Attempt  1	[0.02 s]
+1.0.N: Trace Attempt  3	[0.01 s]
+1.0.Ht: Proofgrid shell started at 176671@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_2
+1.0.B: Proofgrid shell started at 176672@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_2
+1.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.N: Trace Attempt  4	[0.02 s]
+1.0.N: Trace Attempt  5	[0.02 s]
 1.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 1.0.B: Last scan. Per property time limit: 0s
-1.0.B: Starting proof for property "AHBVGADLS.check_dls:precondition1"	[0.00 s].
-1.0.Ht: Proofgrid shell started at 195661@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_2
-1.0.N: Trace Attempt  4	[0.02 s]
-1.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.B: Starting proof for property "AHBVGADLS.check_vsync_pulse:precondition1"	[0.00 s].
+1.0.Ht: Trace Attempt  1	[0.01 s]
+1.0.Ht: Trace Attempt  2	[0.01 s]
+1.0.Ht: Trace Attempt  3	[0.01 s]
+1.0.Ht: Trace Attempt  4	[0.01 s]
+1.0.Ht: Trace Attempt  5	[0.01 s]
 1.0.B: Trace Attempt  1	[0.01 s]
-1.0.B: Trace Attempt  2	[0.01 s]
+1.0.B: Trace Attempt  2	[0.02 s]
+1.0.N: Trace Attempt  5	[0.04 s]
 1.0.B: Trace Attempt  3	[0.02 s]
-1.0.N: Trace Attempt  4	[0.04 s]
-1.0.B: Trace Attempt  4	[0.02 s]
-1.0.Ht: Trace Attempt  1	[0.03 s]
-1.0.Ht: Trace Attempt  2	[0.03 s]
-1.0.Ht: Trace Attempt  3	[0.03 s]
-1.0.B: Trace Attempt  5	[0.03 s]
-1.0.Ht: Trace Attempt  4	[0.04 s]
-1.0.Ht: Trace Attempt  5	[0.04 s]
-1.0.N: Trace Attempt  5	[0.07 s]
-1.0.N: Trace Attempt  5	[0.10 s]
-1.0.N: Requesting engine job to stop
-1.0.B: Requesting engine job to stop
-1.0.Hp: Requesting engine job to terminate
-1.0.Ht: Requesting engine job to terminate
-INFO (IPF144): 1: Initiating shutdown of proof [0.26]
-1.0.Ht: Trace Attempt 32	[0.20 s]
-1.0.Ht: A trace with 32 cycles was found. [0.23 s]
-INFO (IPF047): 1.0.Ht: The cover property "AHBVGADLS.check_dls:precondition1" was covered in 32 cycles in 0.31 s.
-1.0.Ht: All properties determined. [0.23 s]
-1.0.Ht: Exited with Success (@ 0.26 s)
-1: ProofGrid usable level: 0
+1.0.B: Trace Attempt  4	[0.03 s]
+1.0.B: Trace Attempt  5	[0.04 s]
+1.0.Ht: Trace Attempt 3,644	[4.01 s]
+1.0.B: Trace Attempt 158	[4.12 s]
+1.0.N: Trace Attempt 37	[4.23 s]
+1.0.Ht: Trace Attempt 5,402	[8.01 s]
+1.0.B: Trace Attempt 243	[8.16 s]
+1.0.N: Trace Attempt 53	[8.55 s]
+1.0.B: Trace Attempt 306	[12.20 s]
+1.0.N: Trace Attempt 65	[13.06 s]
+1.0.Ht: Trace Attempt 6,722	[13.40 s]
+1.0.B: Trace Attempt 355	[16.21 s]
+1.0.Ht: Trace Attempt 9,052	[17.40 s]
+1.0.N: Trace Attempt 75	[17.86 s]
+1.0.B: Trace Attempt 401	[20.24 s]
+1.0.Ht: Trace Attempt 11,003	[21.40 s]
+1.0.N: Trace Attempt 83	[22.29 s]
+1.0.B: Trace Attempt 443	[24.31 s]
+1.0.N: Trace Attempt 92	[26.44 s]
+1.0.Ht: Trace Attempt 11,840	[28.14 s]
+1.0.B: Trace Attempt 484	[28.38 s]
+1.0.N: Trace Attempt 99	[30.87 s]
+1.0.Ht: Trace Attempt 14,225	[32.14 s]
+1.0.B: Trace Attempt 511	[32.40 s]
+1.0.N: Trace Attempt 105	[34.93 s]
+1.0.Ht: Trace Attempt 16,200	[36.14 s]
+1.0.B: Trace Attempt 543	[36.44 s]
+1.0.N: Trace Attempt 111	[38.95 s]
+1.0.Ht: Trace Attempt 18,195	[40.14 s]
+1.0.B: Trace Attempt 573	[40.57 s]
+1.0.N: Trace Attempt 119	[43.92 s]
+1.0.Ht: Trace Attempt 20,093	[44.14 s]
+1.0.B: Trace Attempt 604	[44.64 s]
+1.0.Ht: Trace Attempt 21,978	[48.14 s]
+1.0.N: Trace Attempt 125	[48.78 s]
+1.0.B: Trace Attempt 636	[48.77 s]
+1.0.N: Trace Attempt 130	[52.81 s]
+1.0.B: Trace Attempt 661	[52.78 s]
+1.0.B: Trace Attempt 684	[56.81 s]
+1.0.N: Trace Attempt 135	[57.33 s]
+1.0.Ht: Trace Attempt 22,077	[58.68 s]
+1.0.B: Trace Attempt 707	[60.91 s]
+1.0.N: Trace Attempt 141	[62.67 s]
+1.0.Ht: Trace Attempt 24,171	[62.68 s]
+1.0.B: Trace Attempt 728	[65.01 s]
+1.0.Ht: Trace Attempt 26,200	[66.68 s]
+1.0.N: Trace Attempt 147	[67.16 s]
+1.0.B: Trace Attempt 748	[69.05 s]
+1.0.Ht: Trace Attempt 28,200	[70.69 s]
+1.0.N: Trace Attempt 151	[71.19 s]
+1.0.B: Trace Attempt 772	[73.07 s]
+1.0.Ht: Trace Attempt 30,115	[74.69 s]
+1.0.N: Trace Attempt 155	[75.63 s]
+1.0.B: Trace Attempt 796	[77.12 s]
+1.0.Ht: Trace Attempt 32,237	[78.69 s]
+1.0.N: Trace Attempt 159	[79.84 s]
+1.0.B: Trace Attempt 817	[81.24 s]
+1.0.Ht: Trace Attempt 34,158	[82.69 s]
+1.0.N: Trace Attempt 164	[84.30 s]
+1.0.B: Trace Attempt 838	[85.32 s]
+1.0.Ht: Trace Attempt 36,015	[86.69 s]
+1.0.N: Trace Attempt 168	[88.81 s]
+1.0.B: Trace Attempt 860	[89.32 s]
+1.0.Ht: Trace Attempt 37,902	[90.69 s]
+1.0.N: Trace Attempt 172	[93.23 s]
+1.0.B: Trace Attempt 879	[93.35 s]
+1.0.Ht: Trace Attempt 39,712	[94.69 s]
+1.0.B: Trace Attempt 897	[97.40 s]
+1.0.N: Trace Attempt 175	[97.73 s]
+1.0.Ht: Trace Attempt 41,490	[98.69 s]
+1.0.B: Trace Attempt 914	[101.57 s]
+1.0.N: Trace Attempt 179	[103.01 s]
+1.0.B: Trace Attempt 931	[105.69 s]
+1.0.N: Trace Attempt 183	[107.36 s]
+1.0.B: Trace Attempt 948	[109.69 s]
+1.0.N: Trace Attempt 187	[112.86 s]
+1.0.B: Trace Attempt 966	[113.84 s]
+1.0.B: Trace Attempt 985	[118.06 s]
+1.0.N: Trace Attempt 191	[118.30 s]
+1.0.B: Trace Attempt 1,003	[122.27 s]
+1.0.N: Trace Attempt 195	[123.43 s]
+1.0.Ht: Trace Attempt 42,549	[124.00 s]
+1.0.B: Trace Attempt 1,019	[126.42 s]
+1.0.Ht: Trace Attempt 44,622	[128.00 s]
+1.0.N: Trace Attempt 199	[129.25 s]
+1.0.B: Trace Attempt 1,037	[130.58 s]
+1.0.Ht: Trace Attempt 46,585	[132.00 s]
+1.0.B: Trace Attempt 1,051	[134.66 s]
+1.0.N: Trace Attempt 203	[135.28 s]
+1.0.Ht: Trace Attempt 48,536	[136.00 s]
+1.0.B: Trace Attempt 1,067	[138.73 s]
+1.0.Ht: Trace Attempt 50,404	[140.00 s]
+1.0.N: Trace Attempt 207	[140.94 s]
+INFO (IIM002): *** Stopping all proof jobs ***
+INFO (IPF144): 1: Initiating shutdown of proof [142.50]
+1.0.Ht: Interrupted (multi)
+1.0.Ht: Trace Attempt 51,598	[142.48 s]
+1.0.Ht: Interrupted. [141.91 s]
+1.0.N: Stopped processing property "AHBVGADLS.check_vsync_pulse:precondition1"	[142.57 s].
+1.0.N: Trace Attempt 209	[141.60 s]
+1.0.N: All properties either determined or skipped. [141.83 s]
+1.0.N: Exited with Success (@ 142.61 s)
 1.0.Hp: Interrupted (multi)
-1.0.Hp: All properties determined. [0.26 s]
-1.0.Hp: Exited with Success (@ 0.27 s)
-1.0.B: Stopped processing property "AHBVGADLS.check_dls:precondition1"	[0.33 s].
-1.0.B: Trace Attempt 25	[0.23 s]
-1.0.B: All properties determined. [0.25 s]
-1.0.B: Exited with Success (@ 0.27 s)
-1.0.N: Stopped processing property "AHBVGADLS.check_dls:precondition1"	[0.36 s].
-1.0.N: Trace Attempt 10	[0.29 s]
-1.0.N: All properties determined. [0.29 s]
-1.0.N: Exited with Success (@ 0.30 s)
+1.0.Hp: Interrupted. [141.98 s]
+1.0.Hp: Exited with Success (@ 142.93 s)
+1.0.B: Stopped processing property "AHBVGADLS.check_vsync_pulse:precondition1"	[143.16 s].
+1.0.B: Trace Attempt 1,081	[142.33 s]
+1.0.B: All properties either determined or skipped. [142.41 s]
+1.0.B: Exited with Success (@ 143.19 s)
+1.0.Ht: Exited with Success (@ 143.63 s)
 1: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
@@ -303,20 +927,20 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.06        0.26        0.00       82.07 %
-     Hp        0.03        0.25        0.00       89.60 %
-     Ht        0.03        0.23        0.00       89.42 %
-      B        0.02        0.23        0.00       91.30 %
-    all        0.03        0.24        0.00       87.83 %
+      N        0.04      142.57        0.00       99.97 %
+     Hp        0.02      142.86        0.00       99.98 %
+     Ht        0.02      142.48        0.00       99.99 %
+      B        0.02      143.17        0.00       99.98 %
+    all        0.03      142.77        0.00       99.98 %
 
-    Data read    : 14.54 kiB
-    Data written : 3.22 kiB
+    Data read    : 2.11 MiB
+    Data written : 2.30 MiB
 
 1: ProofGrid usable level: 0
 1: All pending notifications were processed.
-INFO (IPF059): Completed proof on task: "<embedded>"
-[<embedded>] % prove -bg -task {<embedded>}
-INFO (IPF036): Starting proof on task: "<embedded>", 3 properties to prove with 1 already proven/unreachable
+INFO (IPM007): "prove" command stopped.
+[<embedded>] % prove -bg -property {<embedded>::AHBVGADLS.check_dls}
+INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
 background 2
 INFO (IPF031): Settings used for proof thread 2:
     orchestration                 = on (auto)
@@ -330,386 +954,64 @@ INFO (IPF031): Settings used for proof thread 2:
     proofgrid_restarts            = 10
 2: Using multistage preprocessing
 2: Starting reduce
-2: Finished reduce in 2.127s
+2: Finished reduce in 0.06s
 2.0.PRE: Performing Proof Simplification...
 2.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 2.0.N: Proof Simplification Iteration 1	[0.00 s]
-2.0.N: Proof Simplification Iteration 2	[0.01 s]
+2.0.N: Proof Simplification Iteration 2	[0.00 s]
 2.0.N: Proof Simplification Iteration 3	[0.01 s]
-2.0.N: Proof Simplification Iteration 4	[0.02 s]
-2.0.N: Proof Simplification Iteration 5	[0.03 s]
-2.0.N: Proof Simplification Iteration 6	[0.04 s]
-2.0.N: Proof Simplification Iteration 7	[0.04 s]
-2.0.N: Proof Simplification Iteration 8	[0.05 s]
-2.0.N: Proof Simplification Iteration 9	[0.06 s]
-2.0.N: Proof Simplification Iteration 10	[0.07 s]
-2.0.N: Proof Simplification Iteration 11	[0.07 s]
-2.0.N: Proof Simplification Iteration 12	[0.08 s]
-2.0.N: Proof Simplification Iteration 13	[0.09 s]
-2.0.N: Proof Simplification Iteration 14	[0.10 s]
-2.0.N: Proof Simplification Iteration 15	[0.10 s]
-2.0.N: Proof Simplification Iteration 16	[0.11 s]
-2.0.N: Proof Simplification Iteration 17	[0.12 s]
-2.0.N: Proof Simplification Iteration 18	[0.12 s]
-2.0.N: Proof Simplification Iteration 19	[0.13 s]
-2.0.N: Proof Simplification Iteration 20	[0.14 s]
-2.0.N: Proof Simplification Iteration 21	[0.14 s]
-2.0.N: Proof Simplification Iteration 22	[0.15 s]
-2.0.N: Proof Simplification Iteration 23	[0.16 s]
-2.0.N: Proof Simplification Iteration 24	[0.17 s]
-2.0.N: Proof Simplification Iteration 25	[0.17 s]
-2.0.N: Proof Simplification Iteration 26	[0.18 s]
-2.0.N: Proof Simplification Iteration 27	[0.19 s]
-2.0.N: Proof Simplification Iteration 28	[0.20 s]
-2.0.N: Proof Simplification Iteration 29	[0.20 s]
-2.0.N: Proof Simplification Iteration 30	[0.21 s]
-2.0.N: Proof Simplification Iteration 31	[0.22 s]
-2.0.N: Proof Simplification Iteration 32	[0.22 s]
-2.0.N: Proof Simplification Iteration 33	[0.23 s]
-2.0.N: Proof Simplification Iteration 34	[0.24 s]
-2.0.N: Proof Simplification Iteration 35	[0.25 s]
-2.0.N: Proof Simplification Iteration 36	[0.25 s]
-2.0.N: Proof Simplification Iteration 37	[0.26 s]
-2.0.N: Proof Simplification Iteration 38	[0.27 s]
-2.0.N: Proof Simplification Iteration 39	[0.27 s]
-2.0.N: Proof Simplification Iteration 40	[0.28 s]
-2.0.N: Proof Simplification Iteration 41	[0.29 s]
-2.0.N: Proof Simplification Iteration 42	[0.30 s]
-2.0.N: Proof Simplification Iteration 43	[0.30 s]
-2.0.N: Proof Simplification Iteration 44	[0.31 s]
-2.0.N: Proof Simplification Iteration 45	[0.32 s]
-2.0.N: Proof Simplification Iteration 46	[0.32 s]
-2.0.N: Proof Simplification Iteration 47	[0.33 s]
-2.0.N: Proof Simplification Iteration 48	[0.34 s]
-2.0.N: Proof Simplification Iteration 49	[0.35 s]
-2.0.N: Proof Simplification Iteration 50	[0.35 s]
-2.0.N: Proof Simplification Iteration 51	[0.36 s]
-2.0.N: Proof Simplification Iteration 52	[0.37 s]
-2.0.N: Proof Simplification Iteration 53	[0.37 s]
-2.0.N: Proof Simplification Iteration 54	[0.38 s]
-2.0.N: Proof Simplification Iteration 55	[0.39 s]
-2.0.N: Proof Simplification Iteration 56	[0.40 s]
-2.0.N: Proof Simplification Iteration 57	[0.40 s]
-2.0.N: Proof Simplification Iteration 58	[0.41 s]
-2.0.N: Proof Simplification Iteration 59	[0.42 s]
-2.0.N: Proof Simplification Iteration 60	[0.42 s]
-2.0.N: Proof Simplification Iteration 61	[0.43 s]
-2.0.N: Proof Simplification Iteration 62	[0.44 s]
-2.0.N: Proof Simplification Iteration 63	[0.45 s]
-2.0.N: Proof Simplification Iteration 64	[0.45 s]
-2.0.N: Proof Simplification Iteration 65	[0.46 s]
-2.0.N: Proof Simplification Iteration 66	[0.47 s]
-2.0.N: Proof Simplification Iteration 67	[0.48 s]
-2.0.N: Proof Simplification Iteration 68	[0.48 s]
-2.0.N: Proof Simplification Iteration 69	[0.49 s]
-2.0.N: Proof Simplification Iteration 70	[0.50 s]
-2.0.N: Proof Simplification Iteration 71	[0.50 s]
-2.0.N: Proof Simplification Iteration 72	[0.51 s]
-2.0.N: Proof Simplification Iteration 73	[0.52 s]
-2.0.N: Proof Simplification Iteration 74	[0.53 s]
-2.0.N: Proof Simplification Iteration 75	[0.53 s]
-2.0.N: Proof Simplification Iteration 76	[0.54 s]
-2.0.N: Proof Simplification Iteration 77	[0.55 s]
-2.0.N: Proof Simplification Iteration 78	[0.55 s]
-2.0.N: Proof Simplification Iteration 79	[0.56 s]
-2.0.N: Proof Simplification Iteration 80	[0.57 s]
-2.0.N: Proof Simplification Iteration 81	[0.58 s]
-2.0.N: Proof Simplification Iteration 82	[0.58 s]
-2.0.N: Proof Simplification Iteration 83	[0.59 s]
-2.0.N: Proof Simplification Iteration 84	[0.60 s]
-2.0.N: Proof Simplification Iteration 85	[0.60 s]
-2.0.N: Proof Simplification Iteration 86	[0.61 s]
-2.0.N: Proof Simplification Iteration 87	[0.62 s]
-2.0.N: Proof Simplification Iteration 88	[0.63 s]
-2.0.N: Proof Simplification Iteration 89	[0.63 s]
-2.0.N: Proof Simplification Iteration 90	[0.64 s]
-2.0.N: Proof Simplification Iteration 91	[0.65 s]
-2.0.N: Proof Simplification Iteration 92	[0.66 s]
-2.0.N: Proof Simplification Iteration 93	[0.66 s]
-2.0.N: Proof Simplification Iteration 94	[0.67 s]
-2.0.N: Proof Simplification Iteration 95	[0.68 s]
-2.0.N: Proof Simplification Iteration 96	[0.68 s]
-2.0.N: Proof Simplification Iteration 97	[0.69 s]
-2.0.N: Proof Simplification Iteration 98	[0.70 s]
-2.0.N: Proof Simplification Iteration 99	[0.71 s]
-2.0.N: Proof Simplification Iteration 100	[0.71 s]
-2.0.PRE: Proof Simplification completed in 0.75 s
+2.0.N: Proof Simplification Iteration 4	[0.01 s]
+2.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 2.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+use check_assumptions -show to show this property in the property table
+2.0.PRE: Proof Simplification completed in 0.03 s
 2: About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
 2: =============================== ProofGrid start ===============================
-2: ProofGrid usable level: 3
+2: ProofGrid usable level: 1
 2: ProofGrid is starting event handling
-2.0.N: Proofgrid shell started at 196320@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_3
-2: ProofGrid usable level: 2
-2.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-2: ProofGrid usable level: 1
-2.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
-2.0.N: Starting proof for property "AHBVGADLS.check_hsync"	[0.00 s].
-2.0.Hp: Proofgrid shell started at 196321@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_3
-2.0.N: Trace Attempt  1	[0.00 s]
-2.0.N: Trace Attempt  2	[0.01 s]
-2.0.N: Trace Attempt  3	[0.01 s]
+2.0.Hp: Proofgrid shell started at 7133@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_3
+2.0.N: Proofgrid shell started at 7132@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_3
 2.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-2.0.N: Trace Attempt  3	[0.03 s]
-2.0.Ht: Proofgrid shell started at 196335@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_3
-2.0.B: Proofgrid shell started at 196336@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_3
-2.0.N: Trace Attempt  4	[0.03 s]
-2.0.N: Trace Attempt  5	[0.03 s]
-2.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-2.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-2.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
-2.0.B: Starting proof for property "AHBVGADLS.check_hsync"	[0.00 s].
-2.0.B: Trace Attempt  1	[0.01 s]
-2.0.B: Trace Attempt  2	[0.02 s]
-2.0.B: Trace Attempt  3	[0.02 s]
-2.0.N: Trace Attempt  5	[0.07 s]
-2.0.B: Trace Attempt  4	[0.03 s]
-2.0.B: Trace Attempt  5	[0.04 s]
-2.0.Hp: Trace Attempt  1	[0.12 s]
-2.0.Ht: Trace Attempt  1	[0.11 s]
-2.0.Ht: Trace Attempt  2	[0.11 s]
-2.0.Ht: Trace Attempt  3	[0.11 s]
-2.0.Ht: Trace Attempt  4	[0.11 s]
-2.0.Ht: Trace Attempt  5	[0.12 s]
-2.0.Hp: A proof was found: No trace exists. [0.52 s]
-INFO (IPF057): 2.0.Hp: The property "AHBVGADLS.check_hsync" was proven in 0.50 s.
-2.0.B: Stopped processing property "AHBVGADLS.check_hsync"	[0.50 s].
-2.0.B: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-2.0.N: Stopped processing property "AHBVGADLS.check_hsync"	[0.55 s].
-2.0.N: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-2.0.N: Trace Attempt  1	[0.01 s]
-2.0.N: Trace Attempt  2	[0.01 s]
-2.0.N: Trace Attempt  3	[0.01 s]
-2.0.B: Trace Attempt  1	[0.01 s]
-2.0.B: Trace Attempt  2	[0.01 s]
-2.0.B: Trace Attempt  3	[0.02 s]
-2.0.N: Trace Attempt  3	[0.02 s]
-2.0.N: Trace Attempt  4	[0.03 s]
-2.0.N: Trace Attempt  5	[0.03 s]
-2.0.B: Trace Attempt  4	[0.03 s]
-2.0.B: Trace Attempt  5	[0.04 s]
-2.0.N: Trace Attempt  5	[0.05 s]
-2: ProofGrid usable level: 1
-2.0.N: Trace Attempt 21	[0.87 s]
-2.0.N: Per property time limit expired (1.00 s) [1.02 s]
-2.0.N: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[1.02 s].
-2.0.N: Starting proof for property "AHBVGADLS.check_hsync:precondition2"	[0.00 s].
+2.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.N: Last scan. Per property time limit: 0s
+2.0.N: Starting proof for property "AHBVGADLS.check_dls"	[0.00 s].
 2.0.N: Trace Attempt  1	[0.00 s]
 2.0.N: Trace Attempt  2	[0.00 s]
 2.0.N: Trace Attempt  3	[0.00 s]
-2.0.B: Trace Attempt 59	[0.98 s]
-2.0.B: Per property time limit expired (1.00 s) [1.03 s]
-2.0.B: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[1.07 s].
-2.0.B: Starting proof for property "AHBVGADLS.check_hsync:precondition2"	[0.00 s].
-2.0.B: Trace Attempt  1	[0.01 s]
-2.0.N: Trace Attempt  3	[0.02 s]
-2.0.B: Trace Attempt  2	[0.01 s]
-2.0.N: Trace Attempt  4	[0.02 s]
-2.0.N: Trace Attempt  5	[0.02 s]
-2.0.N: Trace Attempt  1	[0.02 s]
-2.0.N: Trace Attempt  2	[0.02 s]
-2.0.N: Trace Attempt  3	[0.03 s]
-2.0.N: Trace Attempt  4	[0.03 s]
-2.0.B: Trace Attempt  3	[0.02 s]
-2.0.B: Trace Attempt  4	[0.03 s]
-2.0.B: Trace Attempt  5	[0.04 s]
-2.0.N: Trace Attempt 31	[0.90 s]
-2.0.N: Per property time limit expired (1.00 s) [1.02 s]
-2.0.N: Stopped processing property "AHBVGADLS.check_hsync:precondition2"	[1.01 s].
-2.0.N: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
-2.0.N: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-2.0.B: Stopped processing property "AHBVGADLS.check_hsync:precondition2"	[1.02 s].
-2.0.B: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
-2.0.B: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-2.0.B: Trace Attempt  1	[0.01 s]
-2.0.B: Trace Attempt  2	[0.02 s]
-2.0.B: Trace Attempt  3	[0.02 s]
-2.0.B: Trace Attempt  4	[0.03 s]
-2.0.B: Trace Attempt  5	[0.04 s]
-2.0.N: Trace Attempt 21	[0.20 s]
-2.0.Ht: Trace Attempt 575	[4.12 s]
-2.0.B: Trace Attempt 167	[4.04 s]
-2.0.N: Trace Attempt 43	[4.30 s]
-2.0.Ht: Trace Attempt 1,052	[8.12 s]
-2.0.B: Trace Attempt 276	[8.06 s]
-2.0.N: Trace Attempt 59	[8.76 s]
-2.0.Ht: Trace Attempt 1,323	[12.12 s]
-2.0.N: Trace Attempt 63	[9.64 s]
-2.0.N: Per property time limit expired (10.00 s) [10.04 s]
-2.0.N: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[10.03 s].
-2.0.N: Starting proof for property "AHBVGADLS.check_hsync:precondition2"	[0.00 s].
-2.0.B: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[10.19 s].
-2.0.B: Starting proof for property "AHBVGADLS.check_hsync:precondition2"	[0.00 s].
-2.0.B: Trace Attempt  1	[0.01 s]
-2.0.B: Trace Attempt  2	[0.01 s]
-2.0.B: Trace Attempt  3	[0.02 s]
-2.0.B: Trace Attempt  4	[0.03 s]
-2.0.N: Trace Attempt 31	[0.24 s]
-2.0.B: Trace Attempt  5	[0.04 s]
-2.0.Ht: Trace Attempt 1,881	[16.13 s]
-2.0.B: Trace Attempt 172	[4.08 s]
-2.0.N: Trace Attempt 51	[4.64 s]
-2.0.B: Trace Attempt 278	[8.11 s]
-2.0.N: Trace Attempt 64	[8.74 s]
-2.0.N: Trace Attempt 67	[9.50 s]
-2.0.N: Per property time limit expired (10.00 s) [10.07 s]
-2.0.N: Stopped processing property "AHBVGADLS.check_hsync:precondition2"	[10.07 s].
-2.0.N: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
-2.0.N: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-2.0.B: Stopped processing property "AHBVGADLS.check_hsync:precondition2"	[10.05 s].
-2.0.B: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
-2.0.B: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-2.0.B: Trace Attempt  1	[0.01 s]
-2.0.B: Trace Attempt  2	[0.01 s]
-2.0.B: Trace Attempt  3	[0.02 s]
-2.0.B: Trace Attempt  4	[0.03 s]
-2.0.B: Trace Attempt  5	[0.04 s]
-[<embedded>] % prove -bg -property {<embedded>::AHBVGADLS.check_hsync:precondition1}
-2.0.N: Trace Attempt 63	[0.55 s]
-INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
-background 3
-2.0.Ht: Trace Attempt 2,339	[23.34 s]
-INFO (IPF031): Settings used for proof thread 3:
-    orchestration                 = on (auto)
-    time_limit                    = 86400s
-    per_property_time_limit       = 1s * 10 ^ scan
-    engine_mode                   = auto
-    proofgrid_per_engine_max_jobs = 1
-    proofgrid_max_jobs            = 4
-    max engine jobs               = auto (max 4)
-    proofgrid_mode                = local
-    proofgrid_restarts            = 10
-3: Using multistage preprocessing
-3: Starting reduce
-3: Finished reduce in 0.444s
-3.0.PRE: Performing Proof Simplification...
-3.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-3.0.N: Proof Simplification Iteration 1	[0.00 s]
-3.0.N: Proof Simplification Iteration 2	[0.00 s]
-3.0.PRE: A proof was found: No trace exists. [0.00 s]
-INFO (IPF057): 3.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
-use check_assumptions -show to show this property in the property table
-3.0.PRE: Proof Simplification completed in 0.01 s
-3: About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
-3: =============================== ProofGrid start ===============================
-3: ProofGrid usable level: 1
-3: ProofGrid is starting event handling
-3.0.N: Proofgrid shell started at 2028@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_4
-3.0.Hp: Proofgrid shell started at 2029@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_4
-3.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-3.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-3.0.N: Last scan. Per property time limit: 0s
-3.0.N: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-3.0.N: Trace Attempt  1	[0.00 s]
-3.0.N: Trace Attempt  2	[0.00 s]
-3.0.N: Trace Attempt  3	[0.00 s]
-3.0.Hp: Trace Attempt  1	[0.01 s]
-3.0.N: Trace Attempt  3	[0.01 s]
-3.0.Hp: Trace Attempt  2	[0.01 s]
-3.0.N: Trace Attempt  4	[0.01 s]
-3.0.N: Trace Attempt  5	[0.01 s]
-3.0.Hp: Trace Attempt  3	[0.02 s]
-3.0.Ht: Proofgrid shell started at 2042@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_4
-3.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-3.0.Hp: Trace Attempt  4	[0.03 s]
-3.0.N: Trace Attempt  5	[0.03 s]
-3.0.B: Proofgrid shell started at 2043@ee-mill3.ee.ic.ac.uk(local) jg_192732_ee-mill3.ee.ic.ac.uk_4
-3.0.Ht: Trace Attempt  1	[0.01 s]
-3.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-3.0.Ht: Trace Attempt  2	[0.01 s]
-3.0.Ht: Trace Attempt  3	[0.01 s]
-3.0.Ht: Trace Attempt  4	[0.01 s]
-3.0.Ht: Trace Attempt  5	[0.01 s]
-3.0.B: Last scan. Per property time limit: 0s
-3.0.B: Starting proof for property "AHBVGADLS.check_hsync:precondition1"	[0.00 s].
-3.0.Hp: Trace Attempt  5	[0.03 s]
-3.0.B: Trace Attempt  1	[0.00 s]
-3.0.B: Trace Attempt  2	[0.01 s]
-3.0.B: Trace Attempt  3	[0.01 s]
-3.0.B: Trace Attempt  4	[0.01 s]
-3.0.B: Trace Attempt  5	[0.02 s]
-2.0.B: Trace Attempt 167	[4.05 s]
-3.0.N: Requesting engine job to stop
-3.0.B: Requesting engine job to stop
-3.0.Hp: Requesting engine job to terminate
-3.0.Ht: Requesting engine job to terminate
-INFO (IPF144): 3: Initiating shutdown of proof [3.06]
-3.0.Ht: Trace Attempt 3,207	[2.62 s]
-3.0.Ht: A trace with 3207 cycles was found. [2.62 s]
-INFO (IPF047): 3.0.Ht: The cover property "AHBVGADLS.check_hsync:precondition1" was covered in 3207 cycles in 3.07 s.
-3.0.Ht: All properties determined. [2.97 s]
-3.0.N: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[3.10 s].
-3.0.N: Trace Attempt 59	[2.96 s]
-3.0.N: All properties determined. [3.06 s]
-3.0.Ht: Exited with Success (@ 3.08 s)
-3: ProofGrid usable level: 0
-3.0.N: Exited with Success (@ 3.08 s)
-3.0.Hp: Interrupted (multi)
-3.0.Hp: Trace Attempt 61	[1.85 s]
-3.0.Hp: All properties determined. [3.10 s]
-3.0.Hp: Exited with Success (@ 3.12 s)
-3.0.B: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[3.05 s].
-3.0.B: Trace Attempt 213	[3.00 s]
-3.0.B: All properties determined. [3.09 s]
-3.0.B: Exited with Success (@ 3.13 s)
-3: --------------------------------------------------------------
-ProofGrid Summary
---------------------------------------------------------------
-     engines started                               :   4
-     engine jobs started                           :   4
-     jobs where 1 minute load exceeded core count  :   4
-     jobs where 5 minute load exceeded core count  :   4
-     jobs where 15 minute load exceeded core count :   4
-
-    Average time in state (seconds)
-    ------------------------------------------------------
-    Engine  Pending     Running        Dead    Utilization
-    ------------------------------------------------------
-      N        0.06        3.06        0.00       98.14 %
-     Hp        0.02        3.06        0.00       99.34 %
-     Ht        0.02        3.03        0.00       99.25 %
-      B        0.03        3.02        0.00       98.98 %
-    all        0.03        3.04        0.00       98.92 %
-
-    Data read    : 3.85 MiB
-    Data written : 38.31 kiB
-
-3: ProofGrid usable level: 0
-3: All pending notifications were processed.
-2.0.B: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[4.23 s].
+2.0.Ht: Proofgrid shell started at 7146@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_3
+2.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.B: Proofgrid shell started at 7147@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_3
+2.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 2.0.B: Last scan. Per property time limit: 0s
-2.0.B: Starting proof for property "AHBVGADLS.check_hsync:precondition2"	[0.00 s].
-2.0.N: Stopped processing property "AHBVGADLS.check_hsync:precondition1"	[4.41 s].
-2.0.N: Last scan. Per property time limit: 0s
-2.0.N: Starting proof for property "AHBVGADLS.check_hsync:precondition2"	[0.00 s].
+2.0.B: Starting proof for property "AHBVGADLS.check_dls"	[0.00 s].
+2.0.Hp: Trace Attempt  1	[0.03 s]
+2.0.N: Trace Attempt  3	[0.03 s]
+2.0.Ht: Trace Attempt  1	[0.02 s]
+2.0.Ht: Trace Attempt  2	[0.02 s]
+2.0.Ht: Trace Attempt  3	[0.02 s]
 2.0.B: Trace Attempt  1	[0.01 s]
-2.0.B: Trace Attempt  2	[0.01 s]
-2.0.B: Trace Attempt  3	[0.02 s]
-2.0.B: Trace Attempt  4	[0.03 s]
-2.0.B: Trace Attempt  5	[0.04 s]
-INFO (IPF059): Completed proof on task: "<embedded>"
-2.0.Ht: Trace Attempt 2,800	[27.34 s]
+2.0.N: Trace Attempt  4	[0.04 s]
+2.0.Ht: Trace Attempt  4	[0.02 s]
 2.0.N: Requesting engine job to stop
 2.0.B: Requesting engine job to stop
 2.0.Hp: Requesting engine job to terminate
 2.0.Ht: Requesting engine job to terminate
-INFO (IPF144): 2: Initiating shutdown of proof [31.08]
-2.0.Ht: Trace Attempt 3,207	[30.07 s]
-2.0.Ht: A trace with 3207 cycles was found. [30.07 s]
-INFO (IPF047): 2.0.Ht: The cover property "AHBVGADLS.check_hsync:precondition2" was covered in 3207 cycles in 31.09 s.
-2.0.Ht: All properties determined. [30.88 s]
+INFO (IPF144): 2: Initiating shutdown of proof [0.05]
+2.0.Hp: A proof was found: No trace exists. [0.05 s]
+INFO (IPF057): 2.0.Hp: The property "AHBVGADLS.check_dls" was proven in 0.04 s.
+2.0.Hp: All properties determined. [0.05 s]
+2.0.Ht: Interrupted (multi)
+2.0.Hp: Exited with Success (@ 0.05 s)
 2: ProofGrid usable level: 0
-2.0.N: Stopped processing property "AHBVGADLS.check_hsync:precondition2"	[4.02 s].
-2.0.N: Trace Attempt 76	[3.99 s]
-2.0.N: All properties determined. [31.12 s]
-2.0.N: Exited with Success (@ 31.15 s)
-2.0.B: Stopped processing property "AHBVGADLS.check_hsync:precondition2"	[4.05 s].
-2.0.B: Trace Attempt 172	[3.95 s]
-2.0.B: All properties determined. [31.14 s]
-2.0.Hp: Interrupted (multi)
-2.0.Hp: All properties determined. [31.17 s]
-2.0.B: Exited with Success (@ 31.20 s)
-2.0.Hp: Exited with Success (@ 31.24 s)
-2.0.Ht: Exited with Success (@ 31.30 s)
+2.0.Ht: All properties determined. [0.03 s]
+2.0.B: Trace Attempt  2	[0.02 s]
+2.0.N: Stopped processing property "AHBVGADLS.check_dls"	[0.05 s].
+2.0.Ht: Exited with Success (@ 0.06 s)
+2.0.N: All properties determined. [0.05 s]
+2.0.B: Stopped processing property "AHBVGADLS.check_dls"	[0.02 s].
+2.0.B: All properties determined. [0.03 s]
+2.0.N: Exited with Success (@ 0.06 s)
+2.0.B: Exited with Success (@ 0.06 s)
 2: --------------------------------------------------------------
 ProofGrid Summary
 --------------------------------------------------------------
@@ -723,41 +1025,125 @@ ProofGrid Summary
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.57       31.08        0.00       98.20 %
-     Hp        0.04       31.06        0.00       99.86 %
-     Ht        0.04       31.04        0.00       99.88 %
-      B        0.04       31.04        0.00       99.88 %
-    all        0.17       31.05        0.00       99.45 %
+      N        0.04        0.05        0.00       52.79 %
+     Hp        0.03        0.05        0.00       64.68 %
+     Ht        0.02        0.03        0.00       54.94 %
+      B        0.03        0.02        0.00       48.32 %
+    all        0.03        0.04        0.00       55.77 %
 
-    Data read    : 8.36 MiB
-    Data written : 153.89 kiB
+    Data read    : 1.87 kiB
+    Data written : 2.39 kiB
 
 2: ProofGrid usable level: 0
 2: All pending notifications were processed.
 INFO (IPF059): Completed proof on task: "<embedded>"
+[<embedded>] % prove -bg -property {<embedded>::AHBVGADLS.check_dls:precondition1}
+INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
+background 3
+INFO (IPF031): Settings used for proof thread 3:
+    orchestration                 = on (auto)
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    proofgrid_max_jobs            = 4
+    max engine jobs               = auto (max 4)
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+3: Using multistage preprocessing
+3: Starting reduce
+3: Finished reduce in 0.058s
+3.0.PRE: Performing Proof Simplification...
+3.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+3.0.N: Proof Simplification Iteration 1	[0.00 s]
+3.0.N: Proof Simplification Iteration 2	[0.00 s]
+3.0.N: Proof Simplification Iteration 3	[0.01 s]
+3.0.N: Proof Simplification Iteration 4	[0.01 s]
+3.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 3.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+use check_assumptions -show to show this property in the property table
+3.0.PRE: Proof Simplification completed in 0.03 s
+3: About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+3: =============================== ProofGrid start ===============================
+3: ProofGrid usable level: 1
+3: ProofGrid is starting event handling
+3.0.Hp: Proofgrid shell started at 9556@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_4
+3.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+3.0.N: Proofgrid shell started at 9555@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_4
+3.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+3.0.N: Last scan. Per property time limit: 0s
+3.0.N: Starting proof for property "AHBVGADLS.check_dls:precondition1"	[0.00 s].
+3.0.N: Trace Attempt  1	[0.00 s]
+3.0.N: Trace Attempt  2	[0.01 s]
+3.0.N: Trace Attempt  3	[0.01 s]
+3.0.Ht: Proofgrid shell started at 9569@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_4
+3.0.B: Proofgrid shell started at 9570@ee-mill3.ee.ic.ac.uk(local) jg_100161_ee-mill3.ee.ic.ac.uk_4
+3.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+3.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+3.0.N: Trace Attempt  3	[0.03 s]
+3.0.B: Last scan. Per property time limit: 0s
+3.0.B: Starting proof for property "AHBVGADLS.check_dls:precondition1"	[0.00 s].
+3.0.N: Trace Attempt  4	[0.04 s]
+3.0.B: Trace Attempt  1	[0.01 s]
+3.0.Ht: Trace Attempt  1	[0.02 s]
+3.0.Ht: Trace Attempt  2	[0.02 s]
+3.0.B: Trace Attempt  2	[0.01 s]
+3.0.Ht: Trace Attempt  3	[0.02 s]
+3.0.Ht: Trace Attempt  4	[0.03 s]
+3.0.B: Trace Attempt  3	[0.02 s]
+3.0.Ht: Trace Attempt  5	[0.03 s]
+3.0.B: Trace Attempt  4	[0.03 s]
+3.0.N: Trace Attempt  4	[0.07 s]
+3.0.B: Trace Attempt  5	[0.03 s]
+3.0.N: Trace Attempt  5	[0.09 s]
+3.0.N: Trace Attempt  5	[0.12 s]
+3.0.N: Requesting engine job to stop
+3.0.B: Requesting engine job to stop
+3.0.Hp: Requesting engine job to terminate
+3.0.Ht: Requesting engine job to terminate
+INFO (IPF144): 3: Initiating shutdown of proof [0.25]
+3.0.Ht: Trace Attempt 32	[0.19 s]
+3.0.Ht: A trace with 32 cycles was found. [0.22 s]
+INFO (IPF047): 3.0.Ht: The cover property "AHBVGADLS.check_dls:precondition1" was covered in 32 cycles in 0.25 s.
+3.0.Hp: Interrupted (multi)
+3.0.Ht: All properties determined. [0.22 s]
+3.0.Hp: All properties determined. [0.25 s]
+3.0.Hp: Exited with Success (@ 0.26 s)
+3: ProofGrid usable level: 0
+3.0.Ht: Exited with Success (@ 0.26 s)
+3.0.N: Stopped processing property "AHBVGADLS.check_dls:precondition1"	[0.29 s].
+3.0.N: Trace Attempt  9	[0.22 s]
+3.0.N: All properties determined. [0.26 s]
+3.0.N: Exited with Success (@ 0.27 s)
+3.0.B: Stopped processing property "AHBVGADLS.check_dls:precondition1"	[0.25 s].
+3.0.B: Trace Attempt 22	[0.21 s]
+3.0.B: All properties determined. [0.23 s]
+3.0.B: Exited with Success (@ 0.27 s)
+3: --------------------------------------------------------------
+ProofGrid Summary
+--------------------------------------------------------------
+     engines started                               :   4
+     engine jobs started                           :   4
+     jobs where 1 minute load exceeded core count  :   4
+     jobs where 5 minute load exceeded core count  :   4
+     jobs where 15 minute load exceeded core count :   4
 
-==============================================================
-SUMMARY
-==============================================================
-           Properties Considered              : 5
-                 assertions                   : 2
-                  - proven                    : 2 (100%)
-                  - bounded_proven (user)     : 0 (0%)
-                  - bounded_proven (auto)     : 0 (0%)
-                  - marked_proven             : 0 (0%)
-                  - cex                       : 0 (0%)
-                  - ar_cex                    : 0 (0%)
-                  - undetermined              : 0 (0%)
-                  - unknown                   : 0 (0%)
-                  - error                     : 0 (0%)
-                 covers                       : 3
-                  - unreachable               : 0 (0%)
-                  - bounded_unreachable (user): 0 (0%)
-                  - covered                   : 3 (100%)
-                  - ar_covered                : 0 (0%)
-                  - undetermined              : 0 (0%)
-                  - unknown                   : 0 (0%)
-                  - error                     : 0 (0%)
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.06        0.25        0.00       81.30 %
+     Hp        0.03        0.25        0.00       88.16 %
+     Ht        0.03        0.22        0.00       87.05 %
+      B        0.03        0.22        0.00       87.15 %
+    all        0.04        0.24        0.00       85.75 %
+
+    Data read    : 14.22 kiB
+    Data written : 3.22 kiB
+
+3: ProofGrid usable level: 0
+3: All pending notifications were processed.
+INFO (IPF059): Completed proof on task: "<embedded>"
 INFO (IPL005): Received request to exit from the console.
 INFO: Waiting for proof threads to stop...
 INFO: Proof threads stopped.

@@ -1,4 +1,4 @@
-interface AHB_GPIO_INF 
+interface AHBVGA_intf
     (
         input logic clk,
         input logic rst_n
@@ -13,52 +13,66 @@ interface AHB_GPIO_INF
     logic           HWRITE;
     logic           HSEL;
     logic           HREADY;
-    logic [15:0]    GPIOIN; 
 
     // DUT outputs
     logic           HREADYOUT;
-    logic           HRDATA;
-    logic           GPIOOUT;
+    logic [31:0]    HRDATA;
+    logic           HSYNC;
+    logic           VSYNC;
+    logic [7:0]     RGB;
+    logic           DLS_ERROR;
 
-    clocking cb_TB @(posedge clk);
+    // Bug injection
+    logic [4:0]     inject_bug;
+
+    clocking cb_DRIVER @(posedge clk);
         output  HADDR;
         output  HTRANS;
         output  HWDATA;
         output  HWRITE;
         output  HSEL;
         output  HREADY;
-        output  GPIOIN;
 
         input   HREADYOUT;
         input   HRDATA;
-        input   GPIOOUT;              
+        input   HSYNC;
+        input   VSYNC;
+        input   RGB; 
+        input   DLS_ERROR;
+
+        output  inject_bug;             
     endclocking    
 
-    clocking cb_DUT @(posedge clk);
+    clocking cb_MONITOR @(posedge clk);
         input   HADDR;
         input   HTRANS;
         input   HWDATA;
         input   HWRITE;
         input   HSEL;
         input   HREADY;
-        input   GPIOIN;
 
-        output  HREADYOUT;
-        output  HRDATA;
-        output  GPIOOUT;              
+        input   HREADYOUT;
+        input   HRDATA;
+        input   HSYNC;
+        input   VSYNC;
+        input   RGB;
+        input   DLS_ERROR;  
+
+        inout   inject_bug;          
     endclocking
 
-    modport TB
+    modport DRIVER
     (
         input clk,
-        clocking cb_TB
+        input rst_n,
+        clocking cb_DRIVER
     );
 
-    modport DUT
+    modport MONITOR
     (
         input clk,
-        clocking cb_DUT
+        input rst_n,
+        clocking cb_MONITOR
     );
-
 
 endinterface

@@ -89,8 +89,22 @@ module AHBVGADLS(
   // Check length of HSYNC
   check_hsync: assert property(
     @(posedge HCLK) disable iff(!HRESETn)
-    $past(HSYNC) & !HSYNC ##1 CONTROL[*1602] |-> !HSYNC & $past(HSYNC) |-> ##1 !HSYNC
-  );  
+    $past(HSYNC) & !HSYNC ##1 CONTROL[*1602] |-> !HSYNC & $past(HSYNC) |-> ##1 !HSYNC   // 801 * 2
+  ); 
+
+  // Check pulse width of HSYNC
+  check_hysnc_pulse: assert property(
+    @(posedge HCLK) disable iff(!HRESETn)
+    $fell(HSYNC) ##1 CONTROL[*192] |-> $rose(HSYNC)     //96 * 2
+  );
+
+//   // Check horizontal front porch
+//  check_vsync_pulse: assert property(
+//     @(posedge HCLK) disable iff(!HRESETn)
+//     $fell(VSYNC) ##1 CONTROL[*1602] ##1 $fell(HSYNC) ##1 CONTROL[*1602] ##1 $fell(HSYNC) |-> $rose(VSYNC)
+//  );
+
+  // Check pulse length of HSYNC 
   
 
 
