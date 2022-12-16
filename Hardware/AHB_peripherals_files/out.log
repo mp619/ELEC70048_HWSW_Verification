@@ -1,5 +1,5 @@
 # vsim work_opt -c -do "./filesdo/setupvga.do" -l out.log 
-# Start time: 15:07:25 on Dec 16,2022
+# Start time: 15:48:53 on Dec 16,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -123345,5 +123345,5 @@
 # Stopped at tbench_vga/Environment.sv line 63
 # 
 # <EOF>
-# End time: 15:07:37 on Dec 16,2022, Elapsed time: 0:00:12
+# End time: 15:49:06 on Dec 16,2022, Elapsed time: 0:00:13
 # Errors: 0, Warnings: 4

@@ -1,36 +1,30 @@
 # ELEC70048_HWSW_Verification
 
-## Hardware
+This is the AHB_Peripheral part of Hardware and Software Verification with a focus on Formal and Functional testing using SystemVerilog compiled via Questa Sim-64 Version 10.7c  
 
-### GPIO - TODO
+## Structure
 
-- [ ] Verification Checklist
-- [ ] Parity Bit inplementation
-    - [ ] Fault injection
-    - [x] Output PARITYERR 'Set to a ‘1’ every time a parity error is detected'
-    - [x] Input PARITYSEL 'Parity selection input pin;
-                            Odd parity if PARITYSEL = 1,
-                            Even parity if PARITYSEL = 0'
-- [x] Function Verification
-    - [x] Add Assertions
-    - [x] Test with JasperGold
-- [x] Unit Level Tests
-    - [x] Get GPIO Read/Write to work for initial tests
-    - [x] Implement transaction class to randomize
-    - [x] Implement Generator class
-    - [x] Implement Driver class
-    - [x] Make a checker
-    - [ ] Check coverage
-- [ ] Top coverage with CPU implementation 
- 
-### VGA - TODO
+```bash
+.
+└───AHB_peripherals_files       # AHB_Files
+    ├───filesdo                 # Do files
+    ├───filesVC                 # VC files
+    ├───Hex                     # Hex Code
+    ├───Logs                    # Logs
+    ├───outputs                 # Testbench Outputs
+    ├───rtl                     # RTL
+    ├───src                     # Source Files   
+    ├───tbench                  # Top level Testbench
+    ├───tbench_gpio             # GPIO Testbench
+    ├───tbench_vga              # VGA Testbench
+    └───work                    # QuantaSim Work Folder
+```
 
-- [ ] Verification Checklist
-- [x] Dual Lock-Step Configuration of VGA Peripheral
-    - [x] Unit level test for Dual Lock-Step
-- [x] Add display for VGA
-    - [x] Letter unit level test
-- [ ] Top level test for VGA
-- [x] Functional Verification
+## Setup
 
-## Software
+
+## Additonal References
+
+Please see [Verifaction Plan](https://github.com/mp619/ELEC70048_HW_SW_Verification/Hardware/AHB_peripherals_files) for further information about testbench structure
+
+Plase see [Verifaction Report ](https://github.com/mp619/ELEC70048_HW_SW_Verification/Hardware/AHB_peripherals_files) for information about bugs found, fixes made and top level integration waveforms
