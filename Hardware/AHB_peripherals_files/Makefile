@@ -48,10 +48,10 @@ testbench_vga_nogui:
 
 testbench_top:
 	echo "Compiling..."
-	vlog -f ahblite_sys.vc
+	vlog -work work +acc=blnr -noincr -timescale 1ns/1ps -f ./filesVC/ahblite_sys.vc
 
 	echo "Optimizing..."
-	vopt -work work +acc=blnr -noincr -timescale 1ns/1ps ./filesVC/ahblite_sys_tb -o work_opt
+	vopt ahblite_sys_tb -o work_opt
 
 	echo "Opening vsim"
 	vsim work_opt -gui

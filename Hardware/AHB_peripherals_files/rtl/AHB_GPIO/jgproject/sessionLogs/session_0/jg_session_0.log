@@ -5,10 +5,10 @@
 # version   : 2018.06p002 64 bits
 # build date: 2018.08.27 18:04:53 PDT
 #----------------------------------------
-# started Thu Dec 15 17:53:16 GMT 2022
+# started Fri Dec 16 20:13:34 GMT 2022
 # hostname  : ee-mill3.ee.ic.ac.uk
-# pid       : 61315
-# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:42430' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/.tmp/.initCmds.tcl' 'AHBGPIO.tcl'
+# pid       : 96085
+# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:42292' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/.tmp/.initCmds.tcl' 'AHBGPIO.tcl'
 
 Any disclosure about the Cadence Design Systems software or its use
 model to any third party violates the written Non-Disclosure Agreement
@@ -75,8 +75,8 @@ INFO (IRS006): Current reset condition is "HRESETn".
 [<embedded>] % set_proofgrid_max_local_jobs 4
 [<embedded>] % 
 [<embedded>] % prove -bg -task {<embedded>}
-INFO (IPF036): Starting proof on task: "<embedded>", 16 properties to prove with 0 already proven/unreachable
 background 0
+INFO (IPF036): Starting proof on task: "<embedded>", 16 properties to prove with 0 already proven/unreachable
 INFO (IRS029): Starting reset analysis: phase 1 of 4.
 INFO (IRS030): Running reset analysis: phase 2 of 4.
 INFO (IRS031): Running reset analysis: phase 3 of 4.
@@ -118,19 +118,17 @@ use check_assumptions -show to show this property in the property table
 0: ProofGrid usable level: 4
 0: ProofGrid is starting event handling
 0: ProofGrid usable level: 3
-0.0.Hp: Proofgrid shell started at 63704@ee-mill3.ee.ic.ac.uk(local) jg_61315_ee-mill3.ee.ic.ac.uk_1
+0.0.N: Proofgrid shell started at 97430@ee-mill3.ee.ic.ac.uk(local) jg_96085_ee-mill3.ee.ic.ac.uk_1
 0: ProofGrid usable level: 2
-0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-0: ProofGrid usable level: 1
-0.0.Hp: Trace Attempt  1	[0.00 s]
-0.0.Hp: A trace with 1 cycles was found. [0.00 s]
-INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_dir:precondition1" was covered in 1 cycles in 0.05 s.
-INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_read_in:precondition1" was covered in 1 cycles in 0.05 s.
-INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_parityerr_in:precondition1" was covered in 1 cycles in 0.05 s.
-0.0.N: Proofgrid shell started at 63703@ee-mill3.ee.ic.ac.uk(local) jg_61315_ee-mill3.ee.ic.ac.uk_1
 0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0: ProofGrid usable level: 1
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "AHBGPIO.check_read_in:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "AHBGPIO.check_parityerr_in:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.Hp: Proofgrid shell started at 97431@ee-mill3.ee.ic.ac.uk(local) jg_96085_ee-mill3.ee.ic.ac.uk_1
 0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
 0.0.N: Starting proof for property "AHBGPIO.check_dataout:precondition1"	[0.00 s].
+0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.N: Trace Attempt  1	[0.00 s]
 0.0.N: Trace Attempt  2	[0.00 s]
 0.0.N: Trace Attempt  2	[0.00 s]
@@ -142,78 +140,80 @@ INFO (IPF047): 0.0.N: The cover property "AHBGPIO.check_dataout:precondition1" w
 0.0.N: Trace Attempt  2	[0.00 s]
 0.0.N: Trace Attempt  3	[0.00 s]
 0.0.N: Trace Attempt  3	[0.00 s]
+0.0.Hp: Trace Attempt  1	[0.00 s]
+0.0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_dir:precondition1" was covered in 1 cycles in 0.01 s.
 0.0.N: Trace Attempt  4	[0.00 s]
 0.0.N: Trace Attempt  5	[0.00 s]
-0.0.B: Proofgrid shell started at 63718@ee-mill3.ee.ic.ac.uk(local) jg_61315_ee-mill3.ee.ic.ac.uk_1
+0.0.Ht: Proofgrid shell started at 97445@ee-mill3.ee.ic.ac.uk(local) jg_96085_ee-mill3.ee.ic.ac.uk_1
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_read_in" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_read_out" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_parityerr_in" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_parityerr_out" was proven in 0.01 s.
+0.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: Trace Attempt  2	[0.02 s]
+0.0.Hp: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_write:precondition1" was covered in 2 cycles in 0.01 s.
+INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_read_out:precondition1" was covered in 2 cycles in 0.01 s.
+INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_parity_out:precondition1" was covered in 2 cycles in 0.01 s.
+INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_parityerr_out:precondition1" was covered in 2 cycles in 0.01 s.
+0.0.B: Proofgrid shell started at 97446@ee-mill3.ee.ic.ac.uk(local) jg_96085_ee-mill3.ee.ic.ac.uk_1
 0.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
 0.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
 0.0.B: Starting proof for property "AHBGPIO.check_dir"	[0.00 s].
+0.0.Ht: Trace Attempt  1	[0.00 s]
+0.0.Ht: Trace Attempt  2	[0.00 s]
+0.0.Ht: Trace Attempt  3	[0.00 s]
 0.0.B: Trace Attempt  1	[0.00 s]
 0.0.B: Trace Attempt  2	[0.00 s]
-0.0.Ht: Proofgrid shell started at 63717@ee-mill3.ee.ic.ac.uk(local) jg_61315_ee-mill3.ee.ic.ac.uk_1
-0.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
-0.0.B: Trace Attempt  3	[0.00 s]
-0.0.B: Trace Attempt  4	[0.00 s]
-0.0.B: Trace Attempt  5	[0.00 s]
-0.0.Ht: Trace Attempt  1	[0.00 s]
-0.0.Hp: A proof was found: No trace exists. [0.02 s]
-INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_read_in" was proven in 0.09 s.
-0.0.Hp: A proof was found: No trace exists. [0.02 s]
-INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_read_out" was proven in 0.10 s.
-0.0.Hp: A proof was found: No trace exists. [0.02 s]
-INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_parityerr_in" was proven in 0.10 s.
-0.0.Hp: A proof was found: No trace exists. [0.02 s]
-INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_parityerr_out" was proven in 0.11 s.
-0.0.Ht: Trace Attempt  2	[0.00 s]
-0.0.Hp: Trace Attempt  2	[0.02 s]
-0.0.Hp: A trace with 2 cycles was found. [0.02 s]
-INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_write:precondition1" was covered in 2 cycles in 0.12 s.
-INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_read_out:precondition1" was covered in 2 cycles in 0.12 s.
-INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_parity_out:precondition1" was covered in 2 cycles in 0.12 s.
-INFO (IPF047): 0.0.Hp: The cover property "AHBGPIO.check_parityerr_out:precondition1" was covered in 2 cycles in 0.12 s.
-0.0.Ht: Trace Attempt  3	[0.00 s]
-0.0.Ht: Trace Attempt  4	[0.01 s]
-0.0.N: Trace Attempt  1	[0.03 s]
-0.0.N: Trace Attempt  2	[0.03 s]
+0.0.N: Trace Attempt  1	[0.02 s]
+0.0.N: Trace Attempt  2	[0.02 s]
 0.0.N: Trace Attempt  3	[0.03 s]
+0.0.B: Trace Attempt  3	[0.01 s]
 0.0.N: Validation of fixpoint was successful. Time = 0.00
 0.0.N: A proof was found: No trace exists. [0.03 s]
-INFO (IPF057): 0.0.N: The property "AHBGPIO.check_dir" was proven in 0.07 s.
-0.0.N: Stopped processing property "AHBGPIO.check_dir"	[0.07 s].
+INFO (IPF057): 0.0.N: The property "AHBGPIO.check_dir" was proven in 0.01 s.
+0.0.N: Stopped processing property "AHBGPIO.check_dir"	[0.01 s].
 0.0.N: Starting proof for property "AHBGPIO.check_write"	[0.00 s].
 0.0.N: Trace Attempt  1	[0.00 s]
 0.0.N: Trace Attempt  2	[0.00 s]
 0.0.N: Trace Attempt  3	[0.00 s]
 0.0.N: Trace Attempt  3	[0.00 s]
-0.0.B: Stopped processing property "AHBGPIO.check_dir"	[0.05 s].
+0.0.Ht: Trace Attempt  4	[0.01 s]
+0.0.B: Stopped processing property "AHBGPIO.check_dir"	[0.00 s].
 0.0.B: Starting proof for property "AHBGPIO.check_write"	[0.00 s].
-0.0.B: Trace Attempt  1	[0.00 s]
-0.0.B: Trace Attempt  2	[0.00 s]
-0.0.Ht: Trace Attempt  5	[0.03 s]
 0.0.N: Trace Attempt  4	[0.00 s]
-0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  1	[0.00 s]
 0.0.N: Trace Attempt  5	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.Ht: Trace Attempt  5	[0.02 s]
+0.0.B: Trace Attempt  4	[0.01 s]
+0.0.B: Trace Attempt  5	[0.01 s]
 0.0.N: Requesting engine job to stop
 0.0.B: Requesting engine job to stop
 0.0.Hp: Requesting engine job to terminate
 0.0.Ht: Requesting engine job to terminate
 INFO (IPF144): 0: Initiating shutdown of proof [0.05]
 0.0.Hp: A proof was found: No trace exists. [0.05 s]
-INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_write" was proven in 0.14 s.
+INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_write" was proven in 0.01 s.
 0.0.Hp: A proof was found: No trace exists. [0.05 s]
-INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_parity_out" was proven in 0.14 s.
-0.0.B: Trace Attempt  4	[0.00 s]
-0.0.Hp: All properties determined. [0.05 s]
+INFO (IPF057): 0.0.Hp: The property "AHBGPIO.check_parity_out" was proven in 0.02 s.
 0.0.Ht: Interrupted (multi)
-0.0.Ht: Interrupted. [0.03 s]
+0.0.Hp: All properties determined. [0.04 s]
 0.0.N: Stopped processing property "AHBGPIO.check_write"	[0.00 s].
-0.0.N: Trace Attempt  6	[0.01 s]
-0.0.N: All properties either determined or skipped. [0.04 s]
+0.0.Ht: Interrupted. [0.03 s]
+0.0.N: Trace Attempt 10	[0.01 s]
+0.0.N: All properties either determined or skipped. [0.05 s]
 0.0.Hp: Exited with Success (@ 0.05 s)
 0: ProofGrid usable level: 0
-0.0.Ht: Exited with Success (@ 0.05 s)
 0.0.N: Exited with Success (@ 0.05 s)
-0.0.B: Stopped processing property "AHBGPIO.check_write"	[0.00 s].
+0.0.Ht: Exited with Success (@ 0.05 s)
+0.0.B: Stopped processing property "AHBGPIO.check_write"	[0.01 s].
 0.0.B: All properties either determined or skipped. [0.03 s]
 0.0.B: Exited with Success (@ 0.05 s)
 0: --------------------------------------------------------------
@@ -222,21 +222,20 @@ ProofGrid Summary
      engines started                               :   4
      engine jobs started                           :   4
      jobs where 1 minute load exceeded core count  :   4
-     jobs where 5 minute load exceeded core count  :   4
      jobs where 15 minute load exceeded core count :   4
 
     Average time in state (seconds)
     ------------------------------------------------------
     Engine  Pending     Running        Dead    Utilization
     ------------------------------------------------------
-      N        0.03        0.04        0.00       58.49 %
-     Hp        0.02        0.05        0.00       73.33 %
-     Ht        0.02        0.03        0.00       63.74 %
-      B        0.01        0.03        0.00       67.77 %
-    all        0.02        0.04        0.00       65.66 %
+      N        0.02        0.05        0.00       67.45 %
+     Hp        0.02        0.05        0.00       69.27 %
+     Ht        0.02        0.03        0.00       58.25 %
+      B        0.02        0.03        0.00       56.31 %
+    all        0.02        0.04        0.00       63.83 %
 
-    Data read    : 9.85 kiB
-    Data written : 3.38 kiB
+    Data read    : 8.76 kiB
+    Data written : 2.97 kiB
 
 0: ProofGrid usable level: 0
 0: All pending notifications were processed.

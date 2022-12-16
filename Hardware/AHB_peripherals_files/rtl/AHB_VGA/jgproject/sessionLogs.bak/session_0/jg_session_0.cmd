@@ -5,10 +5,10 @@
 # version   : 2018.06p002 64 bits
 # build date: 2018.08.27 18:04:53 PDT
 #----------------------------------------
-# started Fri Dec 16 12:49:28 GMT 2022
+# started Fri Dec 16 20:16:24 GMT 2022
 # hostname  : ee-mill3.ee.ic.ac.uk
-# pid       : 49725
-# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:46119' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/.tmp/.initCmds.tcl' 'AHBVGA.tcl'
+# pid       : 112112
+# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:38896' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_VGA/jgproject/.tmp/.initCmds.tcl' 'AHBVGA.tcl'
 clear -all
 analyze -clear
 analyze -sv -f ahbvga_form.vc
@@ -23,4 +23,4 @@ task -set <embedded>
 set_proofgrid_max_jobs 4
 set_proofgrid_max_local_jobs 4
 
-prove -bg -property {<embedded>::AHBVGADLS.check_horz_front_porch}
+prove -bg -task {<embedded>}

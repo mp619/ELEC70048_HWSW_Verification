@@ -12,5 +12,10 @@ add wave /ahblite_sys_tb/dut/uAHBGPIO/gpio_dir
 add wave /ahblite_sys_tb/dut/uAHBGPIO/HADDR
 add wave /ahblite_sys_tb/dut/uAHBGPIO/HWDATA
 add wave /ahblite_sys_tb/dut/uAHBGPIO/HRDATA
-run  1us
-#run 17ms
+add wave /ahblite_sys_tb/dut/uAHBVGA/VSYNC
+add wave /ahblite_sys_tb/dut/uAHBVGA/HSYNC
+add wave /ahblite_sys_tb/dut/uAHBVGA/RGB
+
+
+#run  1us
+run 17ms

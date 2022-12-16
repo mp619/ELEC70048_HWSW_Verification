@@ -95,7 +95,7 @@ module AHBVGADLS(
   // Check pulse width of HSYNC
   check_hysnc_pulse: assert property(
     @(posedge HCLK) disable iff(!HRESETn)
-    $fell(HSYNC) ##1 CONTROL[*192] |-> $rose(HSYNC)     //96 * 2
+    $fell(HSYNC) ##1 CONTROL[*192] |-> $rose(HSYNC) |-> HSYNC    //96 * 2
   );
 
 //   // Check horizontal front porch

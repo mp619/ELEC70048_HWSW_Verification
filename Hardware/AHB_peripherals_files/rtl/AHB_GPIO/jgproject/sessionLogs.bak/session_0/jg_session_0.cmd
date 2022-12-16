@@ -5,10 +5,10 @@
 # version   : 2018.06p002 64 bits
 # build date: 2018.08.27 18:04:53 PDT
 #----------------------------------------
-# started Wed Dec 14 15:10:54 GMT 2022
+# started Thu Dec 15 17:53:16 GMT 2022
 # hostname  : ee-mill3.ee.ic.ac.uk
-# pid       : 26103
-# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:42558' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/.tmp/.initCmds.tcl' 'AHBGPIO.tcl'
+# pid       : 61315
+# arguments : '-label' 'session_0' '-console' 'ee-mill3.ee.ic.ac.uk:42430' '-style' 'windows' '-data' 'AQAAADx/////AAAAAAAAA3oBAAAAEABMAE0AUgBFAE0ATwBWAEU=' '-proj' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/sessionLogs/session_0' '-init' '-hidden' '/home/mp619/nfshome/ELEC70048_HWSW_Verification/Hardware/AHB_peripherals_files/rtl/AHB_GPIO/jgproject/.tmp/.initCmds.tcl' 'AHBGPIO.tcl'
 
 clear -all
 analyze -clear
@@ -24,4 +24,4 @@ task -set <embedded>
 set_proofgrid_max_jobs 4
 set_proofgrid_max_local_jobs 4
 
-prove -bg -property {<embedded>::AHBGPIO.check_parityerr_in}
+prove -bg -task {<embedded>}
