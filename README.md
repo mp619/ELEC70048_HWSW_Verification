@@ -8,9 +8,11 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
 .
 └───Hardware                        # Hardware top directory
     └───AHB_peripherals_files       # AHB_Files
+        ├───code_coverage           # Code Coverage Files
+        ├───docs                    # Documents
         ├───filesdo                 # Do files
         ├───filesVC                 # VC files
-        ├───Hex                     # Hex Code
+        ├───hex                     # Hex Code
         ├───Logs                    # Logs
         ├───outputs                 # Testbench Outputs
         ├───rtl                     # RTL
