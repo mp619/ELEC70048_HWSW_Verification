@@ -58,9 +58,10 @@ Another simple integration test was performed with VGA with "Hello" being printe
 ## Bugs
 I found some evident bugs in VGA with some examples shown below.
 1. The Display region was clipped at the end
-2. The letters were duplicated at the front of every line 
+2. The letters were duplicated at the front of every line - fixed by editting new line logic
 3. The letters were 'fatter' at the front of each line 
 4. There was no 'default' case in the FONT_ROM which led to undefined behaviour as seen in the picture to the below right.
 <img src="pics/VGA_BUG.png" alt="drawing" width="900"/>
+
 
 
