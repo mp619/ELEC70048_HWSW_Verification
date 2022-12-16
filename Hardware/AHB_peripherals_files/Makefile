@@ -20,7 +20,7 @@ testbench_gpio_nogui:
 
 	echo "Opening vsim"
 	vsim work_opt -c -coverage -do ./filesdo/setup.do \
-		-l out.log & \
+		-l ./logs/outGPIO.log & \
 
 testbench_vga:
 	echo "Compiling..."
@@ -44,7 +44,7 @@ testbench_vga_nogui:
 
 	echo "Opening vsim"
 	vsim work_opt -c -do ./filesdo/setupvga.do \
-		-l out.log &
+		-l ./logs/outVGA.log &
 
 testbench_top:
 	echo "Compiling..."
