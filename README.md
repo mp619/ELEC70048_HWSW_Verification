@@ -42,6 +42,11 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
     - Navigate to */Hardware/AHB_peripherals_files/rtl/[?]* where [?] = AHB_GPIO or AHB_VGA
     - Run ``` make testbench_jg ``` to open JasperGold and complete assertions
     - To check assertions, right click on *Assert* and click on *Prove Task*
+- #### Top-Level Integration 
+    - Run ```source /usr/local/mentor/QUESTA-CORE-PRIME_10.7c/settings.sh ```
+    - Navigate to */Hardware/AHB_peripherals_files*
+    - Run ```make testbench_top ``` where [?] = gpio or vga
+    - In QuestaSim Transcript insert ``` do ./filesdo/setuptop.do ```   
 
 
 ## Additonal References
