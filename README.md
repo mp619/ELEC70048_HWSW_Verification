@@ -48,4 +48,4 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
 
 Please see [Verification Plan](./Hardware/AHB_peripherals_files/docs/Verification_Plan.md) for further information about testbench structure
 
-Plase see [Verification Report ](https://github.com/mp619/ELEC70048_HW_SW_Verification/Hardware/AHB_peripherals_files) for information about bugs found, fixes made and top level integration waveforms
+Plase see [Verification Report ](./Hardware/AHB_peripherals_files/docs/Verification_Report.md) for information about bugs found, fixes made and top level integration waveforms
