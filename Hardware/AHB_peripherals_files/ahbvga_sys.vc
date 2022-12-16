@@ -1,9 +1,0 @@
-rtl/AHB_VGA/AHBVGADLS.sv
-rtl/AHB_VGA/AHBVGASYS.v
-rtl/AHB_VGA/vga_sync.v
-rtl/AHB_VGA/vga_image.v
-rtl/AHB_VGA/vga_console.v
-rtl/AHB_VGA/font_rom.v
-rtl/AHB_VGA/dual_port_ram_sync.v
-rtl/AHB_VGA/counter.v
-tbench_vga/*

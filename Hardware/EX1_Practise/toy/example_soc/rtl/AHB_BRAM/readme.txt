@@ -1,1 +1,0 @@
-Note that when synthesizing, "code.hex" and "AHB2BRAM.v" have to be placed at the same directory in your project.
