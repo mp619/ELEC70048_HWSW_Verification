@@ -4,6 +4,8 @@ Before AHB verification was performed, a plan (see table below) was formulated t
 
 ## Unit-Level Testbench Structure
 
+Each unit level testbench was based on the structure below allowing for easy transfer of code between GPIO and VGA.
+
 <img src="TestBench.png" alt="drawing" width="400"/>
 
 ## Overall Plan
