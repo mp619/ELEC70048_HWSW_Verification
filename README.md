@@ -50,7 +50,7 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
     - In QuestaSim Transcript insert ``` do ./filesdo/setuptop.do ```   
 
 
-## Additonal References
+## Additonal Information
 
 Please see [Verification Plan](./Hardware/AHB_peripherals_files/docs/Verification_Plan.md) for further information about testbench structure
 
