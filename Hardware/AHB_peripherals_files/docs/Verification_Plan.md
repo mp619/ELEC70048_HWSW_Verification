@@ -4,7 +4,7 @@ Before AHB verification was performed, a plan (see table below) was formulated t
 
 ## Unit-Level Testbench Structure
 
-![akt text](TestBench.drawio (1)?raw=true)
+![akt text](TestBench.png?raw=true)
 
 ## Overall Plan
 |     AHB_Peripheral    |     Name                       |     Description                                                                                                                                |     Verification Type    |     Formal Check Name      |
