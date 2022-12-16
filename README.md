@@ -37,6 +37,7 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
     - Run ```make testbench_[?]_nogui ``` where [?] = gpio or vga
     - For VGA, an output display file under */Hardware/AHB_peripherals_files/outputs/out_vga.txt* can be found
     - All proceeding log files can be found in */Hardware/AHB_peripherals_files/logs*
+    - All Errors will be deisplayed in the command line with a converage report
 - #### Formal Verification
     - Run ``` source /usr/local/cadence/JASPER_2018.06.002/settings.sh ```
     - Navigate to */Hardware/AHB_peripherals_files/rtl/[?]* where [?] = AHB_GPIO or AHB_VGA
