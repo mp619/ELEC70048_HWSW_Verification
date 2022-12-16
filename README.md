@@ -38,7 +38,7 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
 - #### Formal Verification
     - Run ``` source /usr/local/cadence/JASPER_2018.06.002/settings.sh ```
     - Navigate to */Hardware/AHB_peripherals_files/rtl/[?]* where [?] = AHB_GPIO or AHB_VGA
-    - Run ``` testbench_jg ``` to open JasperGold and complete assertions
+    - Run ``` make testbench_jg ``` to open JasperGold and complete assertions
     - To check assertions, right click on *Assert* and click on *Prove Task*
 
 
