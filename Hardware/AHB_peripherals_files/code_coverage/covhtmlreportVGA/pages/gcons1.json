@@ -1,0 +1,5 @@
+var g_db_data = [
+{dummy:0},
+{name:'cg_inputs',f:1,type:6,id:2487,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/AHBVGA_tb_sv_unit/Monitor',parent:'2485'},
+{name:'cg_inputs',f:1,type:6,id:3644,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.AHBVGA_tb_sv_unit::Monitor',parent:'3642'}];
+processConsCovergroupsData(g_db_data);

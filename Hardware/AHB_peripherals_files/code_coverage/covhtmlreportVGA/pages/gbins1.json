@@ -1,0 +1,6 @@
+var g_data = {
+c2488:[4,'cp_hwdata',[],,'2487',1,1,'cg_inputs','2485','/AHBVGA_tb_sv_unit/Monitor',[[],[0,'1','841762',,'zero'],[0,'1','143',,'lo'],[0,'1','131',,'med'],[0,'1','127',,'hi'],[0,'1','4',,'max'],[1,'--','488',,'misc']],[]],
+c3645:[4,'cp_hwdata',[],,'3644',1,1,'cg_inputs','3642','work.AHBVGA_tb_sv_unit::Monitor',[[],[0,'1','841762',,'zero'],[0,'1','143',,'lo'],[0,'1','131',,'med'],[0,'1','127',,'hi'],[0,'1','4',,'max'],[1,'--','488',,'misc']],[]],
+dummyEnd:0
+};
+processCovergroupsData(g_data);

@@ -1,0 +1,12 @@
+var g_data = {
+g2485:[{dummy:0},
+{name:'cg_inputs',f:1,type:1,id:2487,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],parent:'2485'}],
+c2487:{name:'cg_inputs',type:1,pHash:'2485',pPath:'/AHBVGA_tb_sv_unit/Monitor',totals:[5,5,'100.00%','G',0,0,'0.00%','R'],cvp:[{dummy:0},
+{name:'cp_hwdata',f:1,type:4,id:2488,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'2487'}],crx:[{dummy:0}]},
+g3642:[{dummy:0},
+{name:'cg_inputs',f:1,type:1,id:3644,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],parent:'3642'}],
+c3644:{name:'cg_inputs',type:1,pHash:'3642',pPath:'work.AHBVGA_tb_sv_unit::Monitor',totals:[5,5,'100.00%','G',0,0,'0.00%','R'],cvp:[{dummy:0},
+{name:'cp_hwdata',f:1,type:4,id:3645,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'3644'}],crx:[{dummy:0}]},
+dummyEnd:0
+};
+processCovergroupsData(g_data);

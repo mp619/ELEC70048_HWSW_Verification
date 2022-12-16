@@ -1,0 +1,18 @@
+var g_data = {
+a4:{
+scopes:[{link:'z.htm?f=0&s=4',val:'work.AHBVGADLS'}]
+,assertions:[{dummy:0},{cr:'m',c:'Z',z:'check_dls',fc:'Gr',pc:'Rr',h0:'0',h1:'0'}
+,{cr:'m',c:'Z',z:'check_hsync',fc:'Gr',pc:'Rr',h0:'0',h1:'0'}
+,{cr:'m',c:'Z',z:'check_hysnc_pulse',fc:'Gr',pc:'Rr',h0:'0',h1:'0'}
+],
+},
+a144:{
+scopes:[{s:'14',b:'1',val:'AHBVGA_top'},{link:'z.htm?f=0&s=144',val:'ahbvga1'}]
+,assertions:[{dummy:0},{cr:'m',c:'Z',z:'check_dls',fc:'Gr',pc:'Rr',h0:'0',h1:'0'}
+,{cr:'m',c:'Z',z:'check_hsync',fc:'Gr',pc:'Rr',h0:'0',h1:'0'}
+,{cr:'m',c:'Z',z:'check_hysnc_pulse',fc:'Gr',pc:'Rr',h0:'0',h1:'0'}
+],
+},
+dummyEnd:0
+};
+processAssertionsData(g_data,1);
