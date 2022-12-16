@@ -33,11 +33,13 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
     - Run ```source /usr/local/mentor/QUESTA-CORE-PRIME_10.7c/settings.sh ```
     - Navigate to */Hardware/AHB_peripherals_files*
     - Run ```make testbench_[?]_nogui ``` where [?] = gpio or vga
-    - For VGA, an output display file under */Hardware/AHB_peripherals_files/out_vga.txt* can be found
+    - For VGA, an output display file under */Hardware/AHB_peripherals_files/outputs/out_vga.txt* can be found
+    - All proceeding log files can be found in */Hardware/AHB_peripherals_files/logs*
 - #### Formal Verification
     - Run ``` source /usr/local/cadence/JASPER_2018.06.002/settings.sh ```
     - Navigate to */Hardware/AHB_peripherals_files/rtl/[?]* where [?] = AHB_GPIO or AHB_VGA
     - Run ``` testbench_jg ``` to open JasperGold and complete assertions
+    - 
 
 
 ## Additonal References
