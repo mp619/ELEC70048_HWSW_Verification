@@ -1,6 +1,6 @@
 # ELEC70048_HWSW_Verification
 
-This is the AHB_Peripheral part of Hardware and Software Verification with a focus on Formal and Functional testing using SystemVerilog compiled via Questa Sim-64 Version 10.7c  
+This is the AHB_Peripheral part of Hardware and Software Verification with a focus on Formal and Functional testing using SystemVerilog compiled via Questa Sim-64 Version 10.7c.   
 
 ## Structure
 
@@ -14,18 +14,34 @@ This is the AHB_Peripheral part of Hardware and Software Verification with a foc
         ├───Logs                    # Logs
         ├───outputs                 # Testbench Outputs
         ├───rtl                     # RTL
+        │   ├───AHB_GPIO            # AHB_GPIO
+        │   └───AHB_VGA             # AHB_VGA
         ├───src                     # Source Files   
         ├───tbench                  # Top level Testbench
         ├───tbench_gpio             # GPIO Testbench
         ├───tbench_vga              # VGA Testbench
         └───work                    # QuantaSim Work Folder
 ```
+## Prerequisites
+- Questa Core Prime 10.7c
+- JasperGold 2018
 
 ## Setup
+- SSH into your respective college unix server (ssh –X your-college-name@ee-mill3.ee.ic.ac.uk)
+- Copy/Clone git repository to personal directory
+- #### Functional Verificaiton
+    - Run ```source /usr/local/mentor/QUESTA-CORE-PRIME_10.7c/settings.sh ```
+    - Navigate to */Hardware/AHB_peripherals_files*
+    - Run ```make testbench_[?]_nogui ``` where [?] = gpio or vga
+    - For VGA, an output display file under */Hardware/AHB_peripherals_files/out_vga.txt* can be found
+- #### Formal Verification
+    - Run ``` source /usr/local/cadence/JASPER_2018.06.002/settings.sh ```
+    - Navigate to */Hardware/AHB_peripherals_files/rtl/[?]* where [?] = AHB_GPIO or AHB_VGA
+    - Run ``` testbench_jg ``` to open JasperGold and complete assertions
 
 
 ## Additonal References
 
-Please see [Verifaction Plan](https://github.com/mp619/ELEC70048_HW_SW_Verification/Hardware/AHB_peripherals_files) for further information about testbench structure
+Please see [Verification Plan](https://github.com/mp619/ELEC70048_HW_SW_Verification/Hardware/AHB_peripherals_files) for further information about testbench structure
 
-Plase see [Verifaction Report ](https://github.com/mp619/ELEC70048_HW_SW_Verification/Hardware/AHB_peripherals_files) for information about bugs found, fixes made and top level integration waveforms
+Plase see [Verification Report ](https://github.com/mp619/ELEC70048_HW_SW_Verification/Hardware/AHB_peripherals_files) for information about bugs found, fixes made and top level integration waveforms
