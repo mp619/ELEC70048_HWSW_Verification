@@ -1,6 +1,6 @@
 # Verification Plan
 
-Before AHB verification was performed, a plan was formulated testing key points within each digital block according to the specification provided by ARM. This includes unit level and formal tests in both the GPIO and VGA. After Parity and Dual-Lock-Step were added to each respectively - a top level integration test was performed to ensure coninued compatability with all circuit blocks
+Before AHB verification was performed, a plan was formulated testing key points within each digital block according to the specification provided by ARM. This includes unit level and formal tests in both the GPIO and VGA. After Parity and Dual-Lock-Step were added to each respectively - a top level integration test was performed to ensure continued compatability with all circuit blocks
 
 ## Overall Plan
 |     AHB_Peripheral    |     Test Number    |     Name                       |     Description                                                                                                                                |     Verification Type    |     Formal Check Name      |     Pass/Fail                                          |
